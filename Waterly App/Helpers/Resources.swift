@@ -62,6 +62,10 @@ enum Resources {
         enum MainController {
             static let dailyWaterGoal = "Дневная норма"
             static let activityType = "Физ. активность"
+            static let daylyGoal = "Цель дня"
+            
+            static let editButton = "Изменить"
+            static let addWaterButton = "Добавить воду"
         }
     }
     

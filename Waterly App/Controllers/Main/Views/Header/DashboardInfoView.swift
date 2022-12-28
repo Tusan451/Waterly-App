@@ -47,7 +47,7 @@ extension DashboardInfoView {
     override func configureViews() {
         super.configureViews()
         
-        dailyWaterGoal.setValueLabel(with: "2000")
+        dailyWaterGoal.setValueLabel(with: "2000 мл")
         activityMode.setActivityColor(for: .medium)
     }
 }

@@ -11,6 +11,7 @@ class MainViewController: BaseController {
 
     private let headerView = HeaderView()
     private let dashboardInfoView = DashboardInfoView()
+    private let counterView = CounterView()
 }
 
 extension MainViewController {
@@ -20,6 +21,7 @@ extension MainViewController {
         
         view.addView(headerView)
         view.addView(dashboardInfoView)
+        view.addView(counterView)
     }
     
     override func layoutViews() {
@@ -33,7 +35,12 @@ extension MainViewController {
             
             dashboardInfoView.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
             dashboardInfoView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 24),
-            dashboardInfoView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor)
+            dashboardInfoView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
+            dashboardInfoView.bottomAnchor.constraint(equalTo: counterView.topAnchor, constant: -32),
+            
+            counterView.topAnchor.constraint(equalTo: dashboardInfoView.bottomAnchor, constant: 32),
+            counterView.leadingAnchor.constraint(equalTo: dashboardInfoView.leadingAnchor),
+            counterView.trailingAnchor.constraint(equalTo: dashboardInfoView.trailingAnchor)
         ])
     }
     
@@ -42,6 +49,15 @@ extension MainViewController {
         
         headerView.configureGreetingsLabel(with: "Олег")
         headerView.configureMotivationLabel(with: "Не забывай пить воду.")
+        
+        counterView.addWaterButtonAction(#selector(addWaterButtonTapped), target: self)
+    }
+}
+
+@objc extension MainViewController {
+    
+    func addWaterButtonTapped() {
+        print("waterButton tapped")
     }
 }
 

@@ -23,6 +23,10 @@
 		E0E1AC92295B356500D2AA9C /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1AC91295B356500D2AA9C /* UIView + ext.swift */; };
 		E0E1AC96295B3AAF00D2AA9C /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1AC95295B3AAF00D2AA9C /* BaseView.swift */; };
 		E0E1AC98295B3B1900D2AA9C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1AC97295B3B1800D2AA9C /* HeaderView.swift */; };
+		E0F5D634295C78DA008259D7 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D633295C78DA008259D7 /* CounterView.swift */; };
+		E0F5D637295C7A34008259D7 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D636295C7A34008259D7 /* ProgressView.swift */; };
+		E0F5D63A295C7FAA008259D7 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D639295C7FAA008259D7 /* GoalView.swift */; };
+		E0F5D63C295C82BB008259D7 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D63B295C82BB008259D7 /* CustomButtonView.swift */; };
 		E0FBFD68295A04E400AFE420 /* NavBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FBFD67295A04E400AFE420 /* NavBarController.swift */; };
 		E0FBFD6B295A0B5900AFE420 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FBFD6A295A0B5900AFE420 /* BaseController.swift */; };
 		E0FBFD6D295A0F1900AFE420 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FBFD6C295A0F1900AFE420 /* SettingsViewController.swift */; };
@@ -48,6 +52,10 @@
 		E0E1AC91295B356500D2AA9C /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
 		E0E1AC95295B3AAF00D2AA9C /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		E0E1AC97295B3B1800D2AA9C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		E0F5D633295C78DA008259D7 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		E0F5D636295C7A34008259D7 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		E0F5D639295C7FAA008259D7 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
+		E0F5D63B295C82BB008259D7 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		E0FBFD67295A04E400AFE420 /* NavBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarController.swift; sourceTree = "<group>"; };
 		E0FBFD6A295A0B5900AFE420 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		E0FBFD6C295A0F1900AFE420 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -143,8 +151,8 @@
 		E0E1AC93295B3A1400D2AA9C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E0E1AC97295B3B1800D2AA9C /* HeaderView.swift */,
-				E05DE9D1295B62F200C81B15 /* DashboardInfoView.swift */,
+				E0F5D635295C7A20008259D7 /* Counter */,
+				E0F5D638295C7D45008259D7 /* Header */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,6 +164,25 @@
 				E05DE9CF295B590200C81B15 /* BaseInfoView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E0F5D635295C7A20008259D7 /* Counter */ = {
+			isa = PBXGroup;
+			children = (
+				E0F5D633295C78DA008259D7 /* CounterView.swift */,
+				E0F5D636295C7A34008259D7 /* ProgressView.swift */,
+				E0F5D639295C7FAA008259D7 /* GoalView.swift */,
+			);
+			path = Counter;
+			sourceTree = "<group>";
+		};
+		E0F5D638295C7D45008259D7 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				E0E1AC97295B3B1800D2AA9C /* HeaderView.swift */,
+				E05DE9D1295B62F200C81B15 /* DashboardInfoView.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		E0FBFD69295A0B2200AFE420 /* Controllers */ = {
@@ -176,6 +203,7 @@
 				E03021CA2959CF5C00126AE7 /* TabBarController.swift */,
 				E0FBFD67295A04E400AFE420 /* NavBarController.swift */,
 				E0FBFD6A295A0B5900AFE420 /* BaseController.swift */,
+				E0F5D63B295C82BB008259D7 /* CustomButtonView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -280,7 +308,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0A773B12959C3F8005FF95B /* MainViewController.swift in Sources */,
+				E0F5D63A295C7FAA008259D7 /* GoalView.swift in Sources */,
 				E0FBFD68295A04E400AFE420 /* NavBarController.swift in Sources */,
+				E0F5D63C295C82BB008259D7 /* CustomButtonView.swift in Sources */,
 				E0FBFD6B295A0B5900AFE420 /* BaseController.swift in Sources */,
 				E03021CB2959CF5C00126AE7 /* TabBarController.swift in Sources */,
 				E0E1AC92295B356500D2AA9C /* UIView + ext.swift in Sources */,
@@ -292,7 +322,9 @@
 				E0A773AF2959C3F8005FF95B /* SceneDelegate.swift in Sources */,
 				E0E1AC96295B3AAF00D2AA9C /* BaseView.swift in Sources */,
 				E0FBFD6D295A0F1900AFE420 /* SettingsViewController.swift in Sources */,
+				E0F5D637295C7A34008259D7 /* ProgressView.swift in Sources */,
 				E05DE9D2295B62F200C81B15 /* DashboardInfoView.swift in Sources */,
+				E0F5D634295C78DA008259D7 /* CounterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
