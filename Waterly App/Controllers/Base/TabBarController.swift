@@ -21,6 +21,7 @@ final class TabBarController: UITabBarController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         configureTabs()
+        switchTo(tab: .main)
     }
     
     required init?(coder: NSCoder) {
@@ -38,6 +39,10 @@ final class TabBarController: UITabBarController {
         super.viewDidLayoutSubviews()
         
         setupCustomTabBarFrame()
+    }
+    
+    private func switchTo(tab: Tabs) {
+        selectedIndex = tab.rawValue
     }
     
     private func setupCustomTabBarFrame() {
@@ -62,8 +67,9 @@ final class TabBarController: UITabBarController {
         
         if #available(iOS 13.0, *) {
             let appearence = tabBar.standardAppearance
-            appearence.stackedLayoutAppearance.normal.titleTextAttributes =
-            [NSAttributedString.Key.foregroundColor: Resources.Colors.Accent.accentInactive as Any]
+            appearence.stackedLayoutAppearance.normal.titleTextAttributes = [
+                .foregroundColor: Resources.Colors.Accent.accentInactive as Any
+            ]
             appearence.stackedLayoutAppearance.normal.iconColor = Resources.Colors.Accent.accentInactive
             appearence.shadowImage = nil
             appearence.shadowColor = nil
@@ -82,8 +88,7 @@ final class TabBarController: UITabBarController {
         customTabBarView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
         customTabBarView.layer.masksToBounds = false
-        customTabBarView.layer.shadowColor =
-            Resources.Colors.Other.shadow?.withAlphaComponent(0.1).cgColor
+        customTabBarView.layer.shadowColor = Resources.Colors.Other.shadow?.cgColor
         customTabBarView.layer.shadowOffset = Resources.Shadows.TabBar.offset
         customTabBarView.layer.shadowOpacity = Resources.Shadows.TabBar.opacity
         customTabBarView.layer.shadowRadius = Resources.Shadows.TabBar.radius
@@ -93,11 +98,11 @@ final class TabBarController: UITabBarController {
     }
     
     private func configureTabs() {
-        let statisticsController = UIViewController()
-        let mainController = UIViewController()
-        let settingsController = UIViewController()
+        let statisticsController = StatisticsViewController()
+        let mainController = MainViewController()
+        let settingsController = SettingsViewController()
         
-        let settingsNavController = UINavigationController(rootViewController: settingsController)
+        let settingsNavController = NavBarController(rootViewController: settingsController)
         
         statisticsController.tabBarItem = UITabBarItem(title: Resources.Strings.TabBar.statistics,
                                                        image: Resources.Images.TabBar.statistics,

@@ -8,24 +8,50 @@
 
 /* Begin PBXBuildFile section */
 		E03021CB2959CF5C00126AE7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03021CA2959CF5C00126AE7 /* TabBarController.swift */; };
+		E05DE9D0295B590200C81B15 /* BaseInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05DE9CF295B590200C81B15 /* BaseInfoView.swift */; };
+		E05DE9D2295B62F200C81B15 /* DashboardInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05DE9D1295B62F200C81B15 /* DashboardInfoView.swift */; };
 		E0A773AD2959C3F8005FF95B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A773AC2959C3F8005FF95B /* AppDelegate.swift */; };
 		E0A773AF2959C3F8005FF95B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A773AE2959C3F8005FF95B /* SceneDelegate.swift */; };
-		E0A773B12959C3F8005FF95B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A773B02959C3F8005FF95B /* ViewController.swift */; };
+		E0A773B12959C3F8005FF95B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A773B02959C3F8005FF95B /* MainViewController.swift */; };
 		E0A773B62959C3F8005FF95B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0A773B52959C3F8005FF95B /* Assets.xcassets */; };
 		E0A773B92959C3F8005FF95B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0A773B72959C3F8005FF95B /* LaunchScreen.storyboard */; };
 		E0BA84992959D8D300D30B1C /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BA84982959D8D300D30B1C /* Resources.swift */; };
+		E0E1AC8C295B301000D2AA9C /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0E1AC88295B301000D2AA9C /* SFProDisplay-Regular.ttf */; };
+		E0E1AC8D295B301000D2AA9C /* SFProDisplay-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0E1AC89295B301000D2AA9C /* SFProDisplay-Light.ttf */; };
+		E0E1AC8E295B301000D2AA9C /* SFProDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0E1AC8A295B301000D2AA9C /* SFProDisplay-Medium.ttf */; };
+		E0E1AC8F295B301000D2AA9C /* SFProDisplay-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0E1AC8B295B301000D2AA9C /* SFProDisplay-Semibold.ttf */; };
+		E0E1AC92295B356500D2AA9C /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1AC91295B356500D2AA9C /* UIView + ext.swift */; };
+		E0E1AC96295B3AAF00D2AA9C /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1AC95295B3AAF00D2AA9C /* BaseView.swift */; };
+		E0E1AC98295B3B1900D2AA9C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1AC97295B3B1800D2AA9C /* HeaderView.swift */; };
+		E0FBFD68295A04E400AFE420 /* NavBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FBFD67295A04E400AFE420 /* NavBarController.swift */; };
+		E0FBFD6B295A0B5900AFE420 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FBFD6A295A0B5900AFE420 /* BaseController.swift */; };
+		E0FBFD6D295A0F1900AFE420 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FBFD6C295A0F1900AFE420 /* SettingsViewController.swift */; };
+		E0FBFD73295A102700AFE420 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FBFD72295A102700AFE420 /* StatisticsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E03021CA2959CF5C00126AE7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		E05DE9CF295B590200C81B15 /* BaseInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInfoView.swift; sourceTree = "<group>"; };
+		E05DE9D1295B62F200C81B15 /* DashboardInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInfoView.swift; sourceTree = "<group>"; };
 		E0A773A92959C3F8005FF95B /* Waterly App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Waterly App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0A773AC2959C3F8005FF95B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0A773AE2959C3F8005FF95B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E0A773B02959C3F8005FF95B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E0A773B02959C3F8005FF95B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E0A773B52959C3F8005FF95B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0A773B82959C3F8005FF95B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0A773BA2959C3F8005FF95B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0BA84982959D8D300D30B1C /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		E0E1AC88295B301000D2AA9C /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
+		E0E1AC89295B301000D2AA9C /* SFProDisplay-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Light.ttf"; sourceTree = "<group>"; };
+		E0E1AC8A295B301000D2AA9C /* SFProDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Medium.ttf"; sourceTree = "<group>"; };
+		E0E1AC8B295B301000D2AA9C /* SFProDisplay-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Semibold.ttf"; sourceTree = "<group>"; };
+		E0E1AC91295B356500D2AA9C /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
+		E0E1AC95295B3AAF00D2AA9C /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		E0E1AC97295B3B1800D2AA9C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		E0FBFD67295A04E400AFE420 /* NavBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarController.swift; sourceTree = "<group>"; };
+		E0FBFD6A295A0B5900AFE420 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		E0FBFD6C295A0F1900AFE420 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E0FBFD72295A102700AFE420 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +86,8 @@
 			children = (
 				E0BA84972959D89B00D30B1C /* Helpers */,
 				E0A773C02959C62B005FF95B /* Application */,
-				E0A773B02959C3F8005FF95B /* ViewController.swift */,
-				E03021CA2959CF5C00126AE7 /* TabBarController.swift */,
+				E0FBFD69295A0B2200AFE420 /* Controllers */,
+				E0E1AC87295B2FDA00D2AA9C /* Fonts */,
 				E0A773C12959C666005FF95B /* SupportingFiles */,
 			);
 			path = "Waterly App";
@@ -89,9 +115,94 @@
 		E0BA84972959D89B00D30B1C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E0E1AC90295B354700D2AA9C /* Extensions */,
 				E0BA84982959D8D300D30B1C /* Resources.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E0E1AC87295B2FDA00D2AA9C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E0E1AC89295B301000D2AA9C /* SFProDisplay-Light.ttf */,
+				E0E1AC8A295B301000D2AA9C /* SFProDisplay-Medium.ttf */,
+				E0E1AC88295B301000D2AA9C /* SFProDisplay-Regular.ttf */,
+				E0E1AC8B295B301000D2AA9C /* SFProDisplay-Semibold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E0E1AC90295B354700D2AA9C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E0E1AC91295B356500D2AA9C /* UIView + ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E0E1AC93295B3A1400D2AA9C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E0E1AC97295B3B1800D2AA9C /* HeaderView.swift */,
+				E05DE9D1295B62F200C81B15 /* DashboardInfoView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E0E1AC94295B3AA300D2AA9C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E0E1AC95295B3AAF00D2AA9C /* BaseView.swift */,
+				E05DE9CF295B590200C81B15 /* BaseInfoView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E0FBFD69295A0B2200AFE420 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E0FBFD71295A100C00AFE420 /* Settings */,
+				E0FBFD70295A100500AFE420 /* Statistics */,
+				E0FBFD6F295A0FFF00AFE420 /* Main */,
+				E0FBFD6E295A0FBC00AFE420 /* Base */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E0FBFD6E295A0FBC00AFE420 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E0E1AC94295B3AA300D2AA9C /* Views */,
+				E03021CA2959CF5C00126AE7 /* TabBarController.swift */,
+				E0FBFD67295A04E400AFE420 /* NavBarController.swift */,
+				E0FBFD6A295A0B5900AFE420 /* BaseController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E0FBFD6F295A0FFF00AFE420 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E0E1AC93295B3A1400D2AA9C /* Views */,
+				E0A773B02959C3F8005FF95B /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E0FBFD70295A100500AFE420 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				E0FBFD72295A102700AFE420 /* StatisticsViewController.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		E0FBFD71295A100C00AFE420 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E0FBFD6C295A0F1900AFE420 /* SettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,8 +263,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0E1AC8C295B301000D2AA9C /* SFProDisplay-Regular.ttf in Resources */,
+				E0E1AC8F295B301000D2AA9C /* SFProDisplay-Semibold.ttf in Resources */,
 				E0A773B92959C3F8005FF95B /* LaunchScreen.storyboard in Resources */,
 				E0A773B62959C3F8005FF95B /* Assets.xcassets in Resources */,
+				E0E1AC8D295B301000D2AA9C /* SFProDisplay-Light.ttf in Resources */,
+				E0E1AC8E295B301000D2AA9C /* SFProDisplay-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,11 +279,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0A773B12959C3F8005FF95B /* ViewController.swift in Sources */,
+				E0A773B12959C3F8005FF95B /* MainViewController.swift in Sources */,
+				E0FBFD68295A04E400AFE420 /* NavBarController.swift in Sources */,
+				E0FBFD6B295A0B5900AFE420 /* BaseController.swift in Sources */,
 				E03021CB2959CF5C00126AE7 /* TabBarController.swift in Sources */,
+				E0E1AC92295B356500D2AA9C /* UIView + ext.swift in Sources */,
 				E0A773AD2959C3F8005FF95B /* AppDelegate.swift in Sources */,
 				E0BA84992959D8D300D30B1C /* Resources.swift in Sources */,
+				E0E1AC98295B3B1900D2AA9C /* HeaderView.swift in Sources */,
+				E05DE9D0295B590200C81B15 /* BaseInfoView.swift in Sources */,
+				E0FBFD73295A102700AFE420 /* StatisticsViewController.swift in Sources */,
 				E0A773AF2959C3F8005FF95B /* SceneDelegate.swift in Sources */,
+				E0E1AC96295B3AAF00D2AA9C /* BaseView.swift in Sources */,
+				E0FBFD6D295A0F1900AFE420 /* SettingsViewController.swift in Sources */,
+				E05DE9D2295B62F200C81B15 /* DashboardInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

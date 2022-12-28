@@ -46,7 +46,7 @@ enum Resources {
         
         enum TabBar {
             static let offset = CGSize(width: 0, height: -4)
-            static let opacity: Float = 0.5
+            static let opacity: Float = 0.1
             static let radius: CGFloat = 22
         }
     }
@@ -58,6 +58,11 @@ enum Resources {
             static let main = "Главная"
             static let settings = "Настройки"
         }
+        
+        enum MainController {
+            static let dailyWaterGoal = "Дневная норма"
+            static let activityType = "Физ. активность"
+        }
     }
     
     enum Images {
@@ -66,6 +71,27 @@ enum Resources {
             static let statistics = UIImage(named: "statistics")
             static let main = UIImage(named: "main")
             static let settings = UIImage(named: "settings")
+        }
+        
+        enum MainController {
+            static let water = UIImage(named: "water")
+            static let activity = UIImage(named: "activity")
+        }
+    }
+    
+    enum Fonts {
+        
+        static func sfProLight(size: CGFloat) -> UIFont {
+            UIFont(name: "SFProDisplay-Light", size: size) ?? UIFont()
+        }
+        static func sfProRegular(size: CGFloat) -> UIFont {
+            UIFont(name: "SFProDisplay-Regular", size: size) ?? UIFont()
+        }
+        static func sfProMedium(size: CGFloat) -> UIFont {
+            UIFont(name: "SFProDisplay-Medium", size: size) ?? UIFont()
+        }
+        static func sfProSemibold(size: CGFloat) -> UIFont {
+            UIFont(name: "SFProDisplay-Semibold", size: size) ?? UIFont()
         }
     }
 }
