@@ -11,7 +11,7 @@ final class CounterView: BaseView {
     
     private let progressView: ProgressView = {
         let view = ProgressView()
-        view.drawProgress(with: 0)
+        view.drawProgress(with: 0.3)
         return view
     }()
     
@@ -65,9 +65,7 @@ extension CounterView {
     
     override func configureViews() {
         super.configureViews()
-        
-        progressView.backgroundColor = .cyan
-        
+                
         goalView.setValueLabel(with: "2000 мл")
         goalView.addEditButtonAction(#selector(editButtonTapped), target: self)
         

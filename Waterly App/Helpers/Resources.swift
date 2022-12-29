@@ -49,6 +49,12 @@ enum Resources {
             static let opacity: Float = 0.1
             static let radius: CGFloat = 22
         }
+        
+        enum MainController {
+            static let offset = CGSize(width: 0, height: 4)
+            static let opacity: Float = 1
+            static let radius: CGFloat = 4
+        }
     }
     
     enum Strings {
