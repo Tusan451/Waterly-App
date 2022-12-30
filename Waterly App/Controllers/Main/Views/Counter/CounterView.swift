@@ -9,9 +9,31 @@ import UIKit
 
 final class CounterView: BaseView {
     
-    private let progressView: ProgressView = {
-        let view = ProgressView()
-        view.drawProgress(with: 0.3)
+    private let progressView = ProgressView()
+    
+    private var counterProgress: CGFloat = 0
+    private var counterGoal = 0.0
+    
+    private let percentProgressValueLabel: UILabel = {
+        let label = UILabel()
+        label.font = Resources.Fonts.sfProSemibold(size: 32)
+        label.textColor = Resources.Colors.Text.textMain
+        label.textAlignment = .center
+        return label
+    }()
+    
+    private let waterProgressValueLabel: UILabel = {
+        let label = UILabel()
+        label.font = Resources.Fonts.sfProMedium(size: 13)
+        label.textColor = Resources.Colors.Text.textSecondary
+        label.textAlignment = .center
+        return label
+    }()
+    
+    private let labelsStackView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .vertical
+        view.distribution = .fillProportionally
         return view
     }()
     
@@ -27,8 +49,16 @@ final class CounterView: BaseView {
     
     private let addWaterButton = CustomButtonView(with: .fill)
     
-    func addWaterButtonAction(_ action: Selector, target: Any?) {
-        addWaterButton.addTarget(target, action: action, for: .touchUpInside)
+    // Конфигурация счетчика воды
+    func configure(goal: Double, progress: Double) {
+        counterGoal = goal
+        
+        let tempCurrentValue = progress > goal ? goal : progress
+        let goalValueDivider = goal == 0 ? 1 : goal
+        let percent = tempCurrentValue / goalValueDivider
+        
+        progressView.drawProgress(with: CGFloat(percent))
+        valueLabelsAnimate(goal: goal, progress: progress)
     }
 }
 
@@ -39,6 +69,9 @@ extension CounterView {
         
         addView(addWaterButton)
         addView(stackView)
+        addView(labelsStackView)
+        labelsStackView.addArrangedSubview(percentProgressValueLabel)
+        labelsStackView.addArrangedSubview(waterProgressValueLabel)
         stackView.addArrangedSubview(progressView)
         stackView.addArrangedSubview(goalView)
     }
@@ -50,6 +83,9 @@ extension CounterView {
             progressView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             progressView.trailingAnchor.constraint(equalTo: goalView.leadingAnchor, constant: -40),
             progressView.heightAnchor.constraint(equalTo: progressView.widthAnchor),
+            
+            labelsStackView.centerXAnchor.constraint(equalTo: progressView.centerXAnchor),
+            labelsStackView.centerYAnchor.constraint(equalTo: progressView.centerYAnchor),
             
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.topAnchor.constraint(equalTo: topAnchor),
@@ -71,12 +107,49 @@ extension CounterView {
         
         addWaterButton.setTitle(with: Resources.Strings.MainController.addWaterButton)
         addWaterButton.setColor(for: Resources.Colors.Accent.accentMain, title: .white)
+        addWaterButton.addTarget(self, action: #selector(addWaterButtonTapped), for: .touchUpInside)
     }
 }
 
 @objc extension CounterView {
     
+    // TODO: - Вызов поп-ап окна с изменением дневной нормы
     func editButtonTapped() {
         print("edit button tapped")
+    }
+    
+    // TODO: - Добавление выпитой воды
+    func addWaterButtonTapped() {
+        print("waterButton tapped")
+    }
+}
+
+private extension CounterView {
+    
+    func valueLabelsAnimate(goal: Double, progress: Double) {
+        var water = 0
+        var labelPercent = 0
+        
+        Timer.scheduledTimer(withTimeInterval: 0.0001,
+                                         repeats: true) { [weak self] timer in
+            guard let self = self else { return }
+            water += 1
+            self.waterProgressValueLabel.text = "\(water) мл"
+            
+            if water == Int(progress) {
+                timer.invalidate()
+            }
+        }
+        
+        Timer.scheduledTimer(withTimeInterval: 0.02,
+                             repeats: true) { [weak self] timer in
+            guard let self = self else { return }
+            labelPercent += 1
+            self.percentProgressValueLabel.text = "\(labelPercent)%"
+            
+            if labelPercent == Int(progress / (goal / 100)) {
+                timer.invalidate()
+            }
+        }
     }
 }

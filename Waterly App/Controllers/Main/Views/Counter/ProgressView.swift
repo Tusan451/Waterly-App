@@ -105,6 +105,16 @@ extension CounterView {
                 angle -= 0.1
             }
             
+            let activeCircleLayerAnimation = CABasicAnimation(keyPath: "strokeEnd")
+            
+            activeCircleLayerAnimation.fromValue = 0
+            activeCircleLayerAnimation.toValue = activeCircleLayer.strokeEnd
+            activeCircleLayerAnimation.duration = 0.7
+            activeCircleLayerAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+            activeCircleLayerAnimation.fillMode = CAMediaTimingFillMode.forwards
+            activeCircleLayerAnimation.isRemovedOnCompletion = false
+            
+            activeCircleLayer.add(activeCircleLayerAnimation, forKey: "activeCircleAnimation")
             layer.addSublayer(defaultCircleLayer)
             layer.addSublayer(activeCircleLayer)
             layer.addSublayer(bigDotLayer)

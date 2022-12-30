@@ -50,14 +50,7 @@ extension MainViewController {
         headerView.configureGreetingsLabel(with: "Олег")
         headerView.configureMotivationLabel(with: "Не забывай пить воду.")
         
-        counterView.addWaterButtonAction(#selector(addWaterButtonTapped), target: self)
-    }
-}
-
-@objc extension MainViewController {
-    
-    func addWaterButtonTapped() {
-        print("waterButton tapped")
+        counterView.configure(goal: 2000, progress: 2000)
     }
 }
 
