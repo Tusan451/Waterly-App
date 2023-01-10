@@ -14,6 +14,8 @@ class MainViewController: BaseController {
     private let headerView = HeaderView()
     private let dashboardInfoView = DashboardInfoView()
     private let counterView = CounterView()
+    
+    private let waterHistoryView = WaterHistoryView()
 }
 
 extension MainViewController {
@@ -25,6 +27,7 @@ extension MainViewController {
         
         scrollView.addView(dashboardInfoView)
         scrollView.addView(counterView)
+        scrollView.addView(waterHistoryView)
         view.addView(scrollView)
     }
     
@@ -50,6 +53,11 @@ extension MainViewController {
             counterView.topAnchor.constraint(equalTo: dashboardInfoView.bottomAnchor, constant: 32),
             counterView.leadingAnchor.constraint(equalTo: dashboardInfoView.leadingAnchor),
             counterView.trailingAnchor.constraint(equalTo: dashboardInfoView.trailingAnchor),
+            counterView.bottomAnchor.constraint(equalTo: waterHistoryView.topAnchor, constant: -32),
+            
+            waterHistoryView.topAnchor.constraint(equalTo: counterView.bottomAnchor, constant: 32),
+            waterHistoryView.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
+            waterHistoryView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor)
         ])
     }
     

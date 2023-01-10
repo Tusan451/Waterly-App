@@ -72,6 +72,9 @@ enum Resources {
             
             static let editButton = "Изменить"
             static let addWaterButton = "Добавить воду"
+            
+            static let recentlyAdded = "Недавно добавлено"
+            static let noAddedWaterLabel = "Сегодня вы еще не добавляли воду"
         }
     }
     
@@ -86,6 +89,7 @@ enum Resources {
         enum MainController {
             static let water = UIImage(named: "water")
             static let activity = UIImage(named: "activity")
+            static let glassOfWater = UIImage(named: "glassOfWater")
         }
     }
     

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E03021CB2959CF5C00126AE7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03021CA2959CF5C00126AE7 /* TabBarController.swift */; };
+		E053B725295F32E200F71F20 /* WaterHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E053B724295F32E200F71F20 /* WaterHistoryView.swift */; };
+		E053B727295F42A400F71F20 /* AddedWaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E053B726295F42A400F71F20 /* AddedWaterView.swift */; };
 		E05DE9D0295B590200C81B15 /* BaseInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05DE9CF295B590200C81B15 /* BaseInfoView.swift */; };
 		E05DE9D2295B62F200C81B15 /* DashboardInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05DE9D1295B62F200C81B15 /* DashboardInfoView.swift */; };
 		E0A773AD2959C3F8005FF95B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A773AC2959C3F8005FF95B /* AppDelegate.swift */; };
@@ -35,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		E03021CA2959CF5C00126AE7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		E053B724295F32E200F71F20 /* WaterHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterHistoryView.swift; sourceTree = "<group>"; };
+		E053B726295F42A400F71F20 /* AddedWaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedWaterView.swift; sourceTree = "<group>"; };
 		E05DE9CF295B590200C81B15 /* BaseInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInfoView.swift; sourceTree = "<group>"; };
 		E05DE9D1295B62F200C81B15 /* DashboardInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInfoView.swift; sourceTree = "<group>"; };
 		E0A773A92959C3F8005FF95B /* Waterly App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Waterly App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +77,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E053B723295F32A000F71F20 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				E053B724295F32E200F71F20 /* WaterHistoryView.swift */,
+				E053B726295F42A400F71F20 /* AddedWaterView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 		E0A773A02959C3F8005FF95B = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +164,7 @@
 		E0E1AC93295B3A1400D2AA9C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E053B723295F32A000F71F20 /* History */,
 				E0F5D635295C7A20008259D7 /* Counter */,
 				E0F5D638295C7D45008259D7 /* Header */,
 			);
@@ -314,6 +328,7 @@
 				E0FBFD6B295A0B5900AFE420 /* BaseController.swift in Sources */,
 				E03021CB2959CF5C00126AE7 /* TabBarController.swift in Sources */,
 				E0E1AC92295B356500D2AA9C /* UIView + ext.swift in Sources */,
+				E053B725295F32E200F71F20 /* WaterHistoryView.swift in Sources */,
 				E0A773AD2959C3F8005FF95B /* AppDelegate.swift in Sources */,
 				E0BA84992959D8D300D30B1C /* Resources.swift in Sources */,
 				E0E1AC98295B3B1900D2AA9C /* HeaderView.swift in Sources */,
@@ -325,6 +340,7 @@
 				E0F5D637295C7A34008259D7 /* ProgressView.swift in Sources */,
 				E05DE9D2295B62F200C81B15 /* DashboardInfoView.swift in Sources */,
 				E0F5D634295C78DA008259D7 /* CounterView.swift in Sources */,
+				E053B727295F42A400F71F20 /* AddedWaterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
