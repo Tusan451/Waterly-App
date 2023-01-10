@@ -71,6 +71,13 @@ extension MainViewController {
         
         scrollView.contentSize = CGSizeMake(self.view.frame.size.width,
                                             self.view.frame.size.height + 500)
+        
+        waterHistoryView.configure(items: [.init(value: 150),
+                                           .init(value: 1000),
+                                           .init(value: 250),
+                                           .init(value: 180),
+                                           .init(value: 0),
+                                           .init(value: 0)])
     }
 }
 

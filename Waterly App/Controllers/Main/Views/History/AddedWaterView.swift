@@ -22,8 +22,8 @@ final class AddedWaterView: BaseView {
         return label
     }()
     
-    init(value: String) {
-        valueLabel.text = value + " мл"
+    init(value: Int) {
+        valueLabel.text = "\(value) мл"
         super.init(frame: .zero)
     }
     

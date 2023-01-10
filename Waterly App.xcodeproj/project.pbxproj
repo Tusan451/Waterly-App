@@ -25,6 +25,9 @@
 		E0E1AC92295B356500D2AA9C /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1AC91295B356500D2AA9C /* UIView + ext.swift */; };
 		E0E1AC96295B3AAF00D2AA9C /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1AC95295B3AAF00D2AA9C /* BaseView.swift */; };
 		E0E1AC98295B3B1900D2AA9C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1AC97295B3B1800D2AA9C /* HeaderView.swift */; };
+		E0EDEF0C296DAD6B00303A41 /* YAxisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDEF0B296DAD6B00303A41 /* YAxisView.swift */; };
+		E0EDEF0F296DAEF400303A41 /* BaseChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDEF0E296DAEF400303A41 /* BaseChartView.swift */; };
+		E0EDEF11296DB69800303A41 /* WeeklySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDEF10296DB69800303A41 /* WeeklySummaryView.swift */; };
 		E0F5D634295C78DA008259D7 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D633295C78DA008259D7 /* CounterView.swift */; };
 		E0F5D637295C7A34008259D7 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D636295C7A34008259D7 /* ProgressView.swift */; };
 		E0F5D63A295C7FAA008259D7 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D639295C7FAA008259D7 /* GoalView.swift */; };
@@ -56,6 +59,9 @@
 		E0E1AC91295B356500D2AA9C /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
 		E0E1AC95295B3AAF00D2AA9C /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		E0E1AC97295B3B1800D2AA9C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		E0EDEF0B296DAD6B00303A41 /* YAxisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YAxisView.swift; sourceTree = "<group>"; };
+		E0EDEF0E296DAEF400303A41 /* BaseChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseChartView.swift; sourceTree = "<group>"; };
+		E0EDEF10296DB69800303A41 /* WeeklySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklySummaryView.swift; sourceTree = "<group>"; };
 		E0F5D633295C78DA008259D7 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		E0F5D636295C7A34008259D7 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		E0F5D639295C7FAA008259D7 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
@@ -164,6 +170,7 @@
 		E0E1AC93295B3A1400D2AA9C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E0EDEF07296DA34700303A41 /* WeeklySummary */,
 				E053B723295F32A000F71F20 /* History */,
 				E0F5D635295C7A20008259D7 /* Counter */,
 				E0F5D638295C7D45008259D7 /* Header */,
@@ -174,8 +181,34 @@
 		E0E1AC94295B3AA300D2AA9C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E0EDEF0A296DAD4500303A41 /* BaseChartView */,
 				E0E1AC95295B3AAF00D2AA9C /* BaseView.swift */,
 				E05DE9CF295B590200C81B15 /* BaseInfoView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E0EDEF07296DA34700303A41 /* WeeklySummary */ = {
+			isa = PBXGroup;
+			children = (
+				E0EDEF10296DB69800303A41 /* WeeklySummaryView.swift */,
+			);
+			path = WeeklySummary;
+			sourceTree = "<group>";
+		};
+		E0EDEF0A296DAD4500303A41 /* BaseChartView */ = {
+			isa = PBXGroup;
+			children = (
+				E0EDEF0D296DAEDA00303A41 /* Views */,
+				E0EDEF0E296DAEF400303A41 /* BaseChartView.swift */,
+			);
+			path = BaseChartView;
+			sourceTree = "<group>";
+		};
+		E0EDEF0D296DAEDA00303A41 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E0EDEF0B296DAD6B00303A41 /* YAxisView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -326,12 +359,14 @@
 				E0FBFD68295A04E400AFE420 /* NavBarController.swift in Sources */,
 				E0F5D63C295C82BB008259D7 /* CustomButtonView.swift in Sources */,
 				E0FBFD6B295A0B5900AFE420 /* BaseController.swift in Sources */,
+				E0EDEF0C296DAD6B00303A41 /* YAxisView.swift in Sources */,
 				E03021CB2959CF5C00126AE7 /* TabBarController.swift in Sources */,
 				E0E1AC92295B356500D2AA9C /* UIView + ext.swift in Sources */,
 				E053B725295F32E200F71F20 /* WaterHistoryView.swift in Sources */,
 				E0A773AD2959C3F8005FF95B /* AppDelegate.swift in Sources */,
 				E0BA84992959D8D300D30B1C /* Resources.swift in Sources */,
 				E0E1AC98295B3B1900D2AA9C /* HeaderView.swift in Sources */,
+				E0EDEF0F296DAEF400303A41 /* BaseChartView.swift in Sources */,
 				E05DE9D0295B590200C81B15 /* BaseInfoView.swift in Sources */,
 				E0FBFD73295A102700AFE420 /* StatisticsViewController.swift in Sources */,
 				E0A773AF2959C3F8005FF95B /* SceneDelegate.swift in Sources */,
@@ -340,6 +375,7 @@
 				E0F5D637295C7A34008259D7 /* ProgressView.swift in Sources */,
 				E05DE9D2295B62F200C81B15 /* DashboardInfoView.swift in Sources */,
 				E0F5D634295C78DA008259D7 /* CounterView.swift in Sources */,
+				E0EDEF11296DB69800303A41 /* WeeklySummaryView.swift in Sources */,
 				E053B727295F42A400F71F20 /* AddedWaterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

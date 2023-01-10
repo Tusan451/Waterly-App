@@ -7,14 +7,11 @@
 
 import UIKit
 
-private var addedWater: [AddedWaterView] = [
-    AddedWaterView(value: "150"),
-    AddedWaterView(value: "100"),
-    AddedWaterView(value: "250"),
-    AddedWaterView(value: "180"),
-    AddedWaterView(value: "0"),
-    AddedWaterView(value: "0")
-]
+extension WaterHistoryView {
+    struct Data {
+        let value: Int
+    }
+}
 
 final class WaterHistoryView: BaseView {
     
@@ -32,6 +29,13 @@ final class WaterHistoryView: BaseView {
         view.distribution = .fillEqually
         return view
     }()
+    
+    func configure(items: [WaterHistoryView.Data]) {
+        items.forEach {
+            let addedWaterItem = AddedWaterView(value: $0.value)
+            addedWaterStackView.addArrangedSubview(addedWaterItem)
+        }
+    }
 }
 
 extension WaterHistoryView {
@@ -41,9 +45,9 @@ extension WaterHistoryView {
         
         addView(titleLabel)
         
-        addedWater.forEach {
-            addedWaterStackView.addArrangedSubview($0)
-        }
+//        addedWater.forEach {
+//            addedWaterStackView.addArrangedSubview($0)
+//        }
         
         addView(addedWaterStackView)
     }
