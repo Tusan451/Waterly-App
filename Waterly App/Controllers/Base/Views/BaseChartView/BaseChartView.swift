@@ -7,10 +7,15 @@
 
 import UIKit
 
+// MARK: - Параметр цели дня из БД
+private let dayGoal = 2000
+
 final class BaseChartView: BaseView {
     
     private let yAxisView = YAxisView()
     private let xAxisView = XAxisView()
+    
+    private let barsView = UIView()
     
     func configure(data: [BaseChartView.Data],
                    chartSize: ChartSize,
@@ -21,6 +26,7 @@ final class BaseChartView: BaseView {
         
         layoutIfNeeded()
         addDashLines(for: chartSize)
+        addBarsFrom(data: data)
     }
 }
 
@@ -31,6 +37,7 @@ extension BaseChartView {
         
         addView(yAxisView)
         addView(xAxisView)
+        addView(barsView)
     }
     
     override func layoutViews() {
@@ -44,12 +51,16 @@ extension BaseChartView {
             xAxisView.leadingAnchor.constraint(equalTo: leadingAnchor),
             xAxisView.trailingAnchor.constraint(equalTo: yAxisView.leadingAnchor, constant: -8),
             xAxisView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            barsView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            barsView.topAnchor.constraint(equalTo: topAnchor, constant: 6),
+            barsView.trailingAnchor.constraint(equalTo: yAxisView.leadingAnchor, constant: -8),
+            barsView.bottomAnchor.constraint(equalTo: xAxisView.topAnchor, constant: -16)
         ])
     }
     
     override func configureViews() {
         super.configureViews()
-        
     }
 }
 
@@ -101,5 +112,55 @@ private extension BaseChartView {
         dashLayer.lineWidth = 1
         
         layer.addSublayer(dashLayer)
+    }
+    
+    func addBarsFrom(data: [BaseChartView.Data]) {
+        
+        var xPosition: CGFloat = 20
+        
+        data.forEach {
+            addBarWith(value: $0.value, at: xPosition)
+            xPosition += 46
+        }
+    }
+    
+    func addBarWith(value: Int, at xPosition: CGFloat) {
+        
+        var barColor = UIColor()
+        
+        if value == 0 {
+            barColor = .clear
+        } else if value == dayGoal {
+            barColor = Resources.Colors.Accent.accentMain ?? .clear
+        } else {
+            barColor = Resources.Colors.Accent.accentInactive ?? .clear
+        }
+        
+        let heightMultiplier: CGFloat = CGFloat(value) / CGFloat(dayGoal)
+        
+        let startPoint = CGPoint(x: xPosition, y: barsView.bounds.height + 4)
+        let endPoint = CGPoint(x: xPosition, y: barsView.bounds.height - (barsView.bounds.height * heightMultiplier) + 8)
+        
+        let barPath = CGMutablePath()
+        barPath.addLines(between: [startPoint, endPoint])
+        
+        let barLayer = CAShapeLayer()
+        barLayer.path = barPath
+        barLayer.strokeColor = barColor.cgColor
+        barLayer.lineWidth = 4
+        barLayer.lineCap = .round
+        
+        let barLayerAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        
+        barLayerAnimation.fromValue = 0
+        barLayerAnimation.toValue = barLayer.strokeEnd
+        barLayerAnimation.duration = 0.7
+        barLayerAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        barLayerAnimation.fillMode = CAMediaTimingFillMode.forwards
+        barLayerAnimation.isRemovedOnCompletion = false
+        
+        barLayer.add(barLayerAnimation, forKey: "activeCircleAnimation")
+        
+        layer.addSublayer(barLayer)
     }
 }
