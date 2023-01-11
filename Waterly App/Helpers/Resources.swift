@@ -75,6 +75,8 @@ enum Resources {
             
             static let recentlyAdded = "Недавно добавлено"
             static let noAddedWaterLabel = "Сегодня вы еще не добавляли воду"
+            
+            static let weeklySummary = "Сводка за неделю"
         }
     }
     

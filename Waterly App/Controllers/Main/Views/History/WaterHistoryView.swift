@@ -45,10 +45,6 @@ extension WaterHistoryView {
         
         addView(titleLabel)
         
-//        addedWater.forEach {
-//            addedWaterStackView.addArrangedSubview($0)
-//        }
-        
         addView(addedWaterStackView)
     }
     

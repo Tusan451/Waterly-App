@@ -16,6 +16,8 @@ class MainViewController: BaseController {
     private let counterView = CounterView()
     
     private let waterHistoryView = WaterHistoryView()
+    
+    private let weeklySummaryView = WeeklySummaryView()
 }
 
 extension MainViewController {
@@ -28,6 +30,7 @@ extension MainViewController {
         scrollView.addView(dashboardInfoView)
         scrollView.addView(counterView)
         scrollView.addView(waterHistoryView)
+        scrollView.addView(weeklySummaryView)
         view.addView(scrollView)
     }
     
@@ -57,7 +60,12 @@ extension MainViewController {
             
             waterHistoryView.topAnchor.constraint(equalTo: counterView.bottomAnchor, constant: 32),
             waterHistoryView.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
-            waterHistoryView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor)
+            waterHistoryView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
+            waterHistoryView.bottomAnchor.constraint(equalTo: weeklySummaryView.topAnchor, constant: -32),
+            
+            weeklySummaryView.topAnchor.constraint(equalTo: waterHistoryView.bottomAnchor, constant: 32),
+            weeklySummaryView.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
+            weeklySummaryView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
         ])
     }
     
@@ -78,6 +86,16 @@ extension MainViewController {
                                            .init(value: 180),
                                            .init(value: 0),
                                            .init(value: 0)])
+        
+        weeklySummaryView.configure(items: [.init(value: 2000, title: "Пн"),
+                                            .init(value: 1500, title: "Вт"),
+                                            .init(value: 1000, title: "Ср"),
+                                            .init(value: 1800, title: "Чт"),
+                                            .init(value: 2000, title: "Пт"),
+                                            .init(value: 0, title: "Сб"),
+                                            .init(value: 1200, title: "Вс")],
+                                    size: .short,
+                                    type: .week)
     }
 }
 
