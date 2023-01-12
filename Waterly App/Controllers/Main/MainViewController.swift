@@ -7,6 +7,9 @@
 
 import UIKit
 
+// MARK: - Параметр цели дня из БД
+let dayGoal = 2000
+
 class MainViewController: BaseController {
 
     private let scrollView = UIScrollView()
@@ -72,13 +75,13 @@ extension MainViewController {
     override func configureViews() {
         super.configureViews()
         
-        title = "Привет, Олег!"
-        navigationController?.tabBarItem.title = Resources.Strings.TabBar.main
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationBarConfigure()
         
         headerView.configureMotivationLabel(with: "Не забывай пить воду.")
         
-        counterView.configure(goal: 2000, progress: 2000)
+        dashboardInfoView.configureWith(dailyGoal: dayGoal, and: .low)
+        
+        counterView.configure(goal: Double(dayGoal), progress: 2000)
         
         scrollView.contentSize = CGSizeMake(self.view.frame.size.width,
                                             self.view.frame.size.height + 500)
@@ -102,3 +105,11 @@ extension MainViewController {
     }
 }
 
+private extension MainViewController {
+    
+    func navigationBarConfigure() {
+        title = "Привет, Олег!"
+        navigationController?.tabBarItem.title = Resources.Strings.TabBar.main
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+}

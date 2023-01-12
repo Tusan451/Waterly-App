@@ -7,9 +7,6 @@
 
 import UIKit
 
-// MARK: - Параметр цели дня из БД
-private let dayGoal = 2000
-
 final class BaseChartView: BaseView {
     
     private let yAxisView = YAxisView()

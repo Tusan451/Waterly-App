@@ -9,10 +9,10 @@ import UIKit
 
 final class DashboardInfoView: BaseView {
     
-    private let dailyWaterGoal = BaseInfoView(with: Resources.Strings.MainController.dailyWaterGoal,
+    private let dailyWaterGoalView = BaseInfoView(with: Resources.Strings.MainController.dailyWaterGoal,
                                               iconImage: Resources.Images.MainController.water)
     
-    private let activityMode = BaseInfoView(with: Resources.Strings.MainController.activityType,
+    private let activityModeView = BaseInfoView(with: Resources.Strings.MainController.activityType,
                                             iconImage: Resources.Images.MainController.activity)
     
     private let stackView: UIStackView = {
@@ -21,6 +21,12 @@ final class DashboardInfoView: BaseView {
         view.distribution = .fillEqually
         return view
     }()
+    
+    // TODO: - Конфигурация данных из БД
+    func configureWith(dailyGoal: Int, and activityType: ActivityType) {
+        dailyWaterGoalView.setValueLabel(with: dailyGoal)
+        activityModeView.setActivityColor(for: activityType)
+    }
 }
 
 extension DashboardInfoView {
@@ -29,8 +35,8 @@ extension DashboardInfoView {
         super.addViews()
         
         addView(stackView)
-        stackView.addArrangedSubview(dailyWaterGoal)
-        stackView.addArrangedSubview(activityMode)
+        stackView.addArrangedSubview(dailyWaterGoalView)
+        stackView.addArrangedSubview(activityModeView)
     }
     
     override func layoutViews() {
@@ -46,8 +52,5 @@ extension DashboardInfoView {
     
     override func configureViews() {
         super.configureViews()
-        
-        dailyWaterGoal.setValueLabel(with: "2000 мл")
-        activityMode.setActivityColor(for: .medium)
     }
 }

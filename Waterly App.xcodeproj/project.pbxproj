@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E01A905029705C970097DEB3 /* WeeklyStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A904F29705C970097DEB3 /* WeeklyStatisticsView.swift */; };
 		E03021CB2959CF5C00126AE7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03021CA2959CF5C00126AE7 /* TabBarController.swift */; };
 		E053B725295F32E200F71F20 /* WaterHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E053B724295F32E200F71F20 /* WaterHistoryView.swift */; };
 		E053B727295F42A400F71F20 /* AddedWaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E053B726295F42A400F71F20 /* AddedWaterView.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E01A904F29705C970097DEB3 /* WeeklyStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyStatisticsView.swift; sourceTree = "<group>"; };
 		E03021CA2959CF5C00126AE7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E053B724295F32E200F71F20 /* WaterHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterHistoryView.swift; sourceTree = "<group>"; };
 		E053B726295F42A400F71F20 /* AddedWaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedWaterView.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				E0EDEF10296DB69800303A41 /* WeeklySummaryView.swift */,
+				E01A904F29705C970097DEB3 /* WeeklyStatisticsView.swift */,
 			);
 			path = WeeklySummary;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				E0EDEF13296DD14A00303A41 /* XAxisView.swift in Sources */,
 				E0FBFD68295A04E400AFE420 /* NavBarController.swift in Sources */,
 				E0F5D63C295C82BB008259D7 /* CustomButtonView.swift in Sources */,
+				E01A905029705C970097DEB3 /* WeeklyStatisticsView.swift in Sources */,
 				E0FBFD6B295A0B5900AFE420 /* BaseController.swift in Sources */,
 				E0EDEF0C296DAD6B00303A41 /* YAxisView.swift in Sources */,
 				E03021CB2959CF5C00126AE7 /* TabBarController.swift in Sources */,

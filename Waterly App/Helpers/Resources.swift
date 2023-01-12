@@ -77,6 +77,9 @@ enum Resources {
             static let noAddedWaterLabel = "Сегодня вы еще не добавляли воду"
             
             static let weeklySummary = "Сводка за неделю"
+            
+            static let hitGoals = "Выполнено целей"
+            static let averageDrinked = "В среднем выпили"
         }
     }
     
