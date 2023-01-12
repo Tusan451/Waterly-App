@@ -73,6 +73,7 @@ final class TabBarController: UITabBarController {
             appearence.stackedLayoutAppearance.normal.iconColor = Resources.Colors.Accent.accentInactive
             appearence.shadowImage = nil
             appearence.shadowColor = nil
+            appearence.backgroundColor = Resources.Colors.Back.tabBarBackColor
             tabBar.standardAppearance = appearence
         } else {
             tabBar.shadowImage = UIImage()
