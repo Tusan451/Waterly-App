@@ -103,12 +103,14 @@ final class TabBarController: UITabBarController {
         let settingsController = SettingsViewController()
         
         let settingsNavController = NavBarController(rootViewController: settingsController)
+        let statisticNavController = NavBarController(rootViewController: statisticsController)
+        let mainNavController = NavBarController(rootViewController: mainController)
         
-        statisticsController.tabBarItem = UITabBarItem(title: Resources.Strings.TabBar.statistics,
+        statisticNavController.tabBarItem = UITabBarItem(title: Resources.Strings.TabBar.statistics,
                                                        image: Resources.Images.TabBar.statistics,
                                                        tag: Tabs.statistics.rawValue)
         
-        mainController.tabBarItem = UITabBarItem(title: Resources.Strings.TabBar.main,
+        mainNavController.tabBarItem = UITabBarItem(title: Resources.Strings.TabBar.main,
                                                  image: Resources.Images.TabBar.main,
                                                  tag: Tabs.main.rawValue)
         
@@ -117,8 +119,8 @@ final class TabBarController: UITabBarController {
                                                         tag: Tabs.settings.rawValue)
         
         setViewControllers([
-            statisticsController,
-            mainController,
+            statisticNavController,
+            mainNavController,
             settingsNavController
         ], animated: false)
     }

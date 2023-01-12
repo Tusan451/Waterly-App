@@ -24,13 +24,13 @@ extension MainViewController {
     
     override func addViews() {
         super.addViews()
-        
-        view.addView(headerView)
-        
+                
+        scrollView.addView(headerView)
         scrollView.addView(dashboardInfoView)
         scrollView.addView(counterView)
         scrollView.addView(waterHistoryView)
         scrollView.addView(weeklySummaryView)
+        
         view.addView(scrollView)
     }
     
@@ -38,18 +38,18 @@ extension MainViewController {
         super.layoutViews()
         
         NSLayoutConstraint.activate([
-            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            headerView.bottomAnchor.constraint(equalTo: scrollView.topAnchor, constant: -12),
-            
-            scrollView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 12),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 8),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
+            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            headerView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 8),
+            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            headerView.bottomAnchor.constraint(equalTo: dashboardInfoView.topAnchor, constant: -20),
+            
             dashboardInfoView.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
-            dashboardInfoView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 12),
+            dashboardInfoView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 20),
             dashboardInfoView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
             dashboardInfoView.bottomAnchor.constraint(equalTo: counterView.topAnchor, constant: -32),
 
@@ -72,7 +72,10 @@ extension MainViewController {
     override func configureViews() {
         super.configureViews()
         
-        headerView.configureGreetingsLabel(with: "Олег")
+        title = "Привет, Олег!"
+        navigationController?.tabBarItem.title = Resources.Strings.TabBar.main
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         headerView.configureMotivationLabel(with: "Не забывай пить воду.")
         
         counterView.configure(goal: 2000, progress: 2000)
