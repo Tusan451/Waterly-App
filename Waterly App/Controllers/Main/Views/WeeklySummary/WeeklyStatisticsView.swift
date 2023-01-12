@@ -20,8 +20,20 @@ final class WeeklyStatisticsView: BaseView {
     }()
     
     // TODO: - Конфигурация данных из БД
-    func configureWith(dailyGoal: Int, and activityType: ActivityType) {
+    func configureWith(items: [WaterData]) {
         
+        var hitGoalsCount = 0
+        
+        items.forEach {
+            if $0.value >= dayGoal { hitGoalsCount += 1 }
+        }
+        
+        hitGoalsView.setValueLabel(with: "\(hitGoalsCount)")
+        
+        let sumOfWaterValues = items.map { $0.value }.reduce(0) { $0 + $1 }
+        let averageWaterValue = sumOfWaterValues / items.count
+        
+        averageDrinkedView.setValueLabel(with: "\(averageWaterValue) мл / день")
     }
 }
 

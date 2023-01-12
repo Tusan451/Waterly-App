@@ -7,15 +7,6 @@
 
 import UIKit
 
-// MARK: - Параметр цели дня из БД
-let dayGoal = 2000
-
-// MARK: - Данные статистики выпитой воды из БД
-struct WaterData {
-    let value: Int
-    let title: String
-}
-
 class MainViewController: BaseController {
 
     private let scrollView = UIScrollView()
@@ -87,10 +78,10 @@ extension MainViewController {
         
         dashboardInfoView.configureWith(dailyGoal: dayGoal, and: .low)
         
-        counterView.configure(goal: Double(dayGoal), progress: 2000)
+        counterView.configure(goal: Double(dayGoal), progress: Double(dayProgress))
         
         scrollView.contentSize = CGSizeMake(self.view.frame.size.width,
-                                            self.view.frame.size.height + 500)
+                                            self.view.frame.size.height + weeklySummaryView.frame.size.height)
         
         waterHistoryView.configure(items: [.init(value: 150),
                                            .init(value: 1000),

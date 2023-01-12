@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E01A905029705C970097DEB3 /* WeeklyStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A904F29705C970097DEB3 /* WeeklyStatisticsView.swift */; };
+		E01A9053297063AD0097DEB3 /* WaterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A9052297063AD0097DEB3 /* WaterData.swift */; };
 		E03021CB2959CF5C00126AE7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03021CA2959CF5C00126AE7 /* TabBarController.swift */; };
 		E053B725295F32E200F71F20 /* WaterHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E053B724295F32E200F71F20 /* WaterHistoryView.swift */; };
 		E053B727295F42A400F71F20 /* AddedWaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E053B726295F42A400F71F20 /* AddedWaterView.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		E01A904F29705C970097DEB3 /* WeeklyStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyStatisticsView.swift; sourceTree = "<group>"; };
+		E01A9052297063AD0097DEB3 /* WaterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterData.swift; sourceTree = "<group>"; };
 		E03021CA2959CF5C00126AE7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E053B724295F32E200F71F20 /* WaterHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterHistoryView.swift; sourceTree = "<group>"; };
 		E053B726295F42A400F71F20 /* AddedWaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedWaterView.swift; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E01A9051297063870097DEB3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E01A9052297063AD0097DEB3 /* WaterData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		E053B723295F32A000F71F20 /* History */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +125,7 @@
 		E0A773AB2959C3F8005FF95B /* Waterly App */ = {
 			isa = PBXGroup;
 			children = (
+				E01A9051297063870097DEB3 /* Data */,
 				E0BA84972959D89B00D30B1C /* Helpers */,
 				E0A773C02959C62B005FF95B /* Application */,
 				E0FBFD69295A0B2200AFE420 /* Controllers */,
@@ -373,6 +384,7 @@
 				E053B725295F32E200F71F20 /* WaterHistoryView.swift in Sources */,
 				E0A773AD2959C3F8005FF95B /* AppDelegate.swift in Sources */,
 				E0BA84992959D8D300D30B1C /* Resources.swift in Sources */,
+				E01A9053297063AD0097DEB3 /* WaterData.swift in Sources */,
 				E0E1AC98295B3B1900D2AA9C /* HeaderView.swift in Sources */,
 				E0EDEF0F296DAEF400303A41 /* BaseChartView.swift in Sources */,
 				E05DE9D0295B590200C81B15 /* BaseInfoView.swift in Sources */,
