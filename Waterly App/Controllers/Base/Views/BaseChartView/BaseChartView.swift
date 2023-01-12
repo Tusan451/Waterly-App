@@ -14,7 +14,7 @@ final class BaseChartView: BaseView {
     
     private let barsView = UIView()
     
-    func configure(data: [BaseChartView.Data],
+    func configure(data: [WaterData],
                    chartSize: ChartSize,
                    chartType: ChartType) {
         
@@ -63,10 +63,10 @@ extension BaseChartView {
 
 extension BaseChartView {
     
-    struct Data {
-        let value: Int
-        let title: String
-    }
+//    struct Data {
+//        let value: Int
+//        let title: String
+//    }
     
     enum ChartSize {
         case short
@@ -111,7 +111,7 @@ private extension BaseChartView {
         layer.addSublayer(dashLayer)
     }
     
-    func addBarsFrom(data: [BaseChartView.Data]) {
+    func addBarsFrom(data: [WaterData]) {
         
         var xPosition: CGFloat = 20
         

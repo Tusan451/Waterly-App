@@ -50,8 +50,8 @@ class BaseInfoView: BaseView {
     }
     
     // TODO: - Изменить функцию установки значения в зависимости от данных из БД
-    func setValueLabel(with value: Int) {
-        valueLabel.text = "\(value) мл"
+    func setValueLabel(with value: String) {
+        valueLabel.text = value
     }
     
     // TODO: - Режим физ активности берем из БД

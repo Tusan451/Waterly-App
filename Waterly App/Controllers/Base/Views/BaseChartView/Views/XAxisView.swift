@@ -15,7 +15,7 @@ final class XAxisView: BaseView {
         return view
     }()
     
-    func configure(data: [BaseChartView.Data],
+    func configure(data: [WaterData],
                    size: BaseChartView.ChartSize,
                    type: BaseChartView.ChartType) {
         

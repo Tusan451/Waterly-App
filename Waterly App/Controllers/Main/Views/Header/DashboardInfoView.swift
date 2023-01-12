@@ -24,7 +24,7 @@ final class DashboardInfoView: BaseView {
     
     // TODO: - Конфигурация данных из БД
     func configureWith(dailyGoal: Int, and activityType: ActivityType) {
-        dailyWaterGoalView.setValueLabel(with: dailyGoal)
+        dailyWaterGoalView.setValueLabel(with: "\(dailyGoal) мл")
         activityModeView.setActivityColor(for: activityType)
     }
 }

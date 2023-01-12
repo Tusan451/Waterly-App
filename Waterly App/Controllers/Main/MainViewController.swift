@@ -10,6 +10,12 @@ import UIKit
 // MARK: - Параметр цели дня из БД
 let dayGoal = 2000
 
+// MARK: - Данные статистики выпитой воды из БД
+struct WaterData {
+    let value: Int
+    let title: String
+}
+
 class MainViewController: BaseController {
 
     private let scrollView = UIScrollView()

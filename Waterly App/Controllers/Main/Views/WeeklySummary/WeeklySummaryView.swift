@@ -19,7 +19,7 @@ final class WeeklySummaryView: BaseView {
     
     private let chartView = BaseChartView()
     
-    func configure(items: [BaseChartView.Data],
+    func configure(items: [WaterData],
                    size: BaseChartView.ChartSize,
                    type: BaseChartView.ChartType) {
         chartView.configure(data: items, chartSize: size, chartType: type)
