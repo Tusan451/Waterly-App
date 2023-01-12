@@ -60,6 +60,16 @@ final class CounterView: BaseView {
         progressView.drawProgress(with: CGFloat(percent))
         valueLabelsAnimate(goal: goal, progress: progress)
     }
+    
+    // Действие для кнопки изменения цели дня
+    func editButtonAddAction(selector: Selector, target: Any?) {
+        goalView.addEditButtonAction(selector, target: target)
+    }
+    
+    // Действие для кнопки добавления воды
+    func addWaterButtonAction(selector: Selector, target: Any?) {
+        addWaterButton.addTarget(target, action: selector, for: .touchUpInside)
+    }
 }
 
 extension CounterView {
@@ -102,27 +112,27 @@ extension CounterView {
     override func configureViews() {
         super.configureViews()
                 
-        goalView.setValueLabel(with: "2000 мл")
-        goalView.addEditButtonAction(#selector(editButtonTapped), target: self)
+        goalView.setValueLabel(with: dayGoal)
+//        goalView.addEditButtonAction(#selector(editButtonTapped), target: self)
         
         addWaterButton.setTitle(with: Resources.Strings.MainController.addWaterButton)
         addWaterButton.setColor(for: Resources.Colors.Accent.accentMain, title: .white)
-        addWaterButton.addTarget(self, action: #selector(addWaterButtonTapped), for: .touchUpInside)
+//        addWaterButton.addTarget(self, action: #selector(addWaterButtonTapped), for: .touchUpInside)
     }
 }
 
-@objc extension CounterView {
-    
-    // TODO: - Вызов поп-ап окна с изменением дневной нормы
-    func editButtonTapped() {
-        print("edit button tapped")
-    }
-    
-    // TODO: - Добавление выпитой воды
-    func addWaterButtonTapped() {
-        print("waterButton tapped")
-    }
-}
+//@objc extension CounterView {
+//
+//    // TODO: - Вызов поп-ап окна с изменением дневной нормы
+//    func editButtonTapped() {
+//        print("edit button tapped")
+//    }
+//
+//    // TODO: - Добавление выпитой воды
+//    func addWaterButtonTapped() {
+//        print("waterButton tapped")
+//    }
+//}
 
 private extension CounterView {
     

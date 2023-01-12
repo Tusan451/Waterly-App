@@ -39,8 +39,8 @@ final class GoalView: BaseView {
     }
     
     // TODO: - Изменить функцию установки значения в зависимости от данных из БД
-    func setValueLabel(with value: String) {
-        valueLabel.text = value
+    func setValueLabel(with value: Int) {
+        valueLabel.text = "\(value) мл"
     }
     
     func addEditButtonAction(_ action: Selector, target: Any?) {

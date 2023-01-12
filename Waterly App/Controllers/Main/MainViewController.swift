@@ -80,6 +80,9 @@ extension MainViewController {
         
         counterView.configure(goal: Double(dayGoal), progress: Double(dayProgress))
         
+        counterView.editButtonAddAction(selector: #selector(editButtonTapped), target: self)
+        counterView.addWaterButtonAction(selector: #selector(addWaterButtonTapped), target: self)
+        
         scrollView.contentSize = CGSizeMake(self.view.frame.size.width,
                                             self.view.frame.size.height + weeklySummaryView.frame.size.height)
         
@@ -108,5 +111,18 @@ private extension MainViewController {
         title = "Привет, Олег!"
         navigationController?.tabBarItem.title = Resources.Strings.TabBar.main
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+}
+
+@objc extension MainViewController {
+    
+    // TODO: - Вызов поп-ап окна с изменением дневной нормы
+    func editButtonTapped() {
+        print("edit button tapped")
+    }
+    
+    // TODO: - Добавление выпитой воды
+    func addWaterButtonTapped() {
+        print("waterButton tapped")
     }
 }
