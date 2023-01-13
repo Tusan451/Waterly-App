@@ -17,6 +17,7 @@
 		E05DE9D2295B62F200C81B15 /* DashboardInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05DE9D1295B62F200C81B15 /* DashboardInfoView.swift */; };
 		E08E3FD42971ADAE007B5B3C /* DailyGoalTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08E3FD32971ADAE007B5B3C /* DailyGoalTextFieldView.swift */; };
 		E08E3FD62971B0EF007B5B3C /* ReccomendDailyWaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08E3FD52971B0EF007B5B3C /* ReccomendDailyWaterView.swift */; };
+		E08E3FD92971CDF5007B5B3C /* ModalViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08E3FD82971CDF5007B5B3C /* ModalViewControllerDelegate.swift */; };
 		E0A2663929718D9C0046C6FD /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A2663829718D9C0046C6FD /* BaseTextField.swift */; };
 		E0A773AD2959C3F8005FF95B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A773AC2959C3F8005FF95B /* AppDelegate.swift */; };
 		E0A773AF2959C3F8005FF95B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A773AE2959C3F8005FF95B /* SceneDelegate.swift */; };
@@ -56,6 +57,7 @@
 		E05DE9D1295B62F200C81B15 /* DashboardInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInfoView.swift; sourceTree = "<group>"; };
 		E08E3FD32971ADAE007B5B3C /* DailyGoalTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoalTextFieldView.swift; sourceTree = "<group>"; };
 		E08E3FD52971B0EF007B5B3C /* ReccomendDailyWaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReccomendDailyWaterView.swift; sourceTree = "<group>"; };
+		E08E3FD82971CDF5007B5B3C /* ModalViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewControllerDelegate.swift; sourceTree = "<group>"; };
 		E0A2663829718D9C0046C6FD /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
 		E0A773A92959C3F8005FF95B /* Waterly App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Waterly App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0A773AC2959C3F8005FF95B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		E08E3FD72971CDE0007B5B3C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E08E3FD82971CDF5007B5B3C /* ModalViewControllerDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		E0A773A02959C3F8005FF95B = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +202,7 @@
 		E0BA84972959D89B00D30B1C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E08E3FD72971CDE0007B5B3C /* Protocols */,
 				E0E1AC90295B354700D2AA9C /* Extensions */,
 				E0BA84982959D8D300D30B1C /* Resources.swift */,
 			);
@@ -414,6 +425,7 @@
 				E0FBFD68295A04E400AFE420 /* NavBarController.swift in Sources */,
 				E0F5D63C295C82BB008259D7 /* CustomButtonView.swift in Sources */,
 				E01A905029705C970097DEB3 /* WeeklyStatisticsView.swift in Sources */,
+				E08E3FD92971CDF5007B5B3C /* ModalViewControllerDelegate.swift in Sources */,
 				E0FBFD6B295A0B5900AFE420 /* BaseController.swift in Sources */,
 				E0EDEF0C296DAD6B00303A41 /* YAxisView.swift in Sources */,
 				E03021CB2959CF5C00126AE7 /* TabBarController.swift in Sources */,
