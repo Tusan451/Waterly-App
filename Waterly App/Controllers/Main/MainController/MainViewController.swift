@@ -119,10 +119,15 @@ private extension MainViewController {
     // TODO: - Вызов поп-ап окна с изменением дневной нормы
     func editButtonTapped() {
         print("edit button tapped")
+        
+        let editGoalVC = AddDayGoalViewController()
+        
+        navigationController?.present(editGoalVC, animated: true)
     }
     
     // TODO: - Добавление выпитой воды
     func addWaterButtonTapped() {
         print("waterButton tapped")
+        
     }
 }
