@@ -11,7 +11,7 @@ import Foundation
 let recommendDailyValue = 2000
 
 // MARK: - Параметр цели дня из БД
-let dayGoal = 2000
+var dayGoal = 2000
 
 // MARK: - Параметр дневного прогресса из БД
 let dayProgress = 1200

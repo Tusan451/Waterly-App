@@ -89,6 +89,7 @@ enum Resources {
                 static let saveButton = "Сохранить"
                 
                 static let dismissButton = "Закрыть"
+                static let mililiters = "мл"
             }
         }
     }
