@@ -12,8 +12,8 @@ class SettingsViewController: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setLeftAlignForTitle(text: Resources.Strings.TabBar.settings,
-                             font: Resources.Fonts.sfProSemibold(size: 32),
-                             textColor: Resources.Colors.Text.textMain)
+//        setLeftAlignForTitle(text: Resources.Strings.TabBar.settings,
+//                             font: Resources.Fonts.sfProSemibold(size: 32),
+//                             textColor: Resources.Colors.Text.textMain)
     }
 }

@@ -29,33 +29,33 @@ class BaseController: UIViewController {
     }
 }
 
-extension BaseController {
-    
-    func setLeftAlignForTitle(text: String, font: UIFont, textColor: UIColor?) {
-        
-        guard let navFrame = navigationController?.navigationBar.frame else { return }
-        
-        let parentView = UIView(
-            frame: CGRect(x: 0,
-                          y: 0,
-                          width: navFrame.width,
-                          height: navFrame.height)
-        )
-        
-        navigationItem.titleView = parentView
-        
-        let titleLabel = UILabel(
-            frame: CGRect(x: parentView.frame.minX,
-                          y: parentView.frame.minY,
-                          width: parentView.frame.width,
-                          height: parentView.frame.height)
-        )
-        
-        titleLabel.font = font
-        titleLabel.textAlignment = .left
-        titleLabel.textColor = textColor
-        titleLabel.text = text
-        
-        parentView.addSubview(titleLabel)
-    }
-}
+//extension BaseController {
+//
+//    func setLeftAlignForTitle(text: String, font: UIFont, textColor: UIColor?) {
+//
+//        guard let navFrame = navigationController?.navigationBar.frame else { return }
+//
+//        let parentView = UIView(
+//            frame: CGRect(x: 0,
+//                          y: 0,
+//                          width: navFrame.width,
+//                          height: navFrame.height)
+//        )
+//
+//        navigationItem.titleView = parentView
+//
+//        let titleLabel = UILabel(
+//            frame: CGRect(x: parentView.frame.minX,
+//                          y: parentView.frame.minY,
+//                          width: parentView.frame.width,
+//                          height: parentView.frame.height)
+//        )
+//
+//        titleLabel.font = font
+//        titleLabel.textAlignment = .left
+//        titleLabel.textColor = textColor
+//        titleLabel.text = text
+//
+//        parentView.addSubview(titleLabel)
+//    }
+//}
