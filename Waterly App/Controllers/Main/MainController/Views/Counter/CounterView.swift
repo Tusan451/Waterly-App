@@ -61,6 +61,10 @@ final class CounterView: BaseView {
         valueLabelsAnimate(goal: goal, progress: progress)
     }
     
+    func configureDailyGoalValue(_ value: Int) {
+        goalView.setValueLabel(with: value)
+    }
+    
     // Действие для кнопки изменения цели дня
     func editButtonAddAction(selector: Selector, target: Any?) {
         goalView.addEditButtonAction(selector, target: target)
@@ -112,7 +116,7 @@ extension CounterView {
     override func configureViews() {
         super.configureViews()
                 
-        goalView.setValueLabel(with: dayGoal)
+//        goalView.setValueLabel(with: dayGoal)
 //        goalView.addEditButtonAction(#selector(editButtonTapped), target: self)
         
         addWaterButton.setTitle(with: Resources.Strings.MainController.addWaterButton)

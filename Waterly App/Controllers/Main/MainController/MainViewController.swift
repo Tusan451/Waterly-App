@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: BaseController {
+final class MainViewController: BaseController {
 
     private let scrollView = UIScrollView()
     
@@ -76,9 +76,10 @@ extension MainViewController {
         
         headerView.configureMotivationLabel(with: "Не забывай пить воду.")
         
-        dashboardInfoView.configureWith(dailyGoal: dayGoal, and: .low)
+        dashboardInfoView.configureWith(recommendDailyValue: recommendDailyValue, and: .low)
         
         counterView.configure(goal: Double(dayGoal), progress: Double(dayProgress))
+        counterView.configureDailyGoalValue(dayGoal)
         
         counterView.editButtonAddAction(selector: #selector(editButtonTapped), target: self)
         counterView.addWaterButtonAction(selector: #selector(addWaterButtonTapped), target: self)
@@ -105,6 +106,14 @@ extension MainViewController {
     }
 }
 
+extension MainViewController: ModalViewControllerDelegate {
+    
+    func modalControllerWillDisapear(_ modal: BaseController) {
+        counterView.configure(goal: Double(dayGoal), progress: Double(dayProgress))
+        counterView.configureDailyGoalValue(dayGoal)
+    }
+}
+
 private extension MainViewController {
     
     func navigationBarConfigure() {
@@ -121,8 +130,9 @@ private extension MainViewController {
         print("edit button tapped")
         
         let editGoalVC = AddDayGoalViewController()
+        editGoalVC.delegate = self
         
-        navigationController?.present(editGoalVC, animated: true)
+        self.present(editGoalVC, animated: true)
     }
     
     // TODO: - Добавление выпитой воды

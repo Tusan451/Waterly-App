@@ -11,7 +11,7 @@ final class ReccomendDailyWaterView: BaseView {
     
     private let textLabel: UILabel = {
         let label = UILabel()
-        label.font = Resources.Fonts.sfProMedium(size: 12)
+        label.font = Resources.Fonts.sfProMedium(size: 13)
         label.textColor = Resources.Colors.Text.textSecondary
         label.text = Resources.Strings.MainController.AddDayGoalController.reccomendGoalText
         label.numberOfLines = 0

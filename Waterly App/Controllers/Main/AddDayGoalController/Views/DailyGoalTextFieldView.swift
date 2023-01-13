@@ -17,7 +17,12 @@ final class DailyGoalTextFieldView: BaseView {
         return label
     }()
     
-    private let textField = BaseTextField(width: UIScreen.main.bounds.width - 40, height: 50)
+    private let textField = BaseTextField(
+        width: UIScreen.main.bounds.width - 40,
+        height: 50,
+        valueLabel: Resources.Strings.MainController.AddDayGoalController.mililiters,
+        keyboardType: .numberPad
+    )
     
     private let stackView: UIStackView = {
         let view = UIStackView()
@@ -28,6 +33,10 @@ final class DailyGoalTextFieldView: BaseView {
     
     func setTextFieldValue(text: String) {
         textField.setText(text)
+    }
+    
+    func getCurrentTextFieldText() -> String {
+        textField.getCurrentText()
     }
 }
 
