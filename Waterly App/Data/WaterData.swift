@@ -7,6 +7,9 @@
 
 import Foundation
 
+// MARK: - Рекомендуемая дневная норма воды
+let recommendDailyValue = 2000
+
 // MARK: - Параметр цели дня из БД
 let dayGoal = 2000
 
