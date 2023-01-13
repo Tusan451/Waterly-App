@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol ModalViewControllerDelegate {
+    func modalControllerWillDisapear(_ modal: BaseController)
+}
