@@ -125,7 +125,7 @@ private extension MainViewController {
 
 @objc extension MainViewController {
     
-    // TODO: - Вызов поп-ап окна с изменением дневной нормы
+    // MARK: - Вызов поп-ап окна с изменением дневной нормы
     func editButtonTapped() {
         print("edit button tapped")
         
@@ -135,9 +135,13 @@ private extension MainViewController {
         self.present(editGoalVC, animated: true)
     }
     
-    // TODO: - Добавление выпитой воды
+    // MARK: - Добавление выпитой воды
     func addWaterButtonTapped() {
         print("waterButton tapped")
         
+        let addWaterVC = AddWaterViewController()
+        addWaterVC.delegate = self
+        
+        self.present(addWaterVC, animated: true)
     }
 }
