@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E00288D32975A55800B13CE4 /* AddWaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00288D22975A55800B13CE4 /* AddWaterViewController.swift */; };
+		E00288D72975B91200B13CE4 /* WaterValueTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00288D62975B91200B13CE4 /* WaterValueTextFieldView.swift */; };
+		E00288D92975BE1F00B13CE4 /* DailyPercentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00288D82975BE1F00B13CE4 /* DailyPercentView.swift */; };
 		E01A905029705C970097DEB3 /* WeeklyStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A904F29705C970097DEB3 /* WeeklyStatisticsView.swift */; };
 		E01A9053297063AD0097DEB3 /* WaterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A9052297063AD0097DEB3 /* WaterData.swift */; };
 		E03021CB2959CF5C00126AE7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03021CA2959CF5C00126AE7 /* TabBarController.swift */; };
@@ -47,6 +50,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E00288D22975A55800B13CE4 /* AddWaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWaterViewController.swift; sourceTree = "<group>"; };
+		E00288D62975B91200B13CE4 /* WaterValueTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterValueTextFieldView.swift; sourceTree = "<group>"; };
+		E00288D82975BE1F00B13CE4 /* DailyPercentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPercentView.swift; sourceTree = "<group>"; };
 		E01A904F29705C970097DEB3 /* WeeklyStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyStatisticsView.swift; sourceTree = "<group>"; };
 		E01A9052297063AD0097DEB3 /* WaterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterData.swift; sourceTree = "<group>"; };
 		E03021CA2959CF5C00126AE7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -99,6 +105,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E00288D02975A52E00B13CE4 /* AddWaterController */ = {
+			isa = PBXGroup;
+			children = (
+				E00288D12975A54200B13CE4 /* Views */,
+				E00288D22975A55800B13CE4 /* AddWaterViewController.swift */,
+			);
+			path = AddWaterController;
+			sourceTree = "<group>";
+		};
+		E00288D12975A54200B13CE4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E00288D62975B91200B13CE4 /* WaterValueTextFieldView.swift */,
+				E00288D82975BE1F00B13CE4 /* DailyPercentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E01A9051297063870097DEB3 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +346,7 @@
 		E0FBFD6F295A0FFF00AFE420 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				E00288D02975A52E00B13CE4 /* AddWaterController */,
 				E05DD2B92971701B00BBE2E3 /* AddDayGoalController */,
 				E05DD2B829716F5800BBE2E3 /* MainController */,
 			);
@@ -420,6 +445,7 @@
 			files = (
 				E0A773B12959C3F8005FF95B /* MainViewController.swift in Sources */,
 				E0F5D63A295C7FAA008259D7 /* GoalView.swift in Sources */,
+				E00288D32975A55800B13CE4 /* AddWaterViewController.swift in Sources */,
 				E0A2663929718D9C0046C6FD /* BaseTextField.swift in Sources */,
 				E0EDEF13296DD14A00303A41 /* XAxisView.swift in Sources */,
 				E0FBFD68295A04E400AFE420 /* NavBarController.swift in Sources */,
@@ -437,6 +463,7 @@
 				E08E3FD42971ADAE007B5B3C /* DailyGoalTextFieldView.swift in Sources */,
 				E0E1AC98295B3B1900D2AA9C /* HeaderView.swift in Sources */,
 				E0EDEF0F296DAEF400303A41 /* BaseChartView.swift in Sources */,
+				E00288D92975BE1F00B13CE4 /* DailyPercentView.swift in Sources */,
 				E05DE9D0295B590200C81B15 /* BaseInfoView.swift in Sources */,
 				E0FBFD73295A102700AFE420 /* StatisticsViewController.swift in Sources */,
 				E0A773AF2959C3F8005FF95B /* SceneDelegate.swift in Sources */,
@@ -449,6 +476,7 @@
 				E053B727295F42A400F71F20 /* AddedWaterView.swift in Sources */,
 				E05DD2BB2971708E00BBE2E3 /* AddDayGoalViewController.swift in Sources */,
 				E08E3FD62971B0EF007B5B3C /* ReccomendDailyWaterView.swift in Sources */,
+				E00288D72975B91200B13CE4 /* WaterValueTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
