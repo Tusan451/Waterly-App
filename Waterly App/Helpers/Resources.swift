@@ -92,6 +92,19 @@ enum Resources {
                 static let mililiters = "мл"
             }
         }
+        
+        enum Alert {
+            enum AddDayGoalController {
+                static let emptyValueHeader = "Вы не ввели значение в поле"
+                
+                static let littleValueHeader = "Значение слишком маленькое"
+                static let bigValueHeader = "Значение слишком высокое"
+                
+                static let valueText = "Внесите значение от \(Values.minimumWaterValue) до \(Values.maximumWaterValue)"
+                
+                static let okAction = "Понятно"
+            }
+        }
     }
     
     enum Images {
@@ -123,5 +136,10 @@ enum Resources {
         static func sfProSemibold(size: CGFloat) -> UIFont {
             UIFont(name: "SFProDisplay-Semibold", size: size) ?? UIFont()
         }
+    }
+    
+    enum Values {
+        static let minimumWaterValue = 500
+        static let maximumWaterValue = 10000
     }
 }
