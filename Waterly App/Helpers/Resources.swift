@@ -91,6 +91,19 @@ enum Resources {
                 static let dismissButton = "Закрыть"
                 static let mililiters = "мл"
             }
+            
+            enum AddWaterController {
+                static let header = "Добавить воду"
+                static let textFieldHeader = "Введите кол-во в миллилитрах"
+                
+                static let dailyPercent = "От дневной нормы"
+                static let currentProgress = "Текущий прогресс за день"
+                
+                static let saveButton = "Добавить воду"
+                static let dismissButton = "Закрыть"
+                
+                static let mililiters = "мл"
+            }
         }
         
         enum Alert {
