@@ -8,9 +8,7 @@
 import UIKit
 
 class BaseTextField: BaseView {
-    
-    var textFieldText = ""
-    
+        
     private let textField: UITextField = {
         let textField = UITextField()
         textField.textColor = Resources.Colors.Text.textMain
@@ -113,6 +111,8 @@ extension BaseTextField: UITextFieldDelegate {
     // TextField Active State
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         
+        textField.placeholder = nil
+        
         textFieldView.layer.borderWidth = 1
         textFieldView.layer.borderColor = Resources.Colors.Separator.separatorAccent?.cgColor
         return true
@@ -124,15 +124,15 @@ extension BaseTextField: UITextFieldDelegate {
         return true
     }
     
-    // Save textField text
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
+    // End editing
+    func textFieldDidEndEditing(_ textField: UITextField) {        
         textFieldView.layer.borderWidth = 0
         textFieldView.layer.borderColor = nil
         
-//        guard let text = textField.text else { return }
-//        guard let value = Int(text) else { return }
-//        
-//        newGoalWaterValue = value
+        guard let text = textField.text else { return }
+        if text.isEmpty {
+            textField.placeholder =
+            Resources.Strings.MainController.AddWaterController.placeholder
+        }
     }
 }
