@@ -102,6 +102,7 @@ enum Resources {
                 static let saveButton = "Добавить воду"
                 static let dismissButton = "Закрыть"
                 
+                static let placeholder = "100"
                 static let mililiters = "мл"
             }
         }
