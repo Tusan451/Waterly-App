@@ -104,9 +104,28 @@ extension AddDayGoalViewController {
     }
     
     func saveButtonAction() {
-        guard let newValue = Int(textField.getCurrentTextFieldText()) else { return }
-        dayGoal = newValue
-        dismiss(animated: true)
+        guard let newValue = Int(textField.getCurrentTextFieldText()) else {
+            showAlert(title: Resources.Strings.Alert.AddDayGoalController.emptyValueHeader,
+                      message: Resources.Strings.Alert.AddDayGoalController.valueText)
+            
+            textField.setTextFieldValue(text: "\(dayGoal)")
+            return
+        }
+        
+        if newValue < Resources.Values.minimumWaterValue {
+            showAlert(title: Resources.Strings.Alert.AddDayGoalController.littleValueHeader,
+                      message: Resources.Strings.Alert.AddDayGoalController.valueText)
+            
+            textField.setTextFieldValue(text: "\(dayGoal)")
+        } else if newValue > Resources.Values.maximumWaterValue {
+            showAlert(title: Resources.Strings.Alert.AddDayGoalController.bigValueHeader,
+                      message: Resources.Strings.Alert.AddDayGoalController.valueText)
+            
+            textField.setTextFieldValue(text: "\(dayGoal)")
+        } else {
+            dayGoal = newValue
+            dismiss(animated: true)
+        }
     }
 }
 
@@ -116,5 +135,17 @@ extension AddDayGoalViewController: UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
+    }
+}
+
+private extension AddDayGoalViewController {
+    
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: Resources.Strings.Alert.AddDayGoalController.okAction,
+                                     style: .default)
+        
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
 }
