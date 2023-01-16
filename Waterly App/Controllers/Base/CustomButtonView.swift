@@ -38,6 +38,16 @@ final class CustomButtonView: UIButton {
         backgroundColor = button
         label.textColor = title
     }
+    
+    func turnOff() {
+        self.alpha = 0.5
+        self.isUserInteractionEnabled = false
+    }
+    
+    func turnOn() {
+        self.alpha = 1
+        self.isUserInteractionEnabled = true
+    }
 }
 
 private extension CustomButtonView {
