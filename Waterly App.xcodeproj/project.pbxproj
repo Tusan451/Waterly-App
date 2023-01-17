@@ -40,6 +40,7 @@
 		E0EDEF0F296DAEF400303A41 /* BaseChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDEF0E296DAEF400303A41 /* BaseChartView.swift */; };
 		E0EDEF11296DB69800303A41 /* WeeklySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDEF10296DB69800303A41 /* WeeklySummaryView.swift */; };
 		E0EDEF13296DD14A00303A41 /* XAxisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDEF12296DD14A00303A41 /* XAxisView.swift */; };
+		E0F3A42E2977118D00E598F8 /* UIStackView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F3A42D2977118D00E598F8 /* UIStackView + ext.swift */; };
 		E0F5D634295C78DA008259D7 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D633295C78DA008259D7 /* CounterView.swift */; };
 		E0F5D637295C7A34008259D7 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D636295C7A34008259D7 /* ProgressView.swift */; };
 		E0F5D63A295C7FAA008259D7 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D639295C7FAA008259D7 /* GoalView.swift */; };
@@ -86,6 +87,7 @@
 		E0EDEF0E296DAEF400303A41 /* BaseChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseChartView.swift; sourceTree = "<group>"; };
 		E0EDEF10296DB69800303A41 /* WeeklySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklySummaryView.swift; sourceTree = "<group>"; };
 		E0EDEF12296DD14A00303A41 /* XAxisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAxisView.swift; sourceTree = "<group>"; };
+		E0F3A42D2977118D00E598F8 /* UIStackView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + ext.swift"; sourceTree = "<group>"; };
 		E0F5D633295C78DA008259D7 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		E0F5D636295C7A34008259D7 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		E0F5D639295C7FAA008259D7 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				E0E1AC91295B356500D2AA9C /* UIView + ext.swift */,
+				E0F3A42D2977118D00E598F8 /* UIStackView + ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				E0F5D63C295C82BB008259D7 /* CustomButtonView.swift in Sources */,
 				E01A905029705C970097DEB3 /* WeeklyStatisticsView.swift in Sources */,
 				E08E3FD92971CDF5007B5B3C /* ModalViewControllerDelegate.swift in Sources */,
+				E0F3A42E2977118D00E598F8 /* UIStackView + ext.swift in Sources */,
 				E0FBFD6B295A0B5900AFE420 /* BaseController.swift in Sources */,
 				E0EDEF0C296DAD6B00303A41 /* YAxisView.swift in Sources */,
 				E03021CB2959CF5C00126AE7 /* TabBarController.swift in Sources */,
