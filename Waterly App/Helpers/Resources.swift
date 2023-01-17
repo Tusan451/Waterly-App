@@ -134,6 +134,10 @@ enum Resources {
             static let activity = UIImage(named: "activity")
             static let glassOfWater = UIImage(named: "glassOfWater")
         }
+        
+        enum AddWaterViewController {
+            static let arrow = UIImage(named: "arrow")
+        }
     }
     
     enum Fonts {
