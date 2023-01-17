@@ -157,10 +157,12 @@ private extension AddWaterViewController {
 
 @objc extension AddWaterViewController {
     
+    // Dismiss Button Action
     func dismissButtonAction() {
         dismiss(animated: true)
     }
     
+    // Save Button Action
     func saveButtonAction() {
         
         let value = textFieldView.getCurrentTextFieldText()
@@ -168,6 +170,14 @@ private extension AddWaterViewController {
         guard let intValue = Int(value) else { return }
         
         dayProgress += intValue
+        
+        // TODO: - Контроль кол-ва элементов реализовать на уровне бека
+        if recentlyAddedWater.count == 6 {
+            recentlyAddedWater.removeFirst()
+        }
+        
+        recentlyAddedWater.append(RecentlyAddedWater.init(value: intValue))
+        
         dismiss(animated: true)
     }
 }
