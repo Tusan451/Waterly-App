@@ -21,3 +21,10 @@ struct WaterData {
     let value: Int
     let title: String
 }
+
+// MARK: - Недавно добавленная вода в мл
+struct RecentlyAddedWater {
+    let value: Int
+}
+
+var recentlyAddedWater: [RecentlyAddedWater] = []
