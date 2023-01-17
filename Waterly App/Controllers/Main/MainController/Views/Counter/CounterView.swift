@@ -155,13 +155,13 @@ private extension CounterView {
             }
         }
         
-        Timer.scheduledTimer(withTimeInterval: 0.02,
+        Timer.scheduledTimer(withTimeInterval: 0.01,
                              repeats: true) { [weak self] timer in
             guard let self = self else { return }
             labelPercent += 1
             self.percentProgressValueLabel.text = "\(labelPercent)%"
             
-            if labelPercent == Int(progress / (goal / 100)) {
+            if labelPercent == lround(progress / (goal / 100)) {
                 timer.invalidate()
             }
         }
