@@ -7,12 +7,6 @@
 
 import UIKit
 
-extension WaterHistoryView {
-    struct Data {
-        let value: Int
-    }
-}
-
 final class WaterHistoryView: BaseView {
     
     private let titleLabel: UILabel = {
@@ -30,10 +24,20 @@ final class WaterHistoryView: BaseView {
         return view
     }()
     
-    func configure(items: [WaterHistoryView.Data]) {
+    func configure(items: [RecentlyAddedWater]) {
+        
+        addedWaterStackView.removeAllArrangedSubviews()
+        
         items.forEach {
             let addedWaterItem = AddedWaterView(value: $0.value)
             addedWaterStackView.addArrangedSubview(addedWaterItem)
+        }
+        
+        if items.count < 6 {
+            for _ in 1...(6 - items.count) {
+                let emptyWaterItem = AddedWaterView(value: 0)
+                addedWaterStackView.addArrangedSubview(emptyWaterItem)
+            }
         }
     }
 }
