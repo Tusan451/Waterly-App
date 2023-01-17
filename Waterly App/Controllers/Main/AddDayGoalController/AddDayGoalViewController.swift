@@ -8,9 +8,7 @@
 import UIKit
 
 final class AddDayGoalViewController: BaseController {
-    
-//    var newGoalWaterValue = 0
-    
+        
     var delegate: ModalViewControllerDelegate?
     
     private let dismissButton = CustomButtonView(with: .text)
@@ -24,7 +22,7 @@ final class AddDayGoalViewController: BaseController {
         return label
     }()
     
-    private let textField = DailyGoalTextFieldView()
+    private let textFieldView = DailyGoalTextFieldView()
     
     private let recomendDailyWaterView = ReccomendDailyWaterView()
     
@@ -32,6 +30,12 @@ final class AddDayGoalViewController: BaseController {
 }
 
 extension AddDayGoalViewController {
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        setSaveButtonState()
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -43,7 +47,7 @@ extension AddDayGoalViewController {
         
         view.addView(dismissButton)
         view.addView(titleLabel)
-        view.addView(textField)
+        view.addView(textFieldView)
         
         view.addView(recomendDailyWaterView)
         view.addView(saveButton)
@@ -56,7 +60,7 @@ extension AddDayGoalViewController {
             dismissButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             dismissButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
             dismissButton.trailingAnchor.constraint(equalTo: titleLabel.leadingAnchor, constant: -5),
-            dismissButton.bottomAnchor.constraint(equalTo: textField.topAnchor, constant: -32),
+            dismissButton.bottomAnchor.constraint(equalTo: textFieldView.topAnchor, constant: -32),
             dismissButton.widthAnchor.constraint(equalToConstant: 80),
             dismissButton.heightAnchor.constraint(equalToConstant: 25),
             
@@ -66,14 +70,14 @@ extension AddDayGoalViewController {
             titleLabel.widthAnchor.constraint(equalToConstant: 180),
             titleLabel.heightAnchor.constraint(equalToConstant: 25),
             
-            textField.leadingAnchor.constraint(equalTo: dismissButton.leadingAnchor),
-            textField.topAnchor.constraint(equalTo: dismissButton.bottomAnchor, constant: 32),
-            textField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            textField.bottomAnchor.constraint(equalTo: recomendDailyWaterView.topAnchor, constant: -32),
+            textFieldView.leadingAnchor.constraint(equalTo: dismissButton.leadingAnchor),
+            textFieldView.topAnchor.constraint(equalTo: dismissButton.bottomAnchor, constant: 32),
+            textFieldView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            textFieldView.bottomAnchor.constraint(equalTo: recomendDailyWaterView.topAnchor, constant: -32),
             
             recomendDailyWaterView.leadingAnchor.constraint(equalTo: dismissButton.leadingAnchor),
             recomendDailyWaterView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            recomendDailyWaterView.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 32),
+            recomendDailyWaterView.topAnchor.constraint(equalTo: textFieldView.bottomAnchor, constant: 32),
             
             saveButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
@@ -87,7 +91,7 @@ extension AddDayGoalViewController {
         dismissButton.setTitle(with: Resources.Strings.MainController.AddDayGoalController.dismissButton)
         dismissButton.addTarget(self, action: #selector(dismissButtonAction), for: .touchUpInside)
                 
-        textField.setTextFieldValue(text: "\(dayGoal)")
+        textFieldView.setTextFieldValue(text: "\(dayGoal)")
         recomendDailyWaterView.setValueForLabel(recommendDailyValue)
         
         saveButton.setTitle(with: Resources.Strings.MainController.AddDayGoalController.saveButton)
@@ -104,24 +108,25 @@ extension AddDayGoalViewController {
     }
     
     func saveButtonAction() {
-        guard let newValue = Int(textField.getCurrentTextFieldText()) else {
-            showAlert(title: Resources.Strings.Alert.AddDayGoalController.emptyValueHeader,
-                      message: Resources.Strings.Alert.AddDayGoalController.valueText)
-            
-            textField.setTextFieldValue(text: "\(dayGoal)")
-            return
-        }
+        guard let newValue = Int(textFieldView.getCurrentTextFieldText()) else { return }
+//        guard let newValue = Int(textFieldView.getCurrentTextFieldText()) else {
+//            showAlert(title: Resources.Strings.Alert.AddDayGoalController.emptyValueHeader,
+//                      message: Resources.Strings.Alert.AddDayGoalController.valueText)
+//
+//            textFieldView.setTextFieldValue(text: "\(dayGoal)")
+//            return
+//        }
         
         if newValue < Resources.Values.minimumWaterValue {
             showAlert(title: Resources.Strings.Alert.AddDayGoalController.littleValueHeader,
                       message: Resources.Strings.Alert.AddDayGoalController.valueText)
             
-            textField.setTextFieldValue(text: "\(dayGoal)")
+            textFieldView.setTextFieldValue(text: "\(dayGoal)")
         } else if newValue > Resources.Values.maximumWaterValue {
             showAlert(title: Resources.Strings.Alert.AddDayGoalController.bigValueHeader,
                       message: Resources.Strings.Alert.AddDayGoalController.valueText)
             
-            textField.setTextFieldValue(text: "\(dayGoal)")
+            textFieldView.setTextFieldValue(text: "\(dayGoal)")
         } else {
             dayGoal = newValue
             dismiss(animated: true)
@@ -147,5 +152,10 @@ private extension AddDayGoalViewController {
         
         alert.addAction(okAction)
         present(alert, animated: true)
+    }
+    
+    func setSaveButtonState() {
+        let text = textFieldView.getCurrentTextFieldText()
+        text.isEmpty ? saveButton.turnOff() : saveButton.turnOn()
     }
 }
