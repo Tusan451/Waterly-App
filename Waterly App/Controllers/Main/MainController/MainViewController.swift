@@ -87,12 +87,7 @@ extension MainViewController {
         scrollView.contentSize = CGSizeMake(self.view.frame.size.width,
                                             self.view.frame.size.height + weeklySummaryView.frame.size.height)
         
-        waterHistoryView.configure(items: [.init(value: 150),
-                                           .init(value: 1000),
-                                           .init(value: 250),
-                                           .init(value: 180),
-                                           .init(value: 0),
-                                           .init(value: 0)])
+        waterHistoryView.configure(items: recentlyAddedWater)
         
         weeklySummaryView.configure(items: [.init(value: 2000, title: "Пн"),
                                             .init(value: 1500, title: "Вт"),
@@ -109,8 +104,11 @@ extension MainViewController {
 extension MainViewController: ModalViewControllerDelegate {
     
     func modalControllerWillDisapear(_ modal: BaseController) {
+        
         counterView.configure(goal: Double(dayGoal), progress: Double(dayProgress))
         counterView.configureDailyGoalValue(dayGoal)
+        
+        waterHistoryView.configure(items: recentlyAddedWater)
     }
 }
 
