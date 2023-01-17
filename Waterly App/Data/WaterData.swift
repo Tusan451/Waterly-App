@@ -14,7 +14,7 @@ let recommendDailyValue = 2000
 var dayGoal = 2000
 
 // MARK: - Параметр дневного прогресса из БД
-let dayProgress = 1200
+var dayProgress = 1200
 
 // MARK: - Данные статистики выпитой воды из БД
 struct WaterData {
