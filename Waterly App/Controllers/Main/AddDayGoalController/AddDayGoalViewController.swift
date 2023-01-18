@@ -92,7 +92,6 @@ extension AddDayGoalViewController {
         dismissButton.addTarget(self, action: #selector(dismissButtonAction), for: .touchUpInside)
                 
         textFieldView.setTextFieldValue(text: "\(dayGoal)")
-        recomendDailyWaterView.setValueForLabel(recommendDailyValue)
         
         saveButton.setTitle(with: Resources.Strings.MainController.AddDayGoalController.saveButton)
         saveButton.setColor(for: Resources.Colors.Accent.accentMain, title: .white)
@@ -109,13 +108,6 @@ extension AddDayGoalViewController {
     
     func saveButtonAction() {
         guard let newValue = Int(textFieldView.getCurrentTextFieldText()) else { return }
-//        guard let newValue = Int(textFieldView.getCurrentTextFieldText()) else {
-//            showAlert(title: Resources.Strings.Alert.AddDayGoalController.emptyValueHeader,
-//                      message: Resources.Strings.Alert.AddDayGoalController.valueText)
-//
-//            textFieldView.setTextFieldValue(text: "\(dayGoal)")
-//            return
-//        }
         
         if newValue < Resources.Values.minimumWaterValue {
             showAlert(title: Resources.Strings.Alert.AddDayGoalController.littleValueHeader,

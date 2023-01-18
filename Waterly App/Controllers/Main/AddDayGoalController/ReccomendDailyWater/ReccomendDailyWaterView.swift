@@ -13,7 +13,6 @@ final class ReccomendDailyWaterView: BaseView {
         let label = UILabel()
         label.font = Resources.Fonts.sfProMedium(size: 13)
         label.textColor = Resources.Colors.Text.textSecondary
-        label.text = Resources.Strings.MainController.AddDayGoalController.reccomendGoalText
         label.numberOfLines = 0
         return label
     }()
@@ -32,8 +31,11 @@ final class ReccomendDailyWaterView: BaseView {
         return view
     }()
     
-    func setValueForLabel(_ value: Int) {
-        valueLabel.text = "\(value) мл"
+    var viewModel: RecomendDailyWaterViewModelProtocol! {
+        didSet {
+            textLabel.text = viewModel.text
+            valueLabel.text = viewModel.setValue(recommendDailyValue)
+        }
     }
 }
 
@@ -60,5 +62,7 @@ extension ReccomendDailyWaterView {
     
     override func configureViews() {
         super.configureViews()
+        
+        viewModel = RecomendDailyWaterViewModel()
     }
 }
