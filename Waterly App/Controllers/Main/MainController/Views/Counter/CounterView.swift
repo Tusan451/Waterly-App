@@ -144,7 +144,7 @@ private extension CounterView {
         var water = 0
         var labelPercent = 0
         
-        Timer.scheduledTimer(withTimeInterval: 0.0001,
+        Timer.scheduledTimer(withTimeInterval: 0.00001,
                                          repeats: true) { [weak self] timer in
             guard let self = self else { return }
             water += 1
