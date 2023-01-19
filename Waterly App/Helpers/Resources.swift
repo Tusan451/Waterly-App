@@ -90,6 +90,8 @@ enum Resources {
                 
                 static let dismissButton = "Закрыть"
                 static let mililiters = "мл"
+                
+                static let placeholder = "2000"
             }
             
             enum AddWaterController {
