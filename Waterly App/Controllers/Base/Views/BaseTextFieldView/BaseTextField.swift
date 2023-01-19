@@ -8,6 +8,18 @@
 import UIKit
 
 class BaseTextField: BaseView {
+    
+    var viewModel: BaseTextFieldViewModelProtocol! {
+        didSet {
+            viewModel.textDidChange = { [unowned self] viewModel in
+                textField.text = viewModel.text
+                textField.placeholder = viewModel.placeholder
+            }
+            textField.text = viewModel.text
+            textField.placeholder = viewModel.placeholder
+            valueLabel.text = viewModel.valueText
+        }
+    }
         
     private let textField: UITextField = {
         let textField = UITextField()
@@ -31,35 +43,18 @@ class BaseTextField: BaseView {
         return label
     }()
     
-    init(width: CGFloat,
-         height: CGFloat,
-         placeholder: String? = nil,
-         valueLabel: String? = nil,
-         keyboardType: UIKeyboardType
-    ) {
+    init(width: CGFloat, height: CGFloat, keyboardType: UIKeyboardType) {
         
         textFieldView.frame.size.width = width
         textFieldView.frame.size.height = height
         
-        textField.placeholder = placeholder
         textField.keyboardType = keyboardType
-        
-        self.valueLabel.text = valueLabel
         
         super.init(frame: .zero)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setText(_ text: String) {
-        textField.text = text
-    }
-    
-    func getCurrentText() -> String {
-        guard let text = textField.text else { return "" }
-        return text
     }
 }
 
@@ -111,7 +106,7 @@ extension BaseTextField: UITextFieldDelegate {
     // TextField Active State
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         
-        textField.placeholder = nil
+        viewModel.changePlaceholder(newValue: nil)
         
         textFieldView.layer.borderWidth = 1
         textFieldView.layer.borderColor = Resources.Colors.Separator.separatorAccent?.cgColor
@@ -130,9 +125,13 @@ extension BaseTextField: UITextFieldDelegate {
         textFieldView.layer.borderColor = nil
         
         guard let text = textField.text else { return }
+        
+        viewModel.changeText(newValue: text)
+        
         if text.isEmpty {
-            textField.placeholder =
-            Resources.Strings.MainController.AddWaterController.placeholder
+            viewModel.changePlaceholder(
+                newValue: Resources.Strings.MainController.AddDayGoalController.placeholder
+            )
         }
     }
 }

@@ -9,6 +9,13 @@ import UIKit
 
 final class ReccomendDailyWaterView: BaseView {
     
+    var viewModel: RecomendDailyWaterViewModelProtocol! {
+        didSet {
+            textLabel.text = viewModel.text
+            valueLabel.text = viewModel.setValue(recommendDailyValue)
+        }
+    }
+    
     private let textLabel: UILabel = {
         let label = UILabel()
         label.font = Resources.Fonts.sfProMedium(size: 13)
@@ -30,13 +37,6 @@ final class ReccomendDailyWaterView: BaseView {
         view.spacing = 12
         return view
     }()
-    
-    var viewModel: RecomendDailyWaterViewModelProtocol! {
-        didSet {
-            textLabel.text = viewModel.text
-            valueLabel.text = viewModel.setValue(recommendDailyValue)
-        }
-    }
 }
 
 extension ReccomendDailyWaterView {

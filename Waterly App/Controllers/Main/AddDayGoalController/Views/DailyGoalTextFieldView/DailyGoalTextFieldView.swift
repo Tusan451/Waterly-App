@@ -9,18 +9,27 @@ import UIKit
 
 final class DailyGoalTextFieldView: BaseView {
     
+    var dailyGoalViewModel: DailyGoalTextFieldViewModelProtocol! {
+        didSet {
+            titleLabel.text = dailyGoalViewModel.title
+            textField.viewModel = BaseTextFieldViewModel(
+                text: dailyGoalViewModel.text,
+                placeholder: dailyGoalViewModel.placeholder,
+                valueText: Resources.Strings.MainController.AddDayGoalController.mililiters
+            )
+        }
+    }
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = Resources.Fonts.sfProRegular(size: 14)
         label.textColor = Resources.Colors.Text.textSecondary
-        label.text = Resources.Strings.MainController.AddDayGoalController.currentGoal
         return label
     }()
     
     private let textField = BaseTextField(
         width: UIScreen.main.bounds.width - 40,
         height: 50,
-        valueLabel: Resources.Strings.MainController.AddDayGoalController.mililiters,
         keyboardType: .numberPad
     )
     
@@ -31,12 +40,8 @@ final class DailyGoalTextFieldView: BaseView {
         return view
     }()
     
-    func setTextFieldValue(text: String) {
-        textField.setText(text)
-    }
-    
     func getCurrentTextFieldText() -> String {
-        textField.getCurrentText()
+        dailyGoalViewModel.getCurrentText(textField.viewModel.text)
     }
 }
 
@@ -60,9 +65,5 @@ extension DailyGoalTextFieldView {
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
-    }
-    
-    override func configureViews() {
-        super.configureViews()
     }
 }
