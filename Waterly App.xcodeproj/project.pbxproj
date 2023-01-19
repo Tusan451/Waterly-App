@@ -29,6 +29,9 @@
 		E0A773B62959C3F8005FF95B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0A773B52959C3F8005FF95B /* Assets.xcassets */; };
 		E0A773B92959C3F8005FF95B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0A773B72959C3F8005FF95B /* LaunchScreen.storyboard */; };
 		E0BA84992959D8D300D30B1C /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BA84982959D8D300D30B1C /* Resources.swift */; };
+		E0D1CA2C297841B40054F859 /* RecomendDailyWaterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1CA2B297841B40054F859 /* RecomendDailyWaterViewModel.swift */; };
+		E0D1CA2F29784DC90054F859 /* BaseTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1CA2E29784DC90054F859 /* BaseTextFieldViewModel.swift */; };
+		E0D1CA3129785F2B0054F859 /* DailyGoalTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1CA3029785F2B0054F859 /* DailyGoalTextFieldViewModel.swift */; };
 		E0E1AC8C295B301000D2AA9C /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0E1AC88295B301000D2AA9C /* SFProDisplay-Regular.ttf */; };
 		E0E1AC8D295B301000D2AA9C /* SFProDisplay-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0E1AC89295B301000D2AA9C /* SFProDisplay-Light.ttf */; };
 		E0E1AC8E295B301000D2AA9C /* SFProDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0E1AC8A295B301000D2AA9C /* SFProDisplay-Medium.ttf */; };
@@ -76,6 +79,9 @@
 		E0A773B82959C3F8005FF95B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0A773BA2959C3F8005FF95B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0BA84982959D8D300D30B1C /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		E0D1CA2B297841B40054F859 /* RecomendDailyWaterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendDailyWaterViewModel.swift; sourceTree = "<group>"; };
+		E0D1CA2E29784DC90054F859 /* BaseTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextFieldViewModel.swift; sourceTree = "<group>"; };
+		E0D1CA3029785F2B0054F859 /* DailyGoalTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoalTextFieldViewModel.swift; sourceTree = "<group>"; };
 		E0E1AC88295B301000D2AA9C /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		E0E1AC89295B301000D2AA9C /* SFProDisplay-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Light.ttf"; sourceTree = "<group>"; };
 		E0E1AC8A295B301000D2AA9C /* SFProDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Medium.ttf"; sourceTree = "<group>"; };
@@ -128,6 +134,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		E012B96D297950DF00A4D402 /* BaseTextFieldView */ = {
+			isa = PBXGroup;
+			children = (
+				E0D1CA2E29784DC90054F859 /* BaseTextFieldViewModel.swift */,
+				E0A2663829718D9C0046C6FD /* BaseTextField.swift */,
+			);
+			path = BaseTextFieldView;
+			sourceTree = "<group>";
+		};
+		E012B96E2979510F00A4D402 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E0D1CA2D297849F40054F859 /* ReccomendDailyWaterView */,
+				E0D1CA322978701E0054F859 /* DailyGoalTextFieldView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E01A9051297063870097DEB3 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,19 +181,10 @@
 		E05DD2B92971701B00BBE2E3 /* AddDayGoalController */ = {
 			isa = PBXGroup;
 			children = (
-				E08E3FD22971AD7C007B5B3C /* Views */,
+				E012B96E2979510F00A4D402 /* Views */,
 				E05DD2BA2971708E00BBE2E3 /* AddDayGoalViewController.swift */,
 			);
 			path = AddDayGoalController;
-			sourceTree = "<group>";
-		};
-		E08E3FD22971AD7C007B5B3C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				E08E3FD32971ADAE007B5B3C /* DailyGoalTextFieldView.swift */,
-				E08E3FD52971B0EF007B5B3C /* ReccomendDailyWaterView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		E08E3FD72971CDE0007B5B3C /* Protocols */ = {
@@ -238,6 +253,24 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		E0D1CA2D297849F40054F859 /* ReccomendDailyWaterView */ = {
+			isa = PBXGroup;
+			children = (
+				E0D1CA2B297841B40054F859 /* RecomendDailyWaterViewModel.swift */,
+				E08E3FD52971B0EF007B5B3C /* ReccomendDailyWaterView.swift */,
+			);
+			path = ReccomendDailyWaterView;
+			sourceTree = "<group>";
+		};
+		E0D1CA322978701E0054F859 /* DailyGoalTextFieldView */ = {
+			isa = PBXGroup;
+			children = (
+				E0D1CA3029785F2B0054F859 /* DailyGoalTextFieldViewModel.swift */,
+				E08E3FD32971ADAE007B5B3C /* DailyGoalTextFieldView.swift */,
+			);
+			path = DailyGoalTextFieldView;
+			sourceTree = "<group>";
+		};
 		E0E1AC87295B2FDA00D2AA9C /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,10 +305,10 @@
 		E0E1AC94295B3AA300D2AA9C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E012B96D297950DF00A4D402 /* BaseTextFieldView */,
 				E0EDEF0A296DAD4500303A41 /* BaseChartView */,
 				E0E1AC95295B3AAF00D2AA9C /* BaseView.swift */,
 				E05DE9CF295B590200C81B15 /* BaseInfoView.swift */,
-				E0A2663829718D9C0046C6FD /* BaseTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -450,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0A773B12959C3F8005FF95B /* MainViewController.swift in Sources */,
+				E0D1CA2F29784DC90054F859 /* BaseTextFieldViewModel.swift in Sources */,
 				E0F5D63A295C7FAA008259D7 /* GoalView.swift in Sources */,
 				E00288D32975A55800B13CE4 /* AddWaterViewController.swift in Sources */,
 				E0A2663929718D9C0046C6FD /* BaseTextField.swift in Sources */,
@@ -477,12 +511,14 @@
 				E0E1AC96295B3AAF00D2AA9C /* BaseView.swift in Sources */,
 				E0FBFD6D295A0F1900AFE420 /* SettingsViewController.swift in Sources */,
 				E076DF3E2976DF9D008C9729 /* CurrentDailyProgressView.swift in Sources */,
+				E0D1CA2C297841B40054F859 /* RecomendDailyWaterViewModel.swift in Sources */,
 				E0F5D637295C7A34008259D7 /* ProgressView.swift in Sources */,
 				E05DE9D2295B62F200C81B15 /* DashboardInfoView.swift in Sources */,
 				E0F5D634295C78DA008259D7 /* CounterView.swift in Sources */,
 				E0EDEF11296DB69800303A41 /* WeeklySummaryView.swift in Sources */,
 				E053B727295F42A400F71F20 /* AddedWaterView.swift in Sources */,
 				E05DD2BB2971708E00BBE2E3 /* AddDayGoalViewController.swift in Sources */,
+				E0D1CA3129785F2B0054F859 /* DailyGoalTextFieldViewModel.swift in Sources */,
 				E08E3FD62971B0EF007B5B3C /* ReccomendDailyWaterView.swift in Sources */,
 				E00288D72975B91200B13CE4 /* WaterValueTextFieldView.swift in Sources */,
 			);
