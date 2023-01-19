@@ -24,7 +24,7 @@ final class AddDayGoalViewController: BaseController {
     
     private let textFieldView = DailyGoalTextFieldView()
     
-    private let recomendDailyWaterView = ReccomendDailyWaterView()
+    private let recomendDailyWaterView = ReccomendDailyWaterView() // -> MVVM
     
     private let saveButton = CustomButtonView(with: .fill)
 }
@@ -88,11 +88,14 @@ extension AddDayGoalViewController {
     override func configureViews() {
         super.configureViews()
         
+        textFieldView.dailyGoalViewModel = DailyGoalTextFieldViewModel(
+            text: "\(dayGoal)",
+            placeholder: Resources.Strings.MainController.AddDayGoalController.placeholder
+        )
+        
         dismissButton.setTitle(with: Resources.Strings.MainController.AddDayGoalController.dismissButton)
         dismissButton.addTarget(self, action: #selector(dismissButtonAction), for: .touchUpInside)
-                
-        textFieldView.setTextFieldValue(text: "\(dayGoal)")
-        
+                        
         saveButton.setTitle(with: Resources.Strings.MainController.AddDayGoalController.saveButton)
         saveButton.setColor(for: Resources.Colors.Accent.accentMain, title: .white)
         
@@ -113,12 +116,14 @@ extension AddDayGoalViewController {
             showAlert(title: Resources.Strings.Alert.AddDayGoalController.littleValueHeader,
                       message: Resources.Strings.Alert.AddDayGoalController.valueText)
             
-            textFieldView.setTextFieldValue(text: "\(dayGoal)")
+            textFieldView.dailyGoalViewModel = DailyGoalTextFieldViewModel( text: "\(dayGoal)",
+                                                                            placeholder: nil)
         } else if newValue > Resources.Values.maximumWaterValue {
             showAlert(title: Resources.Strings.Alert.AddDayGoalController.bigValueHeader,
                       message: Resources.Strings.Alert.AddDayGoalController.valueText)
             
-            textFieldView.setTextFieldValue(text: "\(dayGoal)")
+            textFieldView.dailyGoalViewModel = DailyGoalTextFieldViewModel( text: "\(dayGoal)",
+                                                                            placeholder: nil)
         } else {
             dayGoal = newValue
             dismiss(animated: true)
