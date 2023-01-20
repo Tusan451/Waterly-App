@@ -25,7 +25,7 @@ final class GoalView: BaseView {
         return label
     }()
     
-    private let editButton = CustomButtonView(with: .text)
+    private let editButton = CustomButton(with: .text)
     
     init(with title: String, iconImage: UIImage? = nil) {
         titleLabel.text = title

@@ -17,11 +17,17 @@ final class WaterValueTextFieldView: BaseView {
         return label
     }()
     
+//    private let textField = BaseTextField(
+//        width: UIScreen.main.bounds.width - 40,
+//        height: 50,
+//        placeholder: Resources.Strings.MainController.AddWaterController.placeholder,
+//        valueLabel: Resources.Strings.MainController.AddWaterController.mililiters,
+//        keyboardType: .numberPad
+//    )
+    
     private let textField = BaseTextField(
         width: UIScreen.main.bounds.width - 40,
         height: 50,
-        placeholder: Resources.Strings.MainController.AddWaterController.placeholder,
-        valueLabel: Resources.Strings.MainController.AddWaterController.mililiters,
         keyboardType: .numberPad
     )
     
@@ -32,12 +38,13 @@ final class WaterValueTextFieldView: BaseView {
         return view
     }()
     
-    func setTextFieldValue(text: String) {
-        textField.setText(text)
-    }
+//    func setTextFieldValue(text: String) {
+//        textField.setText(text)
+//    }
     
     func getCurrentTextFieldText() -> String {
-        textField.getCurrentText()
+//        textField.getCurrentText()
+        textField.viewModel.text ?? ""
     }
 }
 

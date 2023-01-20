@@ -47,7 +47,7 @@ final class CounterView: BaseView {
         return view
     }()
     
-    private let addWaterButton = CustomButtonView(with: .fill)
+    private let addWaterButton = CustomButton(with: .fill)
     
     // Конфигурация счетчика воды
     func configure(goal: Double, progress: Double) {

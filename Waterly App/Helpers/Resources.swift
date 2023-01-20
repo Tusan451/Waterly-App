@@ -85,7 +85,8 @@ enum Resources {
                 static let dayGoal = "Цель дня"
                 static let currentGoal = "Текущая цель дня"
                 
-                static let reccomendGoalText = "Рекомендуемая дневная норма, рассчитанная на основе ваших данных"
+                static let reccomendGoalText =
+                "Рекомендуемая дневная норма, рассчитанная на основе ваших данных"
                 static let saveButton = "Сохранить"
                 
                 static let dismissButton = "Закрыть"
