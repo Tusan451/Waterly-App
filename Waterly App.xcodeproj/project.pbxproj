@@ -19,6 +19,7 @@
 		E05DE9D0295B590200C81B15 /* BaseInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05DE9CF295B590200C81B15 /* BaseInfoView.swift */; };
 		E05DE9D2295B62F200C81B15 /* DashboardInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05DE9D1295B62F200C81B15 /* DashboardInfoView.swift */; };
 		E076DF3E2976DF9D008C9729 /* CurrentDailyProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E076DF3D2976DF9D008C9729 /* CurrentDailyProgressView.swift */; };
+		E07FAD14297987F80035284E /* AddDayGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07FAD13297987F80035284E /* AddDayGoalViewModel.swift */; };
 		E08E3FD42971ADAE007B5B3C /* DailyGoalTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08E3FD32971ADAE007B5B3C /* DailyGoalTextFieldView.swift */; };
 		E08E3FD62971B0EF007B5B3C /* ReccomendDailyWaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08E3FD52971B0EF007B5B3C /* ReccomendDailyWaterView.swift */; };
 		E08E3FD92971CDF5007B5B3C /* ModalViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08E3FD82971CDF5007B5B3C /* ModalViewControllerDelegate.swift */; };
@@ -47,7 +48,8 @@
 		E0F5D634295C78DA008259D7 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D633295C78DA008259D7 /* CounterView.swift */; };
 		E0F5D637295C7A34008259D7 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D636295C7A34008259D7 /* ProgressView.swift */; };
 		E0F5D63A295C7FAA008259D7 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D639295C7FAA008259D7 /* GoalView.swift */; };
-		E0F5D63C295C82BB008259D7 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D63B295C82BB008259D7 /* CustomButtonView.swift */; };
+		E0F5D63C295C82BB008259D7 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D63B295C82BB008259D7 /* CustomButton.swift */; };
+		E0F8BB6A297B0335004AE4E2 /* AddDayGoalControllerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F8BB69297B0335004AE4E2 /* AddDayGoalControllerMainView.swift */; };
 		E0FBFD68295A04E400AFE420 /* NavBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FBFD67295A04E400AFE420 /* NavBarController.swift */; };
 		E0FBFD6B295A0B5900AFE420 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FBFD6A295A0B5900AFE420 /* BaseController.swift */; };
 		E0FBFD6D295A0F1900AFE420 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FBFD6C295A0F1900AFE420 /* SettingsViewController.swift */; };
@@ -67,6 +69,7 @@
 		E05DE9CF295B590200C81B15 /* BaseInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInfoView.swift; sourceTree = "<group>"; };
 		E05DE9D1295B62F200C81B15 /* DashboardInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInfoView.swift; sourceTree = "<group>"; };
 		E076DF3D2976DF9D008C9729 /* CurrentDailyProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDailyProgressView.swift; sourceTree = "<group>"; };
+		E07FAD13297987F80035284E /* AddDayGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDayGoalViewModel.swift; sourceTree = "<group>"; };
 		E08E3FD32971ADAE007B5B3C /* DailyGoalTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoalTextFieldView.swift; sourceTree = "<group>"; };
 		E08E3FD52971B0EF007B5B3C /* ReccomendDailyWaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReccomendDailyWaterView.swift; sourceTree = "<group>"; };
 		E08E3FD82971CDF5007B5B3C /* ModalViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -97,7 +100,8 @@
 		E0F5D633295C78DA008259D7 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		E0F5D636295C7A34008259D7 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		E0F5D639295C7FAA008259D7 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
-		E0F5D63B295C82BB008259D7 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
+		E0F5D63B295C82BB008259D7 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		E0F8BB69297B0335004AE4E2 /* AddDayGoalControllerMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDayGoalControllerMainView.swift; sourceTree = "<group>"; };
 		E0FBFD67295A04E400AFE420 /* NavBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarController.swift; sourceTree = "<group>"; };
 		E0FBFD6A295A0B5900AFE420 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		E0FBFD6C295A0F1900AFE420 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -146,8 +150,9 @@
 		E012B96E2979510F00A4D402 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E0D1CA2D297849F40054F859 /* ReccomendDailyWaterView */,
-				E0D1CA322978701E0054F859 /* DailyGoalTextFieldView */,
+				E08E3FD32971ADAE007B5B3C /* DailyGoalTextFieldView.swift */,
+				E08E3FD52971B0EF007B5B3C /* ReccomendDailyWaterView.swift */,
+				E0F8BB69297B0335004AE4E2 /* AddDayGoalControllerMainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -181,8 +186,8 @@
 		E05DD2B92971701B00BBE2E3 /* AddDayGoalController */ = {
 			isa = PBXGroup;
 			children = (
-				E012B96E2979510F00A4D402 /* Views */,
-				E05DD2BA2971708E00BBE2E3 /* AddDayGoalViewController.swift */,
+				E0DED6072979B91F00E9D656 /* ViewModels */,
+				E0DED6062979B8D200E9D656 /* ViewController */,
 			);
 			path = AddDayGoalController;
 			sourceTree = "<group>";
@@ -253,22 +258,23 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		E0D1CA2D297849F40054F859 /* ReccomendDailyWaterView */ = {
+		E0DED6062979B8D200E9D656 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				E0D1CA2B297841B40054F859 /* RecomendDailyWaterViewModel.swift */,
-				E08E3FD52971B0EF007B5B3C /* ReccomendDailyWaterView.swift */,
+				E05DD2BA2971708E00BBE2E3 /* AddDayGoalViewController.swift */,
+				E012B96E2979510F00A4D402 /* Views */,
 			);
-			path = ReccomendDailyWaterView;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
-		E0D1CA322978701E0054F859 /* DailyGoalTextFieldView */ = {
+		E0DED6072979B91F00E9D656 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				E0D1CA3029785F2B0054F859 /* DailyGoalTextFieldViewModel.swift */,
-				E08E3FD32971ADAE007B5B3C /* DailyGoalTextFieldView.swift */,
+				E0D1CA2B297841B40054F859 /* RecomendDailyWaterViewModel.swift */,
+				E07FAD13297987F80035284E /* AddDayGoalViewModel.swift */,
 			);
-			path = DailyGoalTextFieldView;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		E0E1AC87295B2FDA00D2AA9C /* Fonts */ = {
@@ -377,7 +383,7 @@
 				E03021CA2959CF5C00126AE7 /* TabBarController.swift */,
 				E0FBFD67295A04E400AFE420 /* NavBarController.swift */,
 				E0FBFD6A295A0B5900AFE420 /* BaseController.swift */,
-				E0F5D63B295C82BB008259D7 /* CustomButtonView.swift */,
+				E0F5D63B295C82BB008259D7 /* CustomButton.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -489,7 +495,7 @@
 				E0A2663929718D9C0046C6FD /* BaseTextField.swift in Sources */,
 				E0EDEF13296DD14A00303A41 /* XAxisView.swift in Sources */,
 				E0FBFD68295A04E400AFE420 /* NavBarController.swift in Sources */,
-				E0F5D63C295C82BB008259D7 /* CustomButtonView.swift in Sources */,
+				E0F5D63C295C82BB008259D7 /* CustomButton.swift in Sources */,
 				E01A905029705C970097DEB3 /* WeeklyStatisticsView.swift in Sources */,
 				E08E3FD92971CDF5007B5B3C /* ModalViewControllerDelegate.swift in Sources */,
 				E0F3A42E2977118D00E598F8 /* UIStackView + ext.swift in Sources */,
@@ -509,6 +515,7 @@
 				E0FBFD73295A102700AFE420 /* StatisticsViewController.swift in Sources */,
 				E0A773AF2959C3F8005FF95B /* SceneDelegate.swift in Sources */,
 				E0E1AC96295B3AAF00D2AA9C /* BaseView.swift in Sources */,
+				E0F8BB6A297B0335004AE4E2 /* AddDayGoalControllerMainView.swift in Sources */,
 				E0FBFD6D295A0F1900AFE420 /* SettingsViewController.swift in Sources */,
 				E076DF3E2976DF9D008C9729 /* CurrentDailyProgressView.swift in Sources */,
 				E0D1CA2C297841B40054F859 /* RecomendDailyWaterViewModel.swift in Sources */,
@@ -516,6 +523,7 @@
 				E05DE9D2295B62F200C81B15 /* DashboardInfoView.swift in Sources */,
 				E0F5D634295C78DA008259D7 /* CounterView.swift in Sources */,
 				E0EDEF11296DB69800303A41 /* WeeklySummaryView.swift in Sources */,
+				E07FAD14297987F80035284E /* AddDayGoalViewModel.swift in Sources */,
 				E053B727295F42A400F71F20 /* AddedWaterView.swift in Sources */,
 				E05DD2BB2971708E00BBE2E3 /* AddDayGoalViewController.swift in Sources */,
 				E0D1CA3129785F2B0054F859 /* DailyGoalTextFieldViewModel.swift in Sources */,
