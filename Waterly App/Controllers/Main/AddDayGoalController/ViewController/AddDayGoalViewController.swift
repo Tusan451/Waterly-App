@@ -9,24 +9,55 @@ import UIKit
 
 final class AddDayGoalViewController: BaseController {
         
-    var delegate: ModalViewControllerDelegate?
+    weak var delegate: ModalViewControllerDelegate?
     
-    private let dismissButton = CustomButtonView(with: .text)
+    var addDayGoalViewModel: AddDayGoalViewModelProtocol! {
+        didSet {
+            addDayGoalViewModel.viewDidChange = { [unowned self] refreshViewModel in
+                switch refreshViewModel.alert {
+                case .littleValue:
+                    showAlert(
+                        title: refreshViewModel.alertLitleValueTitle,
+                        message: refreshViewModel.alertMessage)
+                    textFieldView.dailyGoalViewModel = DailyGoalTextFieldViewModel(
+                        text: "\(refreshViewModel.dailyGoal)",
+                        placeholder: nil)
+                case .biggerValue:
+                    showAlert(
+                        title: refreshViewModel.alertBigValueTitle,
+                        message: refreshViewModel.alertMessage)
+                    textFieldView.dailyGoalViewModel = DailyGoalTextFieldViewModel(
+                        text: "\(refreshViewModel.dailyGoal)",
+                        placeholder: nil)
+                case .notShow:
+                    dismiss(animated: true)
+                }
+            }
+            addDayGoalViewModel.saveButtonChange = { [unowned self] buttonState in
+                buttonState == .turnOn ? saveButton.turnOn() : saveButton.turnOff()
+            }
+            
+            titleLabel.text = addDayGoalViewModel.title
+            dismissButton.setTitle(with: addDayGoalViewModel.dismissButtonTitle)
+            saveButton.setTitle(with: addDayGoalViewModel.saveButtonTitle)
+        }
+    }
+    
+    private let dismissButton = CustomButton(with: .text)
     
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = Resources.Fonts.sfProSemibold(size: 16)
         label.textColor = Resources.Colors.Text.textMain
-        label.text = Resources.Strings.MainController.AddDayGoalController.dayGoal
         label.textAlignment = .center
         return label
     }()
     
     private let textFieldView = DailyGoalTextFieldView()
     
-    private let recomendDailyWaterView = ReccomendDailyWaterView() // -> MVVM
+    private let recomendDailyWaterView = ReccomendDailyWaterView()
     
-    private let saveButton = CustomButtonView(with: .fill)
+    private let saveButton = CustomButton(with: .fill)
 }
 
 extension AddDayGoalViewController {
@@ -88,17 +119,16 @@ extension AddDayGoalViewController {
     override func configureViews() {
         super.configureViews()
         
-        textFieldView.dailyGoalViewModel = DailyGoalTextFieldViewModel(
-            text: "\(dayGoal)",
-            placeholder: Resources.Strings.MainController.AddDayGoalController.placeholder
-        )
+        addDayGoalViewModel = AddDayGoalViewModel()
         
-        dismissButton.setTitle(with: Resources.Strings.MainController.AddDayGoalController.dismissButton)
+        textFieldView.dailyGoalViewModel = DailyGoalTextFieldViewModel(
+            text: "\(addDayGoalViewModel.dailyGoal)",
+            placeholder: addDayGoalViewModel.textFieldPlaceholder
+        )
+
         dismissButton.addTarget(self, action: #selector(dismissButtonAction), for: .touchUpInside)
                         
-        saveButton.setTitle(with: Resources.Strings.MainController.AddDayGoalController.saveButton)
         saveButton.setColor(for: Resources.Colors.Accent.accentMain, title: .white)
-        
         saveButton.addTarget(self, action: #selector(saveButtonAction), for: .touchUpInside)
     }
 }
@@ -111,23 +141,7 @@ extension AddDayGoalViewController {
     
     func saveButtonAction() {
         guard let newValue = Int(textFieldView.getCurrentTextFieldText()) else { return }
-        
-        if newValue < Resources.Values.minimumWaterValue {
-            showAlert(title: Resources.Strings.Alert.AddDayGoalController.littleValueHeader,
-                      message: Resources.Strings.Alert.AddDayGoalController.valueText)
-            
-            textFieldView.dailyGoalViewModel = DailyGoalTextFieldViewModel( text: "\(dayGoal)",
-                                                                            placeholder: nil)
-        } else if newValue > Resources.Values.maximumWaterValue {
-            showAlert(title: Resources.Strings.Alert.AddDayGoalController.bigValueHeader,
-                      message: Resources.Strings.Alert.AddDayGoalController.valueText)
-            
-            textFieldView.dailyGoalViewModel = DailyGoalTextFieldViewModel( text: "\(dayGoal)",
-                                                                            placeholder: nil)
-        } else {
-            dayGoal = newValue
-            dismiss(animated: true)
-        }
+        addDayGoalViewModel.saveButtonPressed(newValue)
     }
 }
 
@@ -144,7 +158,7 @@ private extension AddDayGoalViewController {
     
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: Resources.Strings.Alert.AddDayGoalController.okAction,
+        let okAction = UIAlertAction(title: addDayGoalViewModel.alertOkActionTitle,
                                      style: .default)
         
         alert.addAction(okAction)
@@ -153,6 +167,6 @@ private extension AddDayGoalViewController {
     
     func setSaveButtonState() {
         let text = textFieldView.getCurrentTextFieldText()
-        text.isEmpty ? saveButton.turnOff() : saveButton.turnOn()
+        addDayGoalViewModel.setSaveButtonStateFor(text)
     }
 }

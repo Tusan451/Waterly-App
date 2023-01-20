@@ -15,7 +15,7 @@ final class DailyGoalTextFieldView: BaseView {
             textField.viewModel = BaseTextFieldViewModel(
                 text: dailyGoalViewModel.text,
                 placeholder: dailyGoalViewModel.placeholder,
-                valueText: Resources.Strings.MainController.AddDayGoalController.mililiters
+                valueText: dailyGoalViewModel.secondaryText
             )
         }
     }

@@ -10,6 +10,7 @@ import Foundation
 protocol DailyGoalTextFieldViewModelProtocol {
     var title: String { get }
     var text: String? { get }
+    var secondaryText: String { get }
     var placeholder: String? { get }
     init(text: String?, placeholder: String?)
     func getCurrentText(_ text: String?) -> String
@@ -22,6 +23,10 @@ class DailyGoalTextFieldViewModel: DailyGoalTextFieldViewModelProtocol {
     }
     
     var text: String?
+    
+    var secondaryText: String {
+        Resources.Strings.MainController.AddDayGoalController.mililiters
+    }
                 
     var placeholder: String?
         

@@ -1,5 +1,5 @@
 //
-//  CustomButtonView.swift
+//  CustomButton.swift
 //  Waterly App
 //
 //  Created by Olegio on 28.12.2022.
@@ -12,7 +12,7 @@ enum CustomButtonType {
     case text
 }
 
-final class CustomButtonView: UIButton {
+final class CustomButton: UIButton {
     
     private var type: CustomButtonType = .fill
     private let label = UILabel()
@@ -50,7 +50,7 @@ final class CustomButtonView: UIButton {
     }
 }
 
-private extension CustomButtonView {
+private extension CustomButton {
     
     func addViews() {
         
