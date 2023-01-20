@@ -9,9 +9,9 @@ import UIKit
 
 final class AddWaterViewController: BaseController {
     
-    var delegate: ModalViewControllerDelegate?
+    weak var delegate: ModalViewControllerDelegate?
     
-    private let dismissButton = CustomButtonView(with: .text)
+    private let dismissButton = CustomButton(with: .text)
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -28,7 +28,7 @@ final class AddWaterViewController: BaseController {
     
     private let currentProgressView = CurrentDailyProgressView()
     
-    private let saveButton = CustomButtonView(with: .fill)
+    private let saveButton = CustomButton(with: .fill)
 }
 
 extension AddWaterViewController {

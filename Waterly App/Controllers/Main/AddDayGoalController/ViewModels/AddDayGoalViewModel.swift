@@ -18,7 +18,7 @@ enum SaveButtonState {
     case turnOn
 }
 
-protocol AddDayGoalViewModelProtocol {
+protocol AddDayGoalViewModelProtocol: AnyObject {
     var dailyGoal: Int { get }
     var title: String { get }
     var textFieldPlaceholder: String { get }

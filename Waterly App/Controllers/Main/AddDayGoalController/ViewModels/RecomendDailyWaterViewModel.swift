@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol RecomendDailyWaterViewModelProtocol {
+protocol RecomendDailyWaterViewModelProtocol: AnyObject {
     var text: String { get }
     var value: String { get }
     func setValue(_ value: Int) -> String

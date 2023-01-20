@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol DailyGoalTextFieldViewModelProtocol {
+protocol DailyGoalTextFieldViewModelProtocol: AnyObject {
     var title: String { get }
     var text: String? { get }
     var secondaryText: String { get }

@@ -5,4 +5,9 @@
 //  Created by Olegio on 20.01.2023.
 //
 
-import Foundation
+import UIKit
+
+class AddDayGoalControllerMainView: BaseView {
+    
+    
+}
