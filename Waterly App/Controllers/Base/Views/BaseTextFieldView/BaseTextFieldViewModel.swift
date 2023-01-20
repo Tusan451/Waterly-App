@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol BaseTextFieldViewModelProtocol {
+protocol BaseTextFieldViewModelProtocol: AnyObject {
     var text: String? { get }
     var textDidChange: ((BaseTextFieldViewModelProtocol) -> (Void))? { get set }
     var placeholder: String? { get }
