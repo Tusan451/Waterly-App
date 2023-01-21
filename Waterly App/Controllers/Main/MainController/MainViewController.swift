@@ -127,10 +127,9 @@ private extension MainViewController {
     func editButtonTapped() {
         print("edit button tapped")
         
-        let editGoalVC = AddDayGoalViewController()
-        editGoalVC.delegate = self
+        let addDayGoalVc = AddDayGoalAssambly.configuredModule(self)
         
-        self.present(editGoalVC, animated: true)
+        self.present(addDayGoalVc, animated: true)
     }
     
     // MARK: - Добавление выпитой воды
