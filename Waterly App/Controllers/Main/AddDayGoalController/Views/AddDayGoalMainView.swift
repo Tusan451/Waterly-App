@@ -7,14 +7,6 @@
 
 import UIKit
 
-enum AddDayGoalMainViewElements {
-    case dismissButton
-    case titleLabel
-    case textFieldView
-    case recomendDailyWaterView
-    case saveButton
-}
-
 protocol AddDayGoalMainViewDelegate: AnyObject {
     
     func dismissButtonDidPressed()
@@ -40,14 +32,6 @@ class AddDayGoalMainView: BaseView {
     private let recomendDailyWaterView = ReccomendDailyWaterView()
     
     private let saveButton = CustomButton(with: .fill)
-    
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//    }
-//    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
 }
 
 extension AddDayGoalMainView {
@@ -97,13 +81,6 @@ extension AddDayGoalMainView {
     
     override func configureViews() {
         super.configureViews()
-        
-//        addDayGoalViewModel = AddDayGoalViewModel()
-//
-//        textFieldView.dailyGoalViewModel = DailyGoalTextFieldViewModel(
-//            text: "\(addDayGoalViewModel.dailyGoal)",
-//            placeholder: addDayGoalViewModel.textFieldPlaceholder
-//        )
 
         dismissButton.addTarget(self, action: #selector(dismissButtonAction), for: .touchUpInside)
                         
@@ -135,13 +112,10 @@ extension AddDayGoalMainView {
 @objc extension AddDayGoalMainView {
     
     func dismissButtonAction() {
-//        dismiss(animated: true)
         delegate?.dismissButtonDidPressed()
     }
     
     func saveButtonAction() {
-//        guard let newValue = Int(textFieldView.getCurrentTextFieldText()) else { return }
-//        addDayGoalViewModel.saveButtonPressed(newValue)
         delegate?.saveButtonDidPressed()
     }
 }
