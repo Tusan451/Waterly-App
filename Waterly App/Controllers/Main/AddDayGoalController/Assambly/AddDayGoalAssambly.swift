@@ -9,7 +9,7 @@ import UIKit
 
 class AddDayGoalAssambly {
     
-    class func configuredModule(_ delegate: UIViewController) -> AddDayGoalViewController {
+    class func configuredModule(_ delegate: UIViewController) -> UIViewController {
         
         let viewController = AddDayGoalViewController()
         let viewModel = AddDayGoalViewModel()
