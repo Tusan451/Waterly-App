@@ -11,6 +11,8 @@ final class AddDayGoalViewController: BaseController {
         
     weak var delegate: ModalViewControllerDelegate?
     
+    var addDayGoalMainView = AddDayGoalMainView()
+    
     var addDayGoalViewModel: AddDayGoalViewModelProtocol! {
         didSet {
             addDayGoalViewModel.viewDidChange = { [unowned self] refreshViewModel in
@@ -19,14 +21,14 @@ final class AddDayGoalViewController: BaseController {
                     showAlert(
                         title: refreshViewModel.alertLitleValueTitle,
                         message: refreshViewModel.alertMessage)
-                    textFieldView.dailyGoalViewModel = DailyGoalTextFieldViewModel(
+                    addDayGoalMainView.getTextFieldView().dailyGoalViewModel = DailyGoalTextFieldViewModel(
                         text: "\(refreshViewModel.dailyGoal)",
                         placeholder: nil)
                 case .biggerValue:
                     showAlert(
                         title: refreshViewModel.alertBigValueTitle,
                         message: refreshViewModel.alertMessage)
-                    textFieldView.dailyGoalViewModel = DailyGoalTextFieldViewModel(
+                    addDayGoalMainView.getTextFieldView().dailyGoalViewModel = DailyGoalTextFieldViewModel(
                         text: "\(refreshViewModel.dailyGoal)",
                         placeholder: nil)
                 case .notShow:
@@ -34,33 +36,21 @@ final class AddDayGoalViewController: BaseController {
                 }
             }
             addDayGoalViewModel.saveButtonChange = { [unowned self] buttonState in
-                buttonState == .turnOn ? saveButton.turnOn() : saveButton.turnOff()
+                buttonState == .turnOn ? addDayGoalMainView.getSaveButton().turnOn() : addDayGoalMainView.getSaveButton().turnOff()
             }
             
-            titleLabel.text = addDayGoalViewModel.title
-            dismissButton.setTitle(with: addDayGoalViewModel.dismissButtonTitle)
-            saveButton.setTitle(with: addDayGoalViewModel.saveButtonTitle)
+            addDayGoalMainView.getTitleLabel().text = addDayGoalViewModel.title
+            addDayGoalMainView.getDismissButton().setTitle(with: addDayGoalViewModel.dismissButtonTitle)
+            addDayGoalMainView.getSaveButton().setTitle(with: addDayGoalViewModel.saveButtonTitle)
         }
     }
-    
-    private let dismissButton = CustomButton(with: .text)
-    
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = Resources.Fonts.sfProSemibold(size: 16)
-        label.textColor = Resources.Colors.Text.textMain
-        label.textAlignment = .center
-        return label
-    }()
-    
-    private let textFieldView = DailyGoalTextFieldView()
-    
-    private let recomendDailyWaterView = ReccomendDailyWaterView()
-    
-    private let saveButton = CustomButton(with: .fill)
 }
 
 extension AddDayGoalViewController {
+    
+    override func loadView() {
+        view = addDayGoalMainView
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -73,75 +63,15 @@ extension AddDayGoalViewController {
         delegate?.modalControllerWillDisapear(self)
     }
     
-    override func addViews() {
-        super.addViews()
-        
-        view.addView(dismissButton)
-        view.addView(titleLabel)
-        view.addView(textFieldView)
-        
-        view.addView(recomendDailyWaterView)
-        view.addView(saveButton)
-    }
-    
-    override func layoutViews() {
-        super.layoutViews()
-        
-        NSLayoutConstraint.activate([
-            dismissButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            dismissButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
-            dismissButton.trailingAnchor.constraint(equalTo: titleLabel.leadingAnchor, constant: -5),
-            dismissButton.bottomAnchor.constraint(equalTo: textFieldView.topAnchor, constant: -32),
-            dismissButton.widthAnchor.constraint(equalToConstant: 80),
-            dismissButton.heightAnchor.constraint(equalToConstant: 25),
-            
-            titleLabel.topAnchor.constraint(equalTo: dismissButton.topAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: dismissButton.bottomAnchor),
-            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleLabel.widthAnchor.constraint(equalToConstant: 180),
-            titleLabel.heightAnchor.constraint(equalToConstant: 25),
-            
-            textFieldView.leadingAnchor.constraint(equalTo: dismissButton.leadingAnchor),
-            textFieldView.topAnchor.constraint(equalTo: dismissButton.bottomAnchor, constant: 32),
-            textFieldView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            textFieldView.bottomAnchor.constraint(equalTo: recomendDailyWaterView.topAnchor, constant: -32),
-            
-            recomendDailyWaterView.leadingAnchor.constraint(equalTo: dismissButton.leadingAnchor),
-            recomendDailyWaterView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            recomendDailyWaterView.topAnchor.constraint(equalTo: textFieldView.bottomAnchor, constant: 32),
-            
-            saveButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            saveButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40)
-        ])
-    }
-    
     override func configureViews() {
         super.configureViews()
         
         addDayGoalViewModel = AddDayGoalViewModel()
-        
-        textFieldView.dailyGoalViewModel = DailyGoalTextFieldViewModel(
+
+        addDayGoalMainView.getTextFieldView().dailyGoalViewModel = DailyGoalTextFieldViewModel(
             text: "\(addDayGoalViewModel.dailyGoal)",
             placeholder: addDayGoalViewModel.textFieldPlaceholder
         )
-
-        dismissButton.addTarget(self, action: #selector(dismissButtonAction), for: .touchUpInside)
-                        
-        saveButton.setColor(for: Resources.Colors.Accent.accentMain, title: .white)
-        saveButton.addTarget(self, action: #selector(saveButtonAction), for: .touchUpInside)
-    }
-}
-
-@objc extension AddDayGoalViewController {
-    
-    func dismissButtonAction() {
-        dismiss(animated: true)
-    }
-    
-    func saveButtonAction() {
-        guard let newValue = Int(textFieldView.getCurrentTextFieldText()) else { return }
-        addDayGoalViewModel.saveButtonPressed(newValue)
     }
 }
 
@@ -151,6 +81,24 @@ extension AddDayGoalViewController: UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
+    }
+}
+
+extension AddDayGoalViewController: AddDayGoalMainViewDelegate {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        addDayGoalMainView.delegate = self
+    }
+    
+    func dismissButtonDidPressed() {
+        dismiss(animated: true)
+    }
+    
+    func saveButtonDidPressed() {
+        guard let newValue = Int(addDayGoalMainView.getTextFieldView().getCurrentTextFieldText()) else { return }
+        addDayGoalViewModel.saveButtonPressed(newValue)
     }
 }
 
@@ -166,7 +114,7 @@ private extension AddDayGoalViewController {
     }
     
     func setSaveButtonState() {
-        let text = textFieldView.getCurrentTextFieldText()
+        let text = addDayGoalMainView.getTextFieldView().getCurrentTextFieldText()
         addDayGoalViewModel.setSaveButtonStateFor(text)
     }
 }
