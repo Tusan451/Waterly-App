@@ -1,5 +1,5 @@
 //
-//  AddDayGoalAssambly.swift
+//  Assambly.swift
 //  Waterly App
 //
 //  Created by Olegio on 21.01.2023.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class AddDayGoalAssambly {
+class ModuleBuilder {
     
-    class func configuredModule(_ delegate: UIViewController) -> UIViewController {
+    class func configureAddDayGoalModule(_ delegate: UIViewController) -> UIViewController {
         
         let viewController = AddDayGoalViewController()
         let viewModel = AddDayGoalViewModel()
