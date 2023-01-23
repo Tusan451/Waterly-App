@@ -15,7 +15,7 @@
 		E03021CB2959CF5C00126AE7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03021CA2959CF5C00126AE7 /* TabBarController.swift */; };
 		E053B725295F32E200F71F20 /* WaterHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E053B724295F32E200F71F20 /* WaterHistoryView.swift */; };
 		E053B727295F42A400F71F20 /* AddedWaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E053B726295F42A400F71F20 /* AddedWaterView.swift */; };
-		E05D7886297C2A6200CCC5D0 /* AddDayGoalAssambly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D7885297C2A6200CCC5D0 /* AddDayGoalAssambly.swift */; };
+		E05D7886297C2A6200CCC5D0 /* Assambly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D7885297C2A6200CCC5D0 /* Assambly.swift */; };
 		E05DD2BB2971708E00BBE2E3 /* AddDayGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05DD2BA2971708E00BBE2E3 /* AddDayGoalViewController.swift */; };
 		E05DE9D0295B590200C81B15 /* BaseInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05DE9CF295B590200C81B15 /* BaseInfoView.swift */; };
 		E05DE9D2295B62F200C81B15 /* DashboardInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05DE9D1295B62F200C81B15 /* DashboardInfoView.swift */; };
@@ -66,7 +66,7 @@
 		E03021CA2959CF5C00126AE7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E053B724295F32E200F71F20 /* WaterHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterHistoryView.swift; sourceTree = "<group>"; };
 		E053B726295F42A400F71F20 /* AddedWaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedWaterView.swift; sourceTree = "<group>"; };
-		E05D7885297C2A6200CCC5D0 /* AddDayGoalAssambly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDayGoalAssambly.swift; sourceTree = "<group>"; };
+		E05D7885297C2A6200CCC5D0 /* Assambly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assambly.swift; sourceTree = "<group>"; };
 		E05DD2BA2971708E00BBE2E3 /* AddDayGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDayGoalViewController.swift; sourceTree = "<group>"; };
 		E05DE9CF295B590200C81B15 /* BaseInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInfoView.swift; sourceTree = "<group>"; };
 		E05DE9D1295B62F200C81B15 /* DashboardInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInfoView.swift; sourceTree = "<group>"; };
@@ -152,6 +152,7 @@
 		E012B96E2979510F00A4D402 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E05DD2BA2971708E00BBE2E3 /* AddDayGoalViewController.swift */,
 				E0F8BB69297B0335004AE4E2 /* AddDayGoalMainView.swift */,
 				E08E3FD32971ADAE007B5B3C /* DailyGoalTextFieldView.swift */,
 				E08E3FD52971B0EF007B5B3C /* ReccomendDailyWaterView.swift */,
@@ -176,14 +177,6 @@
 			path = History;
 			sourceTree = "<group>";
 		};
-		E05D7884297C2A2700CCC5D0 /* Assambly */ = {
-			isa = PBXGroup;
-			children = (
-				E05D7885297C2A6200CCC5D0 /* AddDayGoalAssambly.swift */,
-			);
-			path = Assambly;
-			sourceTree = "<group>";
-		};
 		E05DD2B829716F5800BBE2E3 /* MainController */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,10 +189,8 @@
 		E05DD2B92971701B00BBE2E3 /* AddDayGoalController */ = {
 			isa = PBXGroup;
 			children = (
-				E05D7884297C2A2700CCC5D0 /* Assambly */,
 				E012B96E2979510F00A4D402 /* Views */,
 				E0DED6072979B91F00E9D656 /* ViewModels */,
-				E0DED6062979B8D200E9D656 /* ViewController */,
 			);
 			path = AddDayGoalController;
 			sourceTree = "<group>";
@@ -263,19 +254,20 @@
 		E0BA84972959D89B00D30B1C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E05D7885297C2A6200CCC5D0 /* Assambly.swift */,
 				E08E3FD72971CDE0007B5B3C /* Protocols */,
 				E0E1AC90295B354700D2AA9C /* Extensions */,
-				E0BA84982959D8D300D30B1C /* Resources.swift */,
+				E0BEAFC7297EE06A00292EAD /* Resources */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		E0DED6062979B8D200E9D656 /* ViewController */ = {
+		E0BEAFC7297EE06A00292EAD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E05DD2BA2971708E00BBE2E3 /* AddDayGoalViewController.swift */,
+				E0BA84982959D8D300D30B1C /* Resources.swift */,
 			);
-			path = ViewController;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		E0DED6072979B91F00E9D656 /* ViewModels */ = {
@@ -530,7 +522,7 @@
 				E0FBFD6D295A0F1900AFE420 /* SettingsViewController.swift in Sources */,
 				E076DF3E2976DF9D008C9729 /* CurrentDailyProgressView.swift in Sources */,
 				E0D1CA2C297841B40054F859 /* RecomendDailyWaterViewModel.swift in Sources */,
-				E05D7886297C2A6200CCC5D0 /* AddDayGoalAssambly.swift in Sources */,
+				E05D7886297C2A6200CCC5D0 /* Assambly.swift in Sources */,
 				E0F5D637295C7A34008259D7 /* ProgressView.swift in Sources */,
 				E05DE9D2295B62F200C81B15 /* DashboardInfoView.swift in Sources */,
 				E0F5D634295C78DA008259D7 /* CounterView.swift in Sources */,
