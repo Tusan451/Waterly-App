@@ -125,10 +125,7 @@ private extension MainViewController {
     
     // MARK: - Вызов поп-ап окна с изменением дневной нормы
     func editButtonTapped() {
-        print("edit button tapped")
-        
-        let addDayGoalVc = AddDayGoalAssambly.configuredModule(self)
-        
+        let addDayGoalVc = ModuleBuilder.configureAddDayGoalModule(self)
         self.present(addDayGoalVc, animated: true)
     }
     
