@@ -30,6 +30,7 @@ protocol AddWaterViewProtocol: AnyObject {
     func setSaveButtonState(state: Resources.SaveButtonState)
     func showAlert(title: String, message: String, okButtonTitle: String)
     func dismiss() -> Void
+    func clearTextFieldText(placeholder: String?)
 }
 
 protocol AddWaterPresenterProtocol: AnyObject {
@@ -170,14 +171,23 @@ class AddWaterPresenter: AddWaterPresenterProtocol {
         guard let intValue = Int(value) else { return }
         
         if intValue < self.minimumAddWaterValue {
+            
             self.view?.showAlert(title: self.alertLitleValueTitle,
                                  message: self.alertMessage,
                                  okButtonTitle: self.alertOkButtonTitle)
+            
+            self.view?.clearTextFieldText(placeholder: self.textFieldPlaceholder)
+            
         } else if intValue > self.maximumAddWaterValue {
+            
             self.view?.showAlert(title: self.alertBigValueTitle,
                                  message: self.alertMessage,
                                  okButtonTitle: self.alertOkButtonTitle)
+            
+            self.view?.clearTextFieldText(placeholder: self.textFieldPlaceholder)
+            
         } else {
+            
             dayProgress += intValue
             
             // TODO: - Контроль кол-ва элементов реализовать на уровне бека

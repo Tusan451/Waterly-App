@@ -142,6 +142,11 @@ extension AddWaterViewController: AddWaterViewProtocol {
         state == .turnOn ? mainView.getSaveButton().turnOn() : mainView.getSaveButton().turnOff()
     }
     
+    func clearTextFieldText(placeholder: String?) {
+        mainView.getTextFieldView().textField.viewModel.text = nil
+        mainView.getTextFieldView().textField.viewModel.placeholder = placeholder
+    }
+    
     func showAlert(title: String, message: String, okButtonTitle: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: okButtonTitle,
