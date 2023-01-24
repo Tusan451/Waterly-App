@@ -7,32 +7,21 @@
 
 import Foundation
 
-enum AlertType {
-    case littleValue
-    case biggerValue
-    case notShow
-}
-
-enum SaveButtonState {
-    case turnOff
-    case turnOn
-}
-
 protocol AddDayGoalViewModelProtocol: AnyObject {
     var dailyGoal: Int { get }
     var title: String { get }
     var textFieldPlaceholder: String { get }
     var dismissButtonTitle: String { get }
     var saveButtonTitle: String { get }
-    var saveButtonState: SaveButtonState { get }
-    var saveButtonChange: ((SaveButtonState) -> (Void))? { get set }
+    var saveButtonState: Resources.SaveButtonState { get }
+    var saveButtonChange: ((Resources.SaveButtonState) -> (Void))? { get set }
     var alertLitleValueTitle: String { get }
     var alertBigValueTitle: String { get }
     var alertMessage: String { get }
     var alertOkActionTitle: String { get }
     var minimumWaterValue: Int { get }
     var maximumWaterValue: Int { get }
-    var alert: AlertType { get }
+    var alert: Resources.AlertType { get }
     var viewDidChange: ((AddDayGoalViewModelProtocol) -> (Void))? { get set }
     func saveButtonPressed(_ value: Int)
     func setSaveButtonStateFor(_ value: String)
@@ -62,13 +51,13 @@ class AddDayGoalViewModel: AddDayGoalViewModelProtocol {
         Resources.Strings.MainController.AddDayGoalController.saveButton
     }
     
-    var saveButtonState: SaveButtonState = .turnOn {
+    var saveButtonState: Resources.SaveButtonState = .turnOn {
         didSet {
             saveButtonChange?(self.saveButtonState)
         }
     }
     
-    var saveButtonChange: ((SaveButtonState) -> (Void))?
+    var saveButtonChange: ((Resources.SaveButtonState) -> (Void))?
     
     var alertLitleValueTitle: String {
         Resources.Strings.Alert.AddDayGoalController.littleValueHeader
@@ -79,7 +68,7 @@ class AddDayGoalViewModel: AddDayGoalViewModelProtocol {
     }
     
     var alertMessage: String {
-        Resources.Strings.Alert.AddDayGoalController.valueText
+        Resources.Strings.Alert.AddDayGoalController.messageText
     }
     
     var alertOkActionTitle: String {
@@ -94,7 +83,7 @@ class AddDayGoalViewModel: AddDayGoalViewModelProtocol {
         Resources.Values.maximumWaterValue
     }
     
-    var alert: AlertType = .notShow {
+    var alert: Resources.AlertType = .notShow {
         didSet {
             viewDidChange?(self)
         }
