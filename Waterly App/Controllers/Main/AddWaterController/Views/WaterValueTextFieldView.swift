@@ -9,23 +9,14 @@ import UIKit
 
 final class WaterValueTextFieldView: BaseView {
     
-    private let titleLabel: UILabel = {
+    let titleLabel: UILabel = {
         let label = UILabel()
         label.font = Resources.Fonts.sfProRegular(size: 14)
         label.textColor = Resources.Colors.Text.textSecondary
-        label.text = Resources.Strings.MainController.AddWaterController.textFieldHeader
         return label
     }()
     
-//    private let textField = BaseTextField(
-//        width: UIScreen.main.bounds.width - 40,
-//        height: 50,
-//        placeholder: Resources.Strings.MainController.AddWaterController.placeholder,
-//        valueLabel: Resources.Strings.MainController.AddWaterController.mililiters,
-//        keyboardType: .numberPad
-//    )
-    
-    private let textField = BaseTextField(
+    let textField = BaseTextField(
         width: UIScreen.main.bounds.width - 40,
         height: 50,
         keyboardType: .numberPad
@@ -38,12 +29,7 @@ final class WaterValueTextFieldView: BaseView {
         return view
     }()
     
-//    func setTextFieldValue(text: String) {
-//        textField.setText(text)
-//    }
-    
     func getCurrentTextFieldText() -> String {
-//        textField.getCurrentText()
         textField.viewModel.text ?? ""
     }
 }
