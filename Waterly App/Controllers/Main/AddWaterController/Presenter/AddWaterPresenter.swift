@@ -28,6 +28,8 @@ protocol AddWaterViewProtocol: AnyObject {
     func setCurrentProgressViewValue(value: String)
     func setCurrentProgressViewValueFor(newValue: String?, arrowState: ArrowState)
     func setSaveButtonState(state: Resources.SaveButtonState)
+    func showAlert(title: String, message: String, okButtonTitle: String)
+    func dismiss() -> Void
 }
 
 protocol AddWaterPresenterProtocol: AnyObject {
@@ -41,6 +43,12 @@ protocol AddWaterPresenterProtocol: AnyObject {
     var currentProgressValue: String { get }
     var currentProgressTitle: String { get }
     var saveButtonState: Resources.SaveButtonState { get }
+    var minimumAddWaterValue: Int { get }
+    var maximumAddWaterValue: Int { get }
+    var alertLitleValueTitle: String { get }
+    var alertBigValueTitle: String { get }
+    var alertMessage: String { get }
+    var alertOkButtonTitle: String { get }
     init(view: AddWaterViewProtocol)
     func setViewTitle()
     func setTextFieldTextValues()
@@ -102,6 +110,30 @@ class AddWaterPresenter: AddWaterPresenterProtocol {
     
     var saveButtonState: Resources.SaveButtonState = .turnOn
     
+    var minimumAddWaterValue: Int {
+        Resources.Values.minimumAddWaterValue
+    }
+    
+    var maximumAddWaterValue: Int {
+        Resources.Values.maximumAddWaterValue
+    }
+        
+    var alertLitleValueTitle: String {
+        Resources.Strings.Alert.AddWaterController.littleValueHeader
+    }
+    
+    var alertBigValueTitle: String {
+        Resources.Strings.Alert.AddWaterController.bigValueHeader
+    }
+    
+    var alertMessage: String {
+        Resources.Strings.Alert.AddWaterController.messageText
+    }
+    
+    var alertOkButtonTitle: String {
+        Resources.Strings.Alert.AddWaterController.okAction
+    }
+    
     // MARK: - Initializers
     
     required init(view: AddWaterViewProtocol) {
@@ -137,14 +169,25 @@ class AddWaterPresenter: AddWaterPresenterProtocol {
         guard let value = value else { return }
         guard let intValue = Int(value) else { return }
         
-        dayProgress += intValue
-        
-        // TODO: - Контроль кол-ва элементов реализовать на уровне бека
-        if recentlyAddedWater.count == 6 {
-            recentlyAddedWater.removeFirst()
+        if intValue < self.minimumAddWaterValue {
+            self.view?.showAlert(title: self.alertLitleValueTitle,
+                                 message: self.alertMessage,
+                                 okButtonTitle: self.alertOkButtonTitle)
+        } else if intValue > self.maximumAddWaterValue {
+            self.view?.showAlert(title: self.alertBigValueTitle,
+                                 message: self.alertMessage,
+                                 okButtonTitle: self.alertOkButtonTitle)
+        } else {
+            dayProgress += intValue
+            
+            // TODO: - Контроль кол-ва элементов реализовать на уровне бека
+            if recentlyAddedWater.count == 6 {
+                recentlyAddedWater.removeFirst()
+            }
+            
+            recentlyAddedWater.append(RecentlyAddedWater.init(value: intValue))
+            self.view?.dismiss()
         }
-        
-        recentlyAddedWater.append(RecentlyAddedWater.init(value: intValue))
     }
     
     func configureDailyPercentViewValue(_ value: String?) {
