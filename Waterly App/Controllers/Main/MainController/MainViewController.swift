@@ -131,11 +131,7 @@ private extension MainViewController {
     
     // MARK: - Добавление выпитой воды
     func addWaterButtonTapped() {
-        print("waterButton tapped")
-        
-        let addWaterVC = AddWaterViewController()
-        addWaterVC.delegate = self
-        
-        self.present(addWaterVC, animated: true)
+        let addWaterVc = ModuleBuilder.configureAddWaterModule(self)
+        self.present(addWaterVc, animated: true)
     }
 }
