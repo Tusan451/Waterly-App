@@ -10,8 +10,8 @@ import Foundation
 protocol BaseTextFieldViewModelProtocol: AnyObject {
     var text: String? { get }
     var textDidChange: ((BaseTextFieldViewModelProtocol) -> (Void))? { get set }
-    var placeholder: String? { get }
-    var valueText: String? { get }
+    var placeholder: String? { get set }
+    var valueText: String? { get set }
     init(text: String?, placeholder: String?, valueText: String?)
     func changeText(newValue: String?)
     func changePlaceholder(newValue: String?)
