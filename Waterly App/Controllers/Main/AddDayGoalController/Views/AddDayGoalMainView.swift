@@ -13,7 +13,7 @@ protocol AddDayGoalMainViewDelegate: AnyObject {
     func saveButtonDidPressed()
 }
 
-class AddDayGoalMainView: BaseView {
+final class AddDayGoalMainView: BaseView {
     
     weak var delegate: AddDayGoalMainViewDelegate?
     
