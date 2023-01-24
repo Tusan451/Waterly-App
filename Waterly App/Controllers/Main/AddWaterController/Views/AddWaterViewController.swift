@@ -11,34 +11,22 @@ final class AddWaterViewController: BaseController {
     
     weak var delegate: ModalViewControllerDelegate?
     
-    private let dismissButton = CustomButton(with: .text)
+    var mainView = AddWaterMainView()
     
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = Resources.Fonts.sfProSemibold(size: 16)
-        label.textColor = Resources.Colors.Text.textMain
-        label.text = Resources.Strings.MainController.AddWaterController.header
-        label.textAlignment = .center
-        return label
-    }()
-    
-    private let textFieldView = WaterValueTextFieldView()
-    
-    private let dailyPercentView = DailyPercentView()
-    
-    private let currentProgressView = CurrentDailyProgressView()
-    
-    private let saveButton = CustomButton(with: .fill)
+    var presenter: AddWaterPresenterProtocol!
 }
 
 extension AddWaterViewController {
+    
+    override func loadView() {
+        view = mainView
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         configureDailyPercentLabel()
         configureCurrentProgressLabels()
-        
         configureSaveButtonState()
     }
     
@@ -47,64 +35,33 @@ extension AddWaterViewController {
         delegate?.modalControllerWillDisapear(self)
     }
     
-    override func addViews() {
-        super.addViews()
-        
-        view.addView(dismissButton)
-        view.addView(titleLabel)
-        view.addView(textFieldView)
-        view.addView(dailyPercentView)
-        view.addView(currentProgressView)
-        view.addView(saveButton)
-    }
-    
-    override func layoutViews() {
-        super.layoutViews()
-        
-        NSLayoutConstraint.activate([
-            dismissButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            dismissButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
-            dismissButton.trailingAnchor.constraint(equalTo: titleLabel.leadingAnchor, constant: -5),
-            dismissButton.bottomAnchor.constraint(equalTo: textFieldView.topAnchor, constant: -32),
-            dismissButton.widthAnchor.constraint(equalToConstant: 80),
-            dismissButton.heightAnchor.constraint(equalToConstant: 25),
-            
-            titleLabel.topAnchor.constraint(equalTo: dismissButton.topAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: dismissButton.bottomAnchor),
-            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleLabel.widthAnchor.constraint(equalToConstant: 180),
-            titleLabel.heightAnchor.constraint(equalToConstant: 25),
-            
-            textFieldView.leadingAnchor.constraint(equalTo: dismissButton.leadingAnchor),
-            textFieldView.topAnchor.constraint(equalTo: dismissButton.bottomAnchor, constant: 32),
-            textFieldView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            textFieldView.bottomAnchor.constraint(equalTo: dailyPercentView.topAnchor, constant: -32),
-            
-            dailyPercentView.leadingAnchor.constraint(equalTo: dismissButton.leadingAnchor),
-            dailyPercentView.trailingAnchor.constraint(equalTo: currentProgressView.leadingAnchor, constant: -24),
-            dailyPercentView.topAnchor.constraint(equalTo: textFieldView.bottomAnchor, constant: 32),
-            dailyPercentView.widthAnchor.constraint(equalToConstant: 162),
-            
-            currentProgressView.leadingAnchor.constraint(equalTo: dailyPercentView.trailingAnchor, constant: 24),
-            currentProgressView.topAnchor.constraint(equalTo: dailyPercentView.topAnchor),
-            currentProgressView.widthAnchor.constraint(equalToConstant: 162),
-            
-            saveButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            saveButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40)
-        ])
-    }
-    
     override func configureViews() {
         super.configureViews()
         
-        dismissButton.setTitle(with: Resources.Strings.MainController.AddWaterController.dismissButton)
-        dismissButton.addTarget(self, action: #selector(dismissButtonAction), for: .touchUpInside)
+        presenter.setViewTitle()
+        presenter.setTextFieldTextValues()
+        presenter.setDailyPercentViewTitle()
+        presenter.setDismissButtonTitle()
+        presenter.setSaveButtonTitle()
+        presenter.configureCurrentProgressViewTitle()
+        presenter.setCurrentProgressViewValue()
+    }
+}
+
+extension AddWaterViewController: AddWaterMainViewDelegate {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        saveButton.setTitle(with: Resources.Strings.MainController.AddWaterController.saveButton)
-        saveButton.setColor(for: Resources.Colors.Accent.accentMain, title: .white)
-        
-        saveButton.addTarget(self, action: #selector(saveButtonAction), for: .touchUpInside)
+        mainView.delegate = self
+    }
+    
+    func dismissButtonDidPressed() {
+        dismiss(animated: true)
+    }
+    
+    func saveButtonDidPressed() {
+        presenter.saveButtonPressed(mainView.getTextFieldView().getCurrentTextFieldText())
     }
 }
 
@@ -112,72 +69,89 @@ private extension AddWaterViewController {
     
     // Configure Daily Percent Label
     func configureDailyPercentLabel() {
-        
-        let value = textFieldView.getCurrentTextFieldText()
-        
-        if value.isEmpty {
-            dailyPercentView.configureValueLabel(0, color: Resources.Colors.Text.textTertiary)
-        } else {
-            guard let doubleValue = Double(value) else { return }
-            let percentFromDaily = lround(doubleValue / Double(recommendDailyValue / 100))
-            dailyPercentView.configureValueLabel(percentFromDaily, color: Resources.Colors.Text.textMain)
-        }
+        presenter.configureDailyPercentViewValue(mainView.getTextFieldView().getCurrentTextFieldText())
     }
     
     // Configure Current Progress Labels
     func configureCurrentProgressLabels() {
-        
-        let value = textFieldView.getCurrentTextFieldText()
-        
-        let dailyPercentProgress = lround(Double(dayProgress) / Double(dayGoal / 100))
-        
-        if value.isEmpty {
-            currentProgressView.configureValueLabels(current: "\(dailyPercentProgress)%")
-        } else {
-            guard let doubleValue = Double(value) else { return }
-            let newDailyValue = Double(dayProgress) + doubleValue
-            let newDailyPercentProgress = lround(newDailyValue / Double(dayGoal / 100))
-            currentProgressView.configureValueLabels(current: "\(dailyPercentProgress)%",
-                                                     new: "\(newDailyPercentProgress)%")
-        }
+        presenter.configureCurrentProgressViewFor(value: mainView.getTextFieldView().getCurrentTextFieldText())
     }
     
     // Configure Save Button State
     func configureSaveButtonState() {
-        
-        let value = textFieldView.getCurrentTextFieldText()
-        
-        if value.isEmpty {
-            saveButton.turnOff()
-        } else {
-            saveButton.turnOn()
-        }
+        presenter.setSaveButtonStateFor(mainView.getTextFieldView().getCurrentTextFieldText())
     }
 }
 
-@objc extension AddWaterViewController {
+extension AddWaterViewController: AddWaterViewProtocol {
     
-    // Dismiss Button Action
-    func dismissButtonAction() {
-        dismiss(animated: true)
+    func setMainTitle(title: String) {
+        mainView.getTitleLabel().text = title
     }
     
-    // Save Button Action
-    func saveButtonAction() {
-        
-        let value = textFieldView.getCurrentTextFieldText()
-        
-        guard let intValue = Int(value) else { return }
-        
-        dayProgress += intValue
-        
-        // TODO: - Контроль кол-ва элементов реализовать на уровне бека
-        if recentlyAddedWater.count == 6 {
-            recentlyAddedWater.removeFirst()
+    func setTextFieldTextValues(title: String, placeholder: String, valuePlaceholder: String) {
+        mainView.getTextFieldView().titleLabel.text = title
+        mainView.getTextFieldView().textField.viewModel = BaseTextFieldViewModel(
+            text: nil,
+            placeholder: placeholder,
+            valueText: valuePlaceholder
+        )
+    }
+    
+    func setDismissButtonTitle(title: String) {
+        mainView.getDismissButton().setTitle(with: title)
+    }
+    
+    func setActionButtonTitle(title: String) {
+        mainView.getSaveButton().setTitle(with: title)
+    }
+    
+    func setDailyPercentViewTitle(title: String) {
+        mainView.getDailyPercentView().textLabel.text = title
+    }
+    
+    func setDailyPercentViewValue(value: String, state: DailyPercentValueState) {
+        mainView.getDailyPercentView().valueLabel.text = value
+        switch state {
+        case .notFocus:
+            mainView.getDailyPercentView().valueLabel.textColor = Resources.Colors.Text.textTertiary
+        case .focus:
+            mainView.getDailyPercentView().valueLabel.textColor = Resources.Colors.Text.textMain
         }
-        
-        recentlyAddedWater.append(RecentlyAddedWater.init(value: intValue))
-        
+    }
+    
+    func setCurrentProgressViewTitle(title: String) {
+        mainView.getCurrentProgressView().textLabel.text = title
+    }
+    
+    func setCurrentProgressViewValue(value: String) {
+        mainView.getCurrentProgressView().currentValueLabel.text = value
+    }
+    
+    func setCurrentProgressViewValueFor(newValue: String?, arrowState: ArrowState) {
+        mainView.getCurrentProgressView().newValueLabel.text = newValue
+        switch arrowState {
+        case .isHidden:
+            mainView.getCurrentProgressView().arrowView.isHidden = true
+        case .show:
+            mainView.getCurrentProgressView().arrowView.isHidden = false
+        }
+    }
+    
+    func setSaveButtonState(state: Resources.SaveButtonState) {
+        state == .turnOn ? mainView.getSaveButton().turnOn() : mainView.getSaveButton().turnOff()
+    }
+    
+    func showAlert(title: String, message: String, okButtonTitle: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: okButtonTitle,
+                                     style: .default)
+
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+    
+    func dismiss() {
         dismiss(animated: true)
     }
 }
