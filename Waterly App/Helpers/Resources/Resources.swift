@@ -117,7 +117,16 @@ enum Resources {
                 static let littleValueHeader = "Значение слишком маленькое"
                 static let bigValueHeader = "Значение слишком высокое"
                 
-                static let valueText = "Внесите значение от \(Values.minimumWaterValue) до \(Values.maximumWaterValue)"
+                static let messageText = "Внесите значение от \(Values.minimumWaterValue) до \(Values.maximumWaterValue)"
+                
+                static let okAction = "Понятно"
+            }
+            
+            enum AddWaterController {
+                static let littleValueHeader = "Значение слишком маленькое"
+                static let bigValueHeader = "Значение слишком высокое"
+                
+                static let messageText = "Внесите значение от \(Values.minimumAddWaterValue) до \(Values.maximumAddWaterValue)"
                 
                 static let okAction = "Понятно"
             }
@@ -162,5 +171,19 @@ enum Resources {
     enum Values {
         static let minimumWaterValue = 500
         static let maximumWaterValue = 10000
+        
+        static let minimumAddWaterValue = 50
+        static let maximumAddWaterValue = 1000
+    }
+    
+    enum AlertType {
+        case littleValue
+        case biggerValue
+        case notShow
+    }
+    
+    enum SaveButtonState {
+        case turnOff
+        case turnOn
     }
 }
