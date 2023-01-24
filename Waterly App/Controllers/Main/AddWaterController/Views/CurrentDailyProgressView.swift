@@ -9,31 +9,29 @@ import UIKit
 
 final class CurrentDailyProgressView: BaseView {
     
-    private let textLabel: UILabel = {
+    let textLabel: UILabel = {
         let label = UILabel()
         label.font = Resources.Fonts.sfProMedium(size: 13)
         label.textColor = Resources.Colors.Text.textSecondary
-        label.text = Resources.Strings.MainController.AddWaterController.currentProgress
         label.numberOfLines = 0
         return label
     }()
     
-    private let currentValueLabel: UILabel = {
+    let currentValueLabel: UILabel = {
         let label = UILabel()
         label.font = Resources.Fonts.sfProSemibold(size: 24)
         label.textColor = Resources.Colors.Text.textMain
         return label
     }()
     
-    private let arrowView: UIImageView = {
+    let arrowView: UIImageView = {
         let view = UIImageView()
         view.image = Resources.Images.AddWaterViewController.arrow?.withRenderingMode(.alwaysTemplate)
         view.tintColor = Resources.Colors.Text.textMain
-        view.isHidden = true
         return view
     }()
     
-    private let newValueLabel: UILabel = {
+    let newValueLabel: UILabel = {
         let label = UILabel()
         label.font = Resources.Fonts.sfProSemibold(size: 24)
         label.textColor = Resources.Colors.Accent.accentMain
@@ -46,15 +44,6 @@ final class CurrentDailyProgressView: BaseView {
         view.distribution = .equalSpacing
         return view
     }()
-    
-    func configureValueLabels(current: String, new: String? = nil) {
-        currentValueLabel.text = current
-        
-        if let newValue = new {
-            newValueLabel.text = newValue
-            arrowView.isHidden = false
-        }
-    }
 }
 
 extension CurrentDailyProgressView {
@@ -87,9 +76,5 @@ extension CurrentDailyProgressView {
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
-    }
-    
-    override func configureViews() {
-        super.configureViews()
     }
 }
