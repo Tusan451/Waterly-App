@@ -21,6 +21,7 @@ enum Resources {
             static let backSecondary = UIColor(named: "BackSecondary")
             static let textFieldBack = UIColor(named: "TextFieldBack")
             static let tabBarBackColor = UIColor(named: "TabBarBackColor")
+            static let newUserPresentationBack = UIColor(named: "NewUserPresentationBack")
         }
         
         enum Separator {
@@ -58,6 +59,15 @@ enum Resources {
     }
     
     enum Strings {
+        
+        enum NewUserPageVC {
+            static let icon = "logoPresentation"
+            
+            static let mainTitle = "Если есть магия на этой планете, она содержится"
+            static let secondaryTitle = "в воде."
+            
+            static let author = "Лорен Эйсли"
+        }
         
         enum TabBar {
             static let statistics = "Статистика"
