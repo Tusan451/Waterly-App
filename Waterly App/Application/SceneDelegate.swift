@@ -16,12 +16,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         
         let tabBarController = TabBarController()
+        let pageViewController = ModuleBuilder.configureNewUserPageModule()
         
         guard let windowScene = scene as? UIWindowScene else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = tabBarController
+        window?.rootViewController = pageViewController
         window?.makeKeyAndVisible()
     }
+    
+//    private func configurePageViewController() -> UIPageViewController {
+//
+//        var arrayOfVc = [UIViewController]()
+//        let firstPageVc = ModuleBuilder.configureNewUserFirstPageModule()
+//        arrayOfVc.append(firstPageVc)
+//
+//        return ModuleBuilder.configureNewUserPageModule(arrayOfViewControllers: arrayOfVc)
+//    }
 }
 
