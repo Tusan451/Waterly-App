@@ -24,4 +24,19 @@ class ModuleBuilder {
         viewController.presenter = presenter
         return viewController
     }
+    
+    class func configureNewUserPageModule() -> UIPageViewController {
+        var arrayOfVc = [UIViewController]()
+        let firstPageVc = ModuleBuilder.configureNewUserFirstPageModule()
+        arrayOfVc.append(firstPageVc)
+        let pageViewController = NewUserPageViewController(array: arrayOfVc)
+        return pageViewController
+    }
+    
+    class func configureNewUserFirstPageModule() -> UIViewController {
+        let viewController = FirstPageVC()
+        let presenter = FirstPagePresenter(view: viewController)
+        viewController.presenter = presenter
+        return viewController
+    }
 }
