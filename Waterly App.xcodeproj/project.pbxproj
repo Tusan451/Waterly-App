@@ -33,9 +33,15 @@
 		E0BA84992959D8D300D30B1C /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BA84982959D8D300D30B1C /* Resources.swift */; };
 		E0BEAFC9297EE41200292EAD /* AddWaterMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BEAFC8297EE41200292EAD /* AddWaterMainView.swift */; };
 		E0BEAFCB297EEF0E00292EAD /* AddWaterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BEAFCA297EEF0E00292EAD /* AddWaterPresenter.swift */; };
+		E0CF3F01298196290001A9F2 /* NewUserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3F00298196290001A9F2 /* NewUserPageViewController.swift */; };
+		E0CF3F03298198170001A9F2 /* FirstPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3F02298198170001A9F2 /* FirstPageVC.swift */; };
+		E0CF3F05298198FE0001A9F2 /* FirstPageVCMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3F04298198FE0001A9F2 /* FirstPageVCMainView.swift */; };
+		E0CF3F082981A1DF0001A9F2 /* FirstPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3F072981A1DF0001A9F2 /* FirstPagePresenter.swift */; };
 		E0D1CA2C297841B40054F859 /* RecomendDailyWaterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1CA2B297841B40054F859 /* RecomendDailyWaterViewModel.swift */; };
 		E0D1CA2F29784DC90054F859 /* BaseTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1CA2E29784DC90054F859 /* BaseTextFieldViewModel.swift */; };
 		E0D1CA3129785F2B0054F859 /* DailyGoalTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1CA3029785F2B0054F859 /* DailyGoalTextFieldViewModel.swift */; };
+		E0D95B262980495400F77577 /* Waterly_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D95B252980495400F77577 /* Waterly_AppTests.swift */; };
+		E0D95B3029804BB300F77577 /* AddWaterPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D95B2F29804BB300F77577 /* AddWaterPresenterTest.swift */; };
 		E0E1AC8C295B301000D2AA9C /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0E1AC88295B301000D2AA9C /* SFProDisplay-Regular.ttf */; };
 		E0E1AC8D295B301000D2AA9C /* SFProDisplay-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0E1AC89295B301000D2AA9C /* SFProDisplay-Light.ttf */; };
 		E0E1AC8E295B301000D2AA9C /* SFProDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0E1AC8A295B301000D2AA9C /* SFProDisplay-Medium.ttf */; };
@@ -58,6 +64,16 @@
 		E0FBFD6D295A0F1900AFE420 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FBFD6C295A0F1900AFE420 /* SettingsViewController.swift */; };
 		E0FBFD73295A102700AFE420 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FBFD72295A102700AFE420 /* StatisticsViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E0D95B272980495400F77577 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E0A773A12959C3F8005FF95B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E0A773A82959C3F8005FF95B;
+			remoteInfo = "Waterly App";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E00288D22975A55800B13CE4 /* AddWaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWaterViewController.swift; sourceTree = "<group>"; };
@@ -88,9 +104,16 @@
 		E0BA84982959D8D300D30B1C /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		E0BEAFC8297EE41200292EAD /* AddWaterMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWaterMainView.swift; sourceTree = "<group>"; };
 		E0BEAFCA297EEF0E00292EAD /* AddWaterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWaterPresenter.swift; sourceTree = "<group>"; };
+		E0CF3F00298196290001A9F2 /* NewUserPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserPageViewController.swift; sourceTree = "<group>"; };
+		E0CF3F02298198170001A9F2 /* FirstPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageVC.swift; sourceTree = "<group>"; };
+		E0CF3F04298198FE0001A9F2 /* FirstPageVCMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageVCMainView.swift; sourceTree = "<group>"; };
+		E0CF3F072981A1DF0001A9F2 /* FirstPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPagePresenter.swift; sourceTree = "<group>"; };
 		E0D1CA2B297841B40054F859 /* RecomendDailyWaterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendDailyWaterViewModel.swift; sourceTree = "<group>"; };
 		E0D1CA2E29784DC90054F859 /* BaseTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextFieldViewModel.swift; sourceTree = "<group>"; };
 		E0D1CA3029785F2B0054F859 /* DailyGoalTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoalTextFieldViewModel.swift; sourceTree = "<group>"; };
+		E0D95B232980495400F77577 /* Waterly AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Waterly AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0D95B252980495400F77577 /* Waterly_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waterly_AppTests.swift; sourceTree = "<group>"; };
+		E0D95B2F29804BB300F77577 /* AddWaterPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWaterPresenterTest.swift; sourceTree = "<group>"; };
 		E0E1AC88295B301000D2AA9C /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		E0E1AC89295B301000D2AA9C /* SFProDisplay-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Light.ttf"; sourceTree = "<group>"; };
 		E0E1AC8A295B301000D2AA9C /* SFProDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Medium.ttf"; sourceTree = "<group>"; };
@@ -116,6 +139,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		E0A773A62959C3F8005FF95B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0D95B202980495400F77577 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -221,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				E0A773AB2959C3F8005FF95B /* Waterly App */,
+				E0D95B242980495400F77577 /* Waterly AppTests */,
 				E0A773AA2959C3F8005FF95B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -229,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				E0A773A92959C3F8005FF95B /* Waterly App.app */,
+				E0D95B232980495400F77577 /* Waterly AppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -282,6 +314,42 @@
 				E0BA84982959D8D300D30B1C /* Resources.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E0CF3EFF298195480001A9F2 /* NewUserPresentation */ = {
+			isa = PBXGroup;
+			children = (
+				E0CF3F00298196290001A9F2 /* NewUserPageViewController.swift */,
+				E0CF3F062981990A0001A9F2 /* FirstPage */,
+			);
+			path = NewUserPresentation;
+			sourceTree = "<group>";
+		};
+		E0CF3F062981990A0001A9F2 /* FirstPage */ = {
+			isa = PBXGroup;
+			children = (
+				E0CF3F02298198170001A9F2 /* FirstPageVC.swift */,
+				E0CF3F04298198FE0001A9F2 /* FirstPageVCMainView.swift */,
+				E0CF3F072981A1DF0001A9F2 /* FirstPagePresenter.swift */,
+			);
+			path = FirstPage;
+			sourceTree = "<group>";
+		};
+		E0D95B242980495400F77577 /* Waterly AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				E0D95B3129804C1E00F77577 /* AddWaterModule */,
+				E0D95B252980495400F77577 /* Waterly_AppTests.swift */,
+			);
+			path = "Waterly AppTests";
+			sourceTree = "<group>";
+		};
+		E0D95B3129804C1E00F77577 /* AddWaterModule */ = {
+			isa = PBXGroup;
+			children = (
+				E0D95B2F29804BB300F77577 /* AddWaterPresenterTest.swift */,
+			);
+			path = AddWaterModule;
 			sourceTree = "<group>";
 		};
 		E0DED6072979B91F00E9D656 /* ViewModels */ = {
@@ -385,6 +453,7 @@
 		E0FBFD69295A0B2200AFE420 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E0CF3EFF298195480001A9F2 /* NewUserPresentation */,
 				E0FBFD71295A100C00AFE420 /* Settings */,
 				E0FBFD70295A100500AFE420 /* Statistics */,
 				E0FBFD6F295A0FFF00AFE420 /* Main */,
@@ -451,6 +520,24 @@
 			productReference = E0A773A92959C3F8005FF95B /* Waterly App.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E0D95B222980495400F77577 /* Waterly AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0D95B2B2980495400F77577 /* Build configuration list for PBXNativeTarget "Waterly AppTests" */;
+			buildPhases = (
+				E0D95B1F2980495400F77577 /* Sources */,
+				E0D95B202980495400F77577 /* Frameworks */,
+				E0D95B212980495400F77577 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E0D95B282980495400F77577 /* PBXTargetDependency */,
+			);
+			name = "Waterly AppTests";
+			productName = "Waterly AppTests";
+			productReference = E0D95B232980495400F77577 /* Waterly AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -463,6 +550,10 @@
 				TargetAttributes = {
 					E0A773A82959C3F8005FF95B = {
 						CreatedOnToolsVersion = 14.1;
+					};
+					E0D95B222980495400F77577 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = E0A773A82959C3F8005FF95B;
 					};
 				};
 			};
@@ -480,6 +571,7 @@
 			projectRoot = "";
 			targets = (
 				E0A773A82959C3F8005FF95B /* Waterly App */,
+				E0D95B222980495400F77577 /* Waterly AppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -498,6 +590,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E0D95B212980495400F77577 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -507,12 +606,14 @@
 			files = (
 				E0A773B12959C3F8005FF95B /* MainViewController.swift in Sources */,
 				E0D1CA2F29784DC90054F859 /* BaseTextFieldViewModel.swift in Sources */,
+				E0CF3F01298196290001A9F2 /* NewUserPageViewController.swift in Sources */,
 				E0F5D63A295C7FAA008259D7 /* GoalView.swift in Sources */,
 				E00288D32975A55800B13CE4 /* AddWaterViewController.swift in Sources */,
 				E0A2663929718D9C0046C6FD /* BaseTextField.swift in Sources */,
 				E0EDEF13296DD14A00303A41 /* XAxisView.swift in Sources */,
 				E0FBFD68295A04E400AFE420 /* NavBarController.swift in Sources */,
 				E0F5D63C295C82BB008259D7 /* CustomButton.swift in Sources */,
+				E0CF3F05298198FE0001A9F2 /* FirstPageVCMainView.swift in Sources */,
 				E0BEAFC9297EE41200292EAD /* AddWaterMainView.swift in Sources */,
 				E01A905029705C970097DEB3 /* WeeklyStatisticsView.swift in Sources */,
 				E08E3FD92971CDF5007B5B3C /* ModalViewControllerDelegate.swift in Sources */,
@@ -535,9 +636,11 @@
 				E0A773AF2959C3F8005FF95B /* SceneDelegate.swift in Sources */,
 				E0E1AC96295B3AAF00D2AA9C /* BaseView.swift in Sources */,
 				E0F8BB6A297B0335004AE4E2 /* AddDayGoalMainView.swift in Sources */,
+				E0CF3F082981A1DF0001A9F2 /* FirstPagePresenter.swift in Sources */,
 				E0FBFD6D295A0F1900AFE420 /* SettingsViewController.swift in Sources */,
 				E076DF3E2976DF9D008C9729 /* CurrentDailyProgressView.swift in Sources */,
 				E0D1CA2C297841B40054F859 /* RecomendDailyWaterViewModel.swift in Sources */,
+				E0CF3F03298198170001A9F2 /* FirstPageVC.swift in Sources */,
 				E05D7886297C2A6200CCC5D0 /* Assambly.swift in Sources */,
 				E0F5D637295C7A34008259D7 /* ProgressView.swift in Sources */,
 				E05DE9D2295B62F200C81B15 /* DashboardInfoView.swift in Sources */,
@@ -552,7 +655,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E0D95B1F2980495400F77577 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0D95B3029804BB300F77577 /* AddWaterPresenterTest.swift in Sources */,
+				E0D95B262980495400F77577 /* Waterly_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E0D95B282980495400F77577 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E0A773A82959C3F8005FF95B /* Waterly App */;
+			targetProxy = E0D95B272980495400F77577 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E0A773B72959C3F8005FF95B /* LaunchScreen.storyboard */ = {
@@ -742,6 +862,44 @@
 			};
 			name = Release;
 		};
+		E0D95B292980495400F77577 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 34J2M9FNPA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.olegFedotov.Waterly-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Waterly App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Waterly App";
+			};
+			name = Debug;
+		};
+		E0D95B2A2980495400F77577 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 34J2M9FNPA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.olegFedotov.Waterly-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Waterly App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Waterly App";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -759,6 +917,15 @@
 			buildConfigurations = (
 				E0A773BE2959C3F8005FF95B /* Debug */,
 				E0A773BF2959C3F8005FF95B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0D95B2B2980495400F77577 /* Build configuration list for PBXNativeTarget "Waterly AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0D95B292980495400F77577 /* Debug */,
+				E0D95B2A2980495400F77577 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
