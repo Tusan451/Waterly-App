@@ -31,19 +31,19 @@ class FirstPagePresenter: FirstPagePresenterProtocol {
     weak var view: FirstPageViewProtocol?
     
     var iconName: String {
-        Resources.Strings.NewUserPageVC.icon
+        Resources.Strings.NewUserPageVC.FirstPage.icon
     }
     
     var mainTitle: String {
-        Resources.Strings.NewUserPageVC.mainTitle
+        Resources.Strings.NewUserPageVC.FirstPage.mainTitle
     }
     
     var secondaryTitle: String {
-        Resources.Strings.NewUserPageVC.secondaryTitle
+        Resources.Strings.NewUserPageVC.FirstPage.secondaryTitle
     }
     
     var authorTitle: String {
-        Resources.Strings.NewUserPageVC.author
+        Resources.Strings.NewUserPageVC.FirstPage.author
     }
     
     required init(view: FirstPageViewProtocol) {
