@@ -22,6 +22,12 @@ final class MainViewController: BaseController {
 
 extension MainViewController {
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        startPresentation()
+    }
+    
     override func addViews() {
         super.addViews()
                 
@@ -118,6 +124,11 @@ private extension MainViewController {
         title = "Привет, Олег!"
         navigationController?.tabBarItem.title = Resources.Strings.TabBar.main
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    func startPresentation() {
+        let pageViewController = ModuleBuilder.configureNewUserPageModule(0)
+        present(pageViewController, animated: true)
     }
 }
 
