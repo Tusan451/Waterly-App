@@ -49,6 +49,9 @@
 		E0E1AC92295B356500D2AA9C /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1AC91295B356500D2AA9C /* UIView + ext.swift */; };
 		E0E1AC96295B3AAF00D2AA9C /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1AC95295B3AAF00D2AA9C /* BaseView.swift */; };
 		E0E1AC98295B3B1900D2AA9C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1AC97295B3B1800D2AA9C /* HeaderView.swift */; };
+		E0EBF2152982EB8D00453A6B /* ScreenPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EBF2142982EB8D00453A6B /* ScreenPageViewController.swift */; };
+		E0EBF2172982EC0C00453A6B /* ScreenPageMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EBF2162982EC0C00453A6B /* ScreenPageMainView.swift */; };
+		E0EBF2192982FD3600453A6B /* ScreenPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EBF2182982FD3600453A6B /* ScreenPagePresenter.swift */; };
 		E0EDEF0C296DAD6B00303A41 /* YAxisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDEF0B296DAD6B00303A41 /* YAxisView.swift */; };
 		E0EDEF0F296DAEF400303A41 /* BaseChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDEF0E296DAEF400303A41 /* BaseChartView.swift */; };
 		E0EDEF11296DB69800303A41 /* WeeklySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDEF10296DB69800303A41 /* WeeklySummaryView.swift */; };
@@ -121,6 +124,9 @@
 		E0E1AC91295B356500D2AA9C /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
 		E0E1AC95295B3AAF00D2AA9C /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		E0E1AC97295B3B1800D2AA9C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		E0EBF2142982EB8D00453A6B /* ScreenPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPageViewController.swift; sourceTree = "<group>"; };
+		E0EBF2162982EC0C00453A6B /* ScreenPageMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPageMainView.swift; sourceTree = "<group>"; };
+		E0EBF2182982FD3600453A6B /* ScreenPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPagePresenter.swift; sourceTree = "<group>"; };
 		E0EDEF0B296DAD6B00303A41 /* YAxisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YAxisView.swift; sourceTree = "<group>"; };
 		E0EDEF0E296DAEF400303A41 /* BaseChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseChartView.swift; sourceTree = "<group>"; };
 		E0EDEF10296DB69800303A41 /* WeeklySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklySummaryView.swift; sourceTree = "<group>"; };
@@ -320,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				E0CF3F00298196290001A9F2 /* NewUserPageViewController.swift */,
+				E0EBF2132982EB6600453A6B /* ScreenPage */,
 				E0CF3F062981990A0001A9F2 /* FirstPage */,
 			);
 			path = NewUserPresentation;
@@ -402,6 +409,16 @@
 				E05DE9CF295B590200C81B15 /* BaseInfoView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E0EBF2132982EB6600453A6B /* ScreenPage */ = {
+			isa = PBXGroup;
+			children = (
+				E0EBF2142982EB8D00453A6B /* ScreenPageViewController.swift */,
+				E0EBF2162982EC0C00453A6B /* ScreenPageMainView.swift */,
+				E0EBF2182982FD3600453A6B /* ScreenPagePresenter.swift */,
+			);
+			path = ScreenPage;
 			sourceTree = "<group>";
 		};
 		E0EDEF07296DA34700303A41 /* WeeklySummary */ = {
@@ -611,7 +628,9 @@
 				E00288D32975A55800B13CE4 /* AddWaterViewController.swift in Sources */,
 				E0A2663929718D9C0046C6FD /* BaseTextField.swift in Sources */,
 				E0EDEF13296DD14A00303A41 /* XAxisView.swift in Sources */,
+				E0EBF2192982FD3600453A6B /* ScreenPagePresenter.swift in Sources */,
 				E0FBFD68295A04E400AFE420 /* NavBarController.swift in Sources */,
+				E0EBF2172982EC0C00453A6B /* ScreenPageMainView.swift in Sources */,
 				E0F5D63C295C82BB008259D7 /* CustomButton.swift in Sources */,
 				E0CF3F05298198FE0001A9F2 /* FirstPageVCMainView.swift in Sources */,
 				E0BEAFC9297EE41200292EAD /* AddWaterMainView.swift in Sources */,
@@ -637,6 +656,7 @@
 				E0E1AC96295B3AAF00D2AA9C /* BaseView.swift in Sources */,
 				E0F8BB6A297B0335004AE4E2 /* AddDayGoalMainView.swift in Sources */,
 				E0CF3F082981A1DF0001A9F2 /* FirstPagePresenter.swift in Sources */,
+				E0EBF2152982EB8D00453A6B /* ScreenPageViewController.swift in Sources */,
 				E0FBFD6D295A0F1900AFE420 /* SettingsViewController.swift in Sources */,
 				E076DF3E2976DF9D008C9729 /* CurrentDailyProgressView.swift in Sources */,
 				E0D1CA2C297841B40054F859 /* RecomendDailyWaterViewModel.swift in Sources */,
