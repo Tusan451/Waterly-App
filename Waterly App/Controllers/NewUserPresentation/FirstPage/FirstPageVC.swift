@@ -16,6 +16,8 @@ final class FirstPageVC: BaseController {
 extension FirstPageVC {
     
     override func loadView() {
+        super.loadView()
+        
         view = mainView
     }
     
