@@ -8,35 +8,20 @@
 import UIKit
 
 final class NewUserPageViewController: UIPageViewController {
-    
-//    var arrayOfViewControllers: [UIViewController] = {
-//        var arrayVc = [UIViewController]()
-//        let firstPageVc = ModuleBuilder.configureNewUserFirstPageModule()
-//        arrayVc.append(firstPageVc)
-//        return arrayVc
-//    }()
-    
+
     var arrayOfViewControllers: [UIViewController]!
     
-//    init(transitionStyle style: UIPageViewController.TransitionStyle, navigationOrientation: UIPageViewController.NavigationOrientation, options: [UIPageViewController.OptionsKey : Any]? = nil, arrayOfVc: [UIViewController]) {
-//        super.init(transitionStyle: .scroll, navigationOrientation: navigationOrientation)
-//        self.arrayOfViewControllers = arrayOfVc
-//        setViewControllers([arrayOfViewControllers[0]], direction: .forward, animated: true)
-//    }
+    let targetPageIndex: Int!
     
-    init(array: [UIViewController]) {
+    init(array: [UIViewController], targetPageIndex: Int) {
+        self.targetPageIndex = targetPageIndex
         super.init(transitionStyle: .scroll, navigationOrientation: .horizontal)
         self.view.backgroundColor = Resources.Colors.Back.newUserPresentationBack
         self.arrayOfViewControllers = array
-        setViewControllers([arrayOfViewControllers[0]], direction: .forward, animated: true)
+        self.dataSource = self
+        self.delegate = self
+        setViewControllers([arrayOfViewControllers[targetPageIndex]], direction: .forward, animated: true)
     }
-    
-//    override init(transitionStyle style: UIPageViewController.TransitionStyle, navigationOrientation: UIPageViewController.NavigationOrientation, options: [UIPageViewController.OptionsKey : Any]? = nil) {
-//        super.init(transitionStyle: .scroll, navigationOrientation: navigationOrientation)
-//
-//        self.view.backgroundColor = Resources.Colors.Back.newUserPresentationBack
-//        setViewControllers([arrayOfViewControllers[0]], direction: .forward, animated: true)
-//    }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -76,6 +61,6 @@ extension NewUserPageViewController: UIPageViewControllerDelegate, UIPageViewCon
     }
     
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        return 0
+        return targetPageIndex
     }
 }
