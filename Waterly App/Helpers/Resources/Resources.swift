@@ -61,12 +61,39 @@ enum Resources {
     enum Strings {
         
         enum NewUserPageVC {
-            static let icon = "logoPresentation"
             
-            static let mainTitle = "Если есть магия на этой планете, она содержится"
-            static let secondaryTitle = "в воде."
+            enum FirstPage {
+                static let icon = "logoPresentation"
+                
+                static let mainTitle = "Если есть магия на этой планете, она содержится"
+                static let secondaryTitle = "в воде."
+                
+                static let author = "Лорен Эйсли"
+            }
             
-            static let author = "Лорен Эйсли"
+            enum SecondPage {
+                static let image = "firstScreen"
+                static let title = "Не забывай пить воду!"
+                static let message = "Приложение рассчитает твою норму и поможет следить за водным балансом"
+            }
+            
+            enum ThirdPage {
+                static let image = "secondScreen"
+                static let title = "Выполняй цели"
+                static let message = "Ты можешь следовать рекомендуемой норме или устанавливать свою цель на день"
+            }
+            
+            enum FourthPage {
+                static let image = "thirdScreen"
+                static let title = "Добавляй то, что выпил"
+                static let message = "Не забывай добавлять выпитую воду, чтобы следить за прогрессом"
+            }
+            
+            enum FivePage {
+                static let image = "fourthScreen"
+                static let title = "Темная тема"
+                static let message = "Выбирай интерфейс под себя с новой темной темой"
+            }
         }
         
         enum TabBar {
