@@ -21,9 +21,14 @@
 		E05DE9D2295B62F200C81B15 /* DashboardInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05DE9D1295B62F200C81B15 /* DashboardInfoView.swift */; };
 		E076DF3E2976DF9D008C9729 /* CurrentDailyProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E076DF3D2976DF9D008C9729 /* CurrentDailyProgressView.swift */; };
 		E07FAD14297987F80035284E /* AddDayGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07FAD13297987F80035284E /* AddDayGoalViewModel.swift */; };
+		E08B51D62983E5B3009453D9 /* FinalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08B51D52983E5B3009453D9 /* FinalPageViewController.swift */; };
+		E08B51D82983E5F7009453D9 /* FinalPageMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08B51D72983E5F7009453D9 /* FinalPageMainView.swift */; };
+		E08B51DA2983E67E009453D9 /* NameTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08B51D92983E67E009453D9 /* NameTextFieldView.swift */; };
+		E08B51DC2983EB02009453D9 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08B51DB2983EB02009453D9 /* RadioButton.swift */; };
 		E08E3FD42971ADAE007B5B3C /* DailyGoalTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08E3FD32971ADAE007B5B3C /* DailyGoalTextFieldView.swift */; };
 		E08E3FD62971B0EF007B5B3C /* ReccomendDailyWaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08E3FD52971B0EF007B5B3C /* ReccomendDailyWaterView.swift */; };
 		E08E3FD92971CDF5007B5B3C /* ModalViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08E3FD82971CDF5007B5B3C /* ModalViewControllerDelegate.swift */; };
+		E097194B29840F40001BB930 /* SelectGenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E097194A29840F40001BB930 /* SelectGenderView.swift */; };
 		E0A2663929718D9C0046C6FD /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A2663829718D9C0046C6FD /* BaseTextField.swift */; };
 		E0A773AD2959C3F8005FF95B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A773AC2959C3F8005FF95B /* AppDelegate.swift */; };
 		E0A773AF2959C3F8005FF95B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A773AE2959C3F8005FF95B /* SceneDelegate.swift */; };
@@ -33,6 +38,9 @@
 		E0BA84992959D8D300D30B1C /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BA84982959D8D300D30B1C /* Resources.swift */; };
 		E0BEAFC9297EE41200292EAD /* AddWaterMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BEAFC8297EE41200292EAD /* AddWaterMainView.swift */; };
 		E0BEAFCB297EEF0E00292EAD /* AddWaterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BEAFCA297EEF0E00292EAD /* AddWaterPresenter.swift */; };
+		E0CAAB8329841BAB00602FE6 /* BirthDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAAB8229841BAB00602FE6 /* BirthDateView.swift */; };
+		E0CAAB852984278200602FE6 /* HeightWeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAAB842984278200602FE6 /* HeightWeightView.swift */; };
+		E0CAAB8729842C8300602FE6 /* PhysicalActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAAB8629842C8300602FE6 /* PhysicalActivityView.swift */; };
 		E0CF3F01298196290001A9F2 /* NewUserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3F00298196290001A9F2 /* NewUserPageViewController.swift */; };
 		E0CF3F03298198170001A9F2 /* FirstPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3F02298198170001A9F2 /* FirstPageVC.swift */; };
 		E0CF3F05298198FE0001A9F2 /* FirstPageVCMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3F04298198FE0001A9F2 /* FirstPageVCMainView.swift */; };
@@ -93,9 +101,14 @@
 		E05DE9D1295B62F200C81B15 /* DashboardInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInfoView.swift; sourceTree = "<group>"; };
 		E076DF3D2976DF9D008C9729 /* CurrentDailyProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDailyProgressView.swift; sourceTree = "<group>"; };
 		E07FAD13297987F80035284E /* AddDayGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDayGoalViewModel.swift; sourceTree = "<group>"; };
+		E08B51D52983E5B3009453D9 /* FinalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalPageViewController.swift; sourceTree = "<group>"; };
+		E08B51D72983E5F7009453D9 /* FinalPageMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalPageMainView.swift; sourceTree = "<group>"; };
+		E08B51D92983E67E009453D9 /* NameTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldView.swift; sourceTree = "<group>"; };
+		E08B51DB2983EB02009453D9 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		E08E3FD32971ADAE007B5B3C /* DailyGoalTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoalTextFieldView.swift; sourceTree = "<group>"; };
 		E08E3FD52971B0EF007B5B3C /* ReccomendDailyWaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReccomendDailyWaterView.swift; sourceTree = "<group>"; };
 		E08E3FD82971CDF5007B5B3C /* ModalViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewControllerDelegate.swift; sourceTree = "<group>"; };
+		E097194A29840F40001BB930 /* SelectGenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenderView.swift; sourceTree = "<group>"; };
 		E0A2663829718D9C0046C6FD /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
 		E0A773A92959C3F8005FF95B /* Waterly App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Waterly App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0A773AC2959C3F8005FF95B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +120,9 @@
 		E0BA84982959D8D300D30B1C /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		E0BEAFC8297EE41200292EAD /* AddWaterMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWaterMainView.swift; sourceTree = "<group>"; };
 		E0BEAFCA297EEF0E00292EAD /* AddWaterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWaterPresenter.swift; sourceTree = "<group>"; };
+		E0CAAB8229841BAB00602FE6 /* BirthDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDateView.swift; sourceTree = "<group>"; };
+		E0CAAB842984278200602FE6 /* HeightWeightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightWeightView.swift; sourceTree = "<group>"; };
+		E0CAAB8629842C8300602FE6 /* PhysicalActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicalActivityView.swift; sourceTree = "<group>"; };
 		E0CF3F00298196290001A9F2 /* NewUserPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserPageViewController.swift; sourceTree = "<group>"; };
 		E0CF3F02298198170001A9F2 /* FirstPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageVC.swift; sourceTree = "<group>"; };
 		E0CF3F04298198FE0001A9F2 /* FirstPageVCMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageVCMainView.swift; sourceTree = "<group>"; };
@@ -210,6 +226,14 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		E04FE9282987F3B1007F8726 /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				E0FBFD6C295A0F1900AFE420 /* SettingsViewController.swift */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
 		E053B723295F32A000F71F20 /* History */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +259,20 @@
 				E0DED6072979B91F00E9D656 /* ViewModels */,
 			);
 			path = AddDayGoalController;
+			sourceTree = "<group>";
+		};
+		E08B51D42983E586009453D9 /* FinalPage */ = {
+			isa = PBXGroup;
+			children = (
+				E08B51D52983E5B3009453D9 /* FinalPageViewController.swift */,
+				E08B51D72983E5F7009453D9 /* FinalPageMainView.swift */,
+				E08B51D92983E67E009453D9 /* NameTextFieldView.swift */,
+				E097194A29840F40001BB930 /* SelectGenderView.swift */,
+				E0CAAB8229841BAB00602FE6 /* BirthDateView.swift */,
+				E0CAAB842984278200602FE6 /* HeightWeightView.swift */,
+				E0CAAB8629842C8300602FE6 /* PhysicalActivityView.swift */,
+			);
+			path = FinalPage;
 			sourceTree = "<group>";
 		};
 		E08E397129800F520054E82D /* Presenter */ = {
@@ -326,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				E0CF3F00298196290001A9F2 /* NewUserPageViewController.swift */,
+				E08B51D42983E586009453D9 /* FinalPage */,
 				E0EBF2132982EB6600453A6B /* ScreenPage */,
 				E0CF3F062981990A0001A9F2 /* FirstPage */,
 			);
@@ -487,6 +526,7 @@
 				E0FBFD67295A04E400AFE420 /* NavBarController.swift */,
 				E0FBFD6A295A0B5900AFE420 /* BaseController.swift */,
 				E0F5D63B295C82BB008259D7 /* CustomButton.swift */,
+				E08B51DB2983EB02009453D9 /* RadioButton.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -512,7 +552,7 @@
 		E0FBFD71295A100C00AFE420 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				E0FBFD6C295A0F1900AFE420 /* SettingsViewController.swift */,
+				E04FE9282987F3B1007F8726 /* MainModule */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -631,27 +671,35 @@
 				E0EBF2192982FD3600453A6B /* ScreenPagePresenter.swift in Sources */,
 				E0FBFD68295A04E400AFE420 /* NavBarController.swift in Sources */,
 				E0EBF2172982EC0C00453A6B /* ScreenPageMainView.swift in Sources */,
+				E08B51D62983E5B3009453D9 /* FinalPageViewController.swift in Sources */,
 				E0F5D63C295C82BB008259D7 /* CustomButton.swift in Sources */,
 				E0CF3F05298198FE0001A9F2 /* FirstPageVCMainView.swift in Sources */,
 				E0BEAFC9297EE41200292EAD /* AddWaterMainView.swift in Sources */,
+				E0CAAB8729842C8300602FE6 /* PhysicalActivityView.swift in Sources */,
 				E01A905029705C970097DEB3 /* WeeklyStatisticsView.swift in Sources */,
 				E08E3FD92971CDF5007B5B3C /* ModalViewControllerDelegate.swift in Sources */,
 				E0F3A42E2977118D00E598F8 /* UIStackView + ext.swift in Sources */,
+				E0CAAB852984278200602FE6 /* HeightWeightView.swift in Sources */,
 				E0FBFD6B295A0B5900AFE420 /* BaseController.swift in Sources */,
 				E0EDEF0C296DAD6B00303A41 /* YAxisView.swift in Sources */,
 				E03021CB2959CF5C00126AE7 /* TabBarController.swift in Sources */,
 				E0E1AC92295B356500D2AA9C /* UIView + ext.swift in Sources */,
 				E053B725295F32E200F71F20 /* WaterHistoryView.swift in Sources */,
+				E08B51DC2983EB02009453D9 /* RadioButton.swift in Sources */,
 				E0A773AD2959C3F8005FF95B /* AppDelegate.swift in Sources */,
 				E0BA84992959D8D300D30B1C /* Resources.swift in Sources */,
+				E097194B29840F40001BB930 /* SelectGenderView.swift in Sources */,
 				E01A9053297063AD0097DEB3 /* WaterData.swift in Sources */,
 				E08E3FD42971ADAE007B5B3C /* DailyGoalTextFieldView.swift in Sources */,
+				E0CAAB8329841BAB00602FE6 /* BirthDateView.swift in Sources */,
 				E0E1AC98295B3B1900D2AA9C /* HeaderView.swift in Sources */,
+				E08B51DA2983E67E009453D9 /* NameTextFieldView.swift in Sources */,
 				E0BEAFCB297EEF0E00292EAD /* AddWaterPresenter.swift in Sources */,
 				E0EDEF0F296DAEF400303A41 /* BaseChartView.swift in Sources */,
 				E00288D92975BE1F00B13CE4 /* DailyPercentView.swift in Sources */,
 				E05DE9D0295B590200C81B15 /* BaseInfoView.swift in Sources */,
 				E0FBFD73295A102700AFE420 /* StatisticsViewController.swift in Sources */,
+				E08B51D82983E5F7009453D9 /* FinalPageMainView.swift in Sources */,
 				E0A773AF2959C3F8005FF95B /* SceneDelegate.swift in Sources */,
 				E0E1AC96295B3AAF00D2AA9C /* BaseView.swift in Sources */,
 				E0F8BB6A297B0335004AE4E2 /* AddDayGoalMainView.swift in Sources */,
