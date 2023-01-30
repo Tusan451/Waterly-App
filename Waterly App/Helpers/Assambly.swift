@@ -28,31 +28,34 @@ class ModuleBuilder {
     class func configureNewUserPageModule(_ targetPageIndex: Int) -> UIPageViewController {
         var arrayOfVc = [UIViewController]()
         let firstPageVc = ModuleBuilder.configureNewUserFirstPageModule()
-        let secondPageVc = ModuleBuilder.configureScreenPageModule(
+        let secondPageVc = ModuleBuilder.configureNewUserScreenPageModule(
             title: Resources.Strings.NewUserPageVC.SecondPage.title,
             message: Resources.Strings.NewUserPageVC.SecondPage.message,
             imageName: Resources.Strings.NewUserPageVC.SecondPage.image
         )
-        let thirdPageVc = ModuleBuilder.configureScreenPageModule(
+        let thirdPageVc = ModuleBuilder.configureNewUserScreenPageModule(
             title: Resources.Strings.NewUserPageVC.ThirdPage.title,
             message: Resources.Strings.NewUserPageVC.ThirdPage.message,
             imageName: Resources.Strings.NewUserPageVC.ThirdPage.image
         )
-        let fourthPageVc = ModuleBuilder.configureScreenPageModule(
+        let fourthPageVc = ModuleBuilder.configureNewUserScreenPageModule(
             title: Resources.Strings.NewUserPageVC.FourthPage.title,
             message: Resources.Strings.NewUserPageVC.FourthPage.message,
             imageName: Resources.Strings.NewUserPageVC.FourthPage.image
         )
-        let fivePageVc = ModuleBuilder.configureScreenPageModule(
+        let fivePageVc = ModuleBuilder.configureNewUserScreenPageModule(
             title: Resources.Strings.NewUserPageVC.FivePage.title,
             message: Resources.Strings.NewUserPageVC.FivePage.message,
             imageName: Resources.Strings.NewUserPageVC.FivePage.image
         )
+//        let finalPageVc = ModuleBuilder.configureNewUserFinalPageModule()
+        
         arrayOfVc.append(firstPageVc)
         arrayOfVc.append(secondPageVc)
         arrayOfVc.append(thirdPageVc)
         arrayOfVc.append(fourthPageVc)
         arrayOfVc.append(fivePageVc)
+//        arrayOfVc.append(finalPageVc)
         
         let pageViewController = NewUserPageViewController(array: arrayOfVc, targetPageIndex: targetPageIndex)
         return pageViewController
@@ -65,13 +68,18 @@ class ModuleBuilder {
         return viewController
     }
     
-    class func configureScreenPageModule(title: String, message: String, imageName: String) -> UIViewController {
+    class func configureNewUserScreenPageModule(title: String, message: String, imageName: String) -> UIViewController {
         let viewController = ScreenPageViewController()
         let presenter = ScreenPagePresenter(view: viewController,
                                             title: title,
                                             imageName: imageName,
                                             message: message)
         viewController.presenter = presenter
+        return viewController
+    }
+    
+    class func configureNewUserFinalPageModule() -> UIViewController {
+        let viewController = FinalPageViewController()
         return viewController
     }
 }
