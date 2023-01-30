@@ -9,10 +9,14 @@ import UIKit
 
 class SettingsViewController: BaseController {
     
-    
+    var mainView = SettingsMainView()
 }
 
 extension SettingsViewController {
+    
+    override func loadView() {
+        view = mainView
+    }
     
     override func addViews() {
         super.addViews()
@@ -22,6 +26,23 @@ extension SettingsViewController {
         super.configureViews()
         
         navigationBarConfigure()
+    }
+}
+
+extension SettingsViewController: SettingsMainViewDelegate {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        mainView.delegate = self
+    }
+    
+    func userSettingsMenuItemTapped() {
+        print("userSettingsMenuItemTapped")
+    }
+    
+    func appSettingsMenuItemTapped() {
+        print("appSettingsMenuItemTapped")
     }
 }
 
