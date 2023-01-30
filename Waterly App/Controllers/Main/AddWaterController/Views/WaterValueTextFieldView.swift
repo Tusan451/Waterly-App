@@ -19,6 +19,7 @@ final class WaterValueTextFieldView: BaseView {
     let textField = BaseTextField(
         width: UIScreen.main.bounds.width - 40,
         height: 50,
+        backgroundColor: Resources.Colors.Back.backSecondary,
         keyboardType: .numberPad
     )
     
@@ -54,9 +55,5 @@ extension WaterValueTextFieldView {
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
-    }
-    
-    override func configureViews() {
-        super.configureViews()
     }
 }
