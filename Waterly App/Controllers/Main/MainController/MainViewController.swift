@@ -24,7 +24,7 @@ extension MainViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         startPresentation()
     }
     
@@ -90,8 +90,7 @@ extension MainViewController {
         counterView.editButtonAddAction(selector: #selector(editButtonTapped), target: self)
         counterView.addWaterButtonAction(selector: #selector(addWaterButtonTapped), target: self)
         
-        scrollView.contentSize = CGSizeMake(self.view.frame.size.width,
-                                            self.view.frame.size.height + weeklySummaryView.frame.size.height)
+        setHightForScrollView()
         
         waterHistoryView.configure(items: recentlyAddedWater)
         
@@ -129,6 +128,25 @@ private extension MainViewController {
     func startPresentation() {
         let pageViewController = ModuleBuilder.configureNewUserPageModule(0)
         present(pageViewController, animated: true)
+    }
+    
+    func setHightForScrollView() {
+        
+        let screenHeight = UIScreen.main.bounds.height
+        var scrollViewHeight: CGFloat = 0
+        
+        switch screenHeight {
+        case 667:
+            scrollViewHeight = screenHeight + 130
+        case 812:
+            scrollViewHeight = screenHeight + 40
+        case 844:
+            scrollViewHeight = screenHeight + 30
+        default:
+            scrollViewHeight = screenHeight + 30
+        }
+        
+        scrollView.contentSize = CGSizeMake(self.view.frame.size.width, scrollViewHeight)
     }
 }
 
