@@ -176,6 +176,8 @@ enum Resources {
         
         enum SettingsModule {
             static let mainControllerTitle = "Настройки"
+            static let mainControllerUserSettingsTitle = "Настройки профиля"
+            static let mainControllerAppSettingsTitle = "Настройки приложения"
         }
         
         enum Alert {
@@ -222,6 +224,12 @@ enum Resources {
         enum RadioButton {
             static let normal = UIImage(named: "radioButtonNormal")
             static let selected = UIImage(named: "radioButtonSelected")
+        }
+        
+        enum SettingsModule {
+            static let user = UIImage(named: "user")
+            static let menuArrow = UIImage(named: "menuArrow")
+            static let settings = UIImage(named: "settings")
         }
     }
     
