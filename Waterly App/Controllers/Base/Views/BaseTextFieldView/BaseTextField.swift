@@ -24,14 +24,12 @@ class BaseTextField: BaseView {
     private let textField: UITextField = {
         let textField = UITextField()
         textField.textColor = Resources.Colors.Text.textMain
-        textField.backgroundColor = Resources.Colors.Back.backSecondary
         return textField
     }()
     
     private let textFieldView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 8
-        view.backgroundColor = Resources.Colors.Back.backSecondary
         return view
     }()
     
@@ -43,10 +41,12 @@ class BaseTextField: BaseView {
         return label
     }()
     
-    init(width: CGFloat, height: CGFloat, keyboardType: UIKeyboardType) {
+    init(width: CGFloat, height: CGFloat, backgroundColor: UIColor?, keyboardType: UIKeyboardType) {
         
         textFieldView.frame.size.width = width
         textFieldView.frame.size.height = height
+        textFieldView.backgroundColor = backgroundColor
+        textField.backgroundColor = backgroundColor
         
         textField.keyboardType = keyboardType
         
