@@ -30,6 +30,7 @@ final class DailyGoalTextFieldView: BaseView {
     private let textField = BaseTextField(
         width: UIScreen.main.bounds.width - 40,
         height: 50,
+        backgroundColor: Resources.Colors.Back.backSecondary,
         keyboardType: .numberPad
     )
     
