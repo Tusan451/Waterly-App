@@ -74,6 +74,8 @@
 		E0FBFD6B295A0B5900AFE420 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FBFD6A295A0B5900AFE420 /* BaseController.swift */; };
 		E0FBFD6D295A0F1900AFE420 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FBFD6C295A0F1900AFE420 /* SettingsViewController.swift */; };
 		E0FBFD73295A102700AFE420 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FBFD72295A102700AFE420 /* StatisticsViewController.swift */; };
+		E0FDF12C298819E000FF2C07 /* SettingsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDF12B298819E000FF2C07 /* SettingsMainView.swift */; };
+		E0FDF12E298820B500FF2C07 /* MenuItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDF12D298820B500FF2C07 /* MenuItemButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +159,8 @@
 		E0FBFD6A295A0B5900AFE420 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		E0FBFD6C295A0F1900AFE420 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E0FBFD72295A102700AFE420 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		E0FDF12B298819E000FF2C07 /* SettingsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMainView.swift; sourceTree = "<group>"; };
+		E0FDF12D298820B500FF2C07 /* MenuItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				E0FBFD6C295A0F1900AFE420 /* SettingsViewController.swift */,
+				E0FDF12B298819E000FF2C07 /* SettingsMainView.swift */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -527,6 +532,7 @@
 				E0FBFD6A295A0B5900AFE420 /* BaseController.swift */,
 				E0F5D63B295C82BB008259D7 /* CustomButton.swift */,
 				E08B51DB2983EB02009453D9 /* RadioButton.swift */,
+				E0FDF12D298820B500FF2C07 /* MenuItemButton.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -699,6 +705,7 @@
 				E00288D92975BE1F00B13CE4 /* DailyPercentView.swift in Sources */,
 				E05DE9D0295B590200C81B15 /* BaseInfoView.swift in Sources */,
 				E0FBFD73295A102700AFE420 /* StatisticsViewController.swift in Sources */,
+				E0FDF12C298819E000FF2C07 /* SettingsMainView.swift in Sources */,
 				E08B51D82983E5F7009453D9 /* FinalPageMainView.swift in Sources */,
 				E0A773AF2959C3F8005FF95B /* SceneDelegate.swift in Sources */,
 				E0E1AC96295B3AAF00D2AA9C /* BaseView.swift in Sources */,
@@ -714,6 +721,7 @@
 				E05DE9D2295B62F200C81B15 /* DashboardInfoView.swift in Sources */,
 				E0F5D634295C78DA008259D7 /* CounterView.swift in Sources */,
 				E0EDEF11296DB69800303A41 /* WeeklySummaryView.swift in Sources */,
+				E0FDF12E298820B500FF2C07 /* MenuItemButton.swift in Sources */,
 				E07FAD14297987F80035284E /* AddDayGoalViewModel.swift in Sources */,
 				E053B727295F42A400F71F20 /* AddedWaterView.swift in Sources */,
 				E05DD2BB2971708E00BBE2E3 /* AddDayGoalViewController.swift in Sources */,
