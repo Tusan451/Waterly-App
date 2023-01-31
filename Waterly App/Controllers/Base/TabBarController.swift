@@ -101,7 +101,10 @@ final class TabBarController: UITabBarController {
     private func configureTabs() {
         let statisticsController = StatisticsViewController()
         let mainController = MainViewController()
-        let settingsController = SettingsViewController()
+//        let settingsController = SettingsViewController()
+        
+        let assamblySettingsModule: SettingsAssamblyInputProtocol = SettingsModuleAssambly()
+        let settingsController = assamblySettingsModule.configure()
         
         let settingsNavController = NavBarController(rootViewController: settingsController)
         let statisticNavController = NavBarController(rootViewController: statisticsController)
