@@ -28,11 +28,8 @@ final class MenuItemButton: UIButton {
         return view
     }()
     
-    init(title: String, image: UIImage?) {
+    override init(frame: CGRect) {
         super.init(frame: .zero)
-        self.titleImageView.image = image?.withRenderingMode(.alwaysTemplate)
-        self.label.text = title
-        
         addViews()
         layoutViews()
         configure()
@@ -40,6 +37,15 @@ final class MenuItemButton: UIButton {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setButtonTitle(_ title: String) {
+        self.label.text = title
+    }
+    
+    func setButtonIcon(_ imageName: String) {
+        guard let image = UIImage(named: imageName) else { return }
+        self.titleImageView.image = image.withRenderingMode(.alwaysTemplate)
     }
 }
 
