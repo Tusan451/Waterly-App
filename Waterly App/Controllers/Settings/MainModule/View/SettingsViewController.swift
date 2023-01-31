@@ -10,6 +10,8 @@ import UIKit
 class SettingsViewController: BaseController {
     
     var mainView = SettingsMainView()
+    
+    var presenter: SettingsViewOutputProtocol!
 }
 
 extension SettingsViewController {
@@ -25,9 +27,17 @@ extension SettingsViewController {
     override func configureViews() {
         super.configureViews()
         
-        navigationBarConfigure()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        presenter.provideUserData()
+        presenter.provideAppMenuItemData()
+        presenter.provideUserMenuItemData()
+        presenter.provideTabBarTitle()
+        presenter.provideNavigationBarTitle()
     }
 }
+
+// MARK: - SettingsMainViewDelegate
 
 extension SettingsViewController: SettingsMainViewDelegate {
     
@@ -38,19 +48,49 @@ extension SettingsViewController: SettingsMainViewDelegate {
     }
     
     func userSettingsMenuItemTapped() {
-        print("userSettingsMenuItemTapped")
+        presenter.didTapUserSettingsMenuItem()
     }
     
     func appSettingsMenuItemTapped() {
-        print("appSettingsMenuItemTapped")
+        presenter.didTapAppSettingsMenuItem()
     }
 }
 
-private extension SettingsViewController {
+// MARK: - SettingsViewInputProtocol
+
+extension SettingsViewController: SettingsViewInputProtocol {
+
+    func setUserName(_ userName: String) {
+        mainView.userNameLabel.text = userName
+    }
     
-    func navigationBarConfigure() {
-        title = Resources.Strings.SettingsModule.mainControllerTitle
-        navigationController?.tabBarItem.title = Resources.Strings.TabBar.settings
-        navigationController?.navigationBar.prefersLargeTitles = true
+    func setUserInfo(_ userInfo: String) {
+        mainView.userInfoLabel.text = userInfo
+    }
+    
+    func setUserSettingsMenuItem(title: String, imageName: String) {
+        mainView.userSettingsMenuItemButton.setButtonTitle(title)
+        mainView.userSettingsMenuItemButton.setButtonIcon(imageName)
+    }
+    
+    func setAppSettingsMenuItem(title: String, imageName: String) {
+        mainView.appSettingsMenuItemButton.setButtonTitle(title)
+        mainView.appSettingsMenuItemButton.setButtonIcon(imageName)
+    }
+    
+    func setNavigationBarTitle(navBarTitle: String) {
+        title = navBarTitle
+    }
+    
+    func setTabBarTitle(title: String) {
+        navigationController?.tabBarItem.title = title
+    }
+    
+    func performUserSettingsMenuItemAction(with message: String) {
+        print(message)
+    }
+    
+    func performAppSettingsMenuItemAction(with message: String) {
+        print(message)
     }
 }
