@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+protocol SettingsViewOutputProtocol {
+    init(view: SettingsViewInputProtocol)
+    func provideUserData()
+    func provideUserMenuItemData()
+    func provideAppMenuItemData()
+    func provideNavigationBarTitle()
+    func provideTabBarTitle()
+    func didTapUserSettingsMenuItem()
+    func didTapAppSettingsMenuItem()
+}
