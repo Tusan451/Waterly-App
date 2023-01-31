@@ -227,9 +227,9 @@ enum Resources {
         }
         
         enum SettingsModule {
-            static let user = UIImage(named: "user")
             static let menuArrow = UIImage(named: "menuArrow")
-            static let settings = UIImage(named: "settings")
+            static let user = "user"
+            static let settings = "settings"
         }
     }
     
