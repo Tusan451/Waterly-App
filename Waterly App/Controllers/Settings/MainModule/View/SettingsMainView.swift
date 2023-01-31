@@ -31,13 +31,9 @@ final class SettingsMainView: BaseView {
         return label
     }()
     
-    let userSettingsMenuItemButton = MenuItemButton(
-        title: Resources.Strings.SettingsModule.mainControllerUserSettingsTitle,
-        image: Resources.Images.SettingsModule.user)
+    var userSettingsMenuItemButton = MenuItemButton()
     
-    let appSettingsMenuItemButton = MenuItemButton(
-        title: Resources.Strings.SettingsModule.mainControllerAppSettingsTitle,
-        image: Resources.Images.SettingsModule.settings)
+    var appSettingsMenuItemButton = MenuItemButton()
     
     private let menuItemsStackView: UIStackView = {
         let view = UIStackView()
@@ -87,8 +83,8 @@ extension SettingsMainView {
     override func configureViews() {
         super.configureViews()
         
-        userNameLabel.text = "Олег Федотов"
-        userInfoLabel.text = "31 год, 74 кг, 178 см"
+//        userNameLabel.text = "Олег Федотов"
+//        userInfoLabel.text = "31 год, 74 кг, 178 см"
         
         userSettingsMenuItemButton.addTarget(self,
                                              action: #selector(userSettingsMenuItemButtonAction),
