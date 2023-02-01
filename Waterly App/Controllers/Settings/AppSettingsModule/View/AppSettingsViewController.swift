@@ -21,7 +21,7 @@ extension AppSettingsViewController {
     override func configureViews() {
         super.configureViews()
         
-        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationItem.largeTitleDisplayMode = .never
         
         title = "Приложение"
     }
