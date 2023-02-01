@@ -176,8 +176,16 @@ enum Resources {
         
         enum SettingsModule {
             static let mainControllerTitle = "Настройки"
-            static let mainControllerUserSettingsTitle = "Настройки профиля"
-            static let mainControllerAppSettingsTitle = "Настройки приложения"
+            static let mainControllerUserSettingsTitle = "Профиль"
+            static let mainControllerAppSettingsTitle = "Приложение"
+            
+            enum AppSettingsModule {
+                static let notificationsMainTitle = "Уведомления"
+                static let notificationsSecondaryTitle = "Мы будем отправлять вам напоминания, чтобы вы не забывали пить воду"
+                static let lightThemeMainTitle = "Светлая тема"
+                static let darkThemeMainTitle = "Темная тема"
+                static let systemThemeMainTitle = "Системная тема"
+            }
         }
         
         enum Alert {
