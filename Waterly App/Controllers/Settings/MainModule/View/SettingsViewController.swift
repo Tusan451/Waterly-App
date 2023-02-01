@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingsViewController: BaseController {
+final class SettingsViewController: BaseController {
     
     var mainView = SettingsMainView()
     
@@ -20,14 +20,11 @@ extension SettingsViewController {
         view = mainView
     }
     
-    override func addViews() {
-        super.addViews()
-    }
-    
     override func configureViews() {
         super.configureViews()
         
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = Resources.Colors.Separator.separatorAccent
         
         presenter.provideUserData()
         presenter.provideAppMenuItemData()
@@ -53,6 +50,8 @@ extension SettingsViewController: SettingsMainViewDelegate {
     
     func appSettingsMenuItemTapped() {
         presenter.didTapAppSettingsMenuItem()
+        let appSettingsVc = AppSettingsViewController()
+        navigationController?.pushViewController(appSettingsVc, animated: true)
     }
 }
 
