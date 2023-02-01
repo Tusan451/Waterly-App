@@ -83,9 +83,6 @@ extension SettingsMainView {
     override func configureViews() {
         super.configureViews()
         
-//        userNameLabel.text = "Олег Федотов"
-//        userInfoLabel.text = "31 год, 74 кг, 178 см"
-        
         userSettingsMenuItemButton.addTarget(self,
                                              action: #selector(userSettingsMenuItemButtonAction),
                                              for: .touchUpInside)
