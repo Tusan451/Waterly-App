@@ -78,6 +78,9 @@
 		E0FBFD6B295A0B5900AFE420 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FBFD6A295A0B5900AFE420 /* BaseController.swift */; };
 		E0FBFD6D295A0F1900AFE420 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FBFD6C295A0F1900AFE420 /* SettingsViewController.swift */; };
 		E0FBFD73295A102700AFE420 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FBFD72295A102700AFE420 /* StatisticsViewController.swift */; };
+		E0FC93AC2989768B00698EB0 /* AppSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FC93AB2989768B00698EB0 /* AppSettingsViewController.swift */; };
+		E0FC93AE298978B500698EB0 /* AppSettingsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FC93AD298978B500698EB0 /* AppSettingsMainView.swift */; };
+		E0FC93B02989797000698EB0 /* AppSettingsMenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FC93AF2989797000698EB0 /* AppSettingsMenuItemView.swift */; };
 		E0FDF12C298819E000FF2C07 /* SettingsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDF12B298819E000FF2C07 /* SettingsMainView.swift */; };
 		E0FDF12E298820B500FF2C07 /* MenuItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDF12D298820B500FF2C07 /* MenuItemButton.swift */; };
 		E0FDF1312988367E00FF2C07 /* SettingsViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDF1302988367E00FF2C07 /* SettingsViewInputProtocol.swift */; };
@@ -170,6 +173,9 @@
 		E0FBFD6A295A0B5900AFE420 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		E0FBFD6C295A0F1900AFE420 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E0FBFD72295A102700AFE420 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		E0FC93AB2989768B00698EB0 /* AppSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsViewController.swift; sourceTree = "<group>"; };
+		E0FC93AD298978B500698EB0 /* AppSettingsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsMainView.swift; sourceTree = "<group>"; };
+		E0FC93AF2989797000698EB0 /* AppSettingsMenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsMenuItemView.swift; sourceTree = "<group>"; };
 		E0FDF12B298819E000FF2C07 /* SettingsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMainView.swift; sourceTree = "<group>"; };
 		E0FDF12D298820B500FF2C07 /* MenuItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemButton.swift; sourceTree = "<group>"; };
 		E0FDF1302988367E00FF2C07 /* SettingsViewInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewInputProtocol.swift; sourceTree = "<group>"; };
@@ -592,9 +598,28 @@
 		E0FBFD71295A100C00AFE420 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				E0FC93A92989763000698EB0 /* AppSettingsModule */,
 				E04FE9282987F3B1007F8726 /* MainModule */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		E0FC93A92989763000698EB0 /* AppSettingsModule */ = {
+			isa = PBXGroup;
+			children = (
+				E0FC93AA2989766500698EB0 /* View */,
+			);
+			path = AppSettingsModule;
+			sourceTree = "<group>";
+		};
+		E0FC93AA2989766500698EB0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E0FC93AB2989768B00698EB0 /* AppSettingsViewController.swift */,
+				E0FC93AD298978B500698EB0 /* AppSettingsMainView.swift */,
+				E0FC93AF2989797000698EB0 /* AppSettingsMenuItemView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		E0FDF12F2988363E00FF2C07 /* View */ = {
@@ -733,7 +758,9 @@
 				E0EBF2172982EC0C00453A6B /* ScreenPageMainView.swift in Sources */,
 				E08B51D62983E5B3009453D9 /* FinalPageViewController.swift in Sources */,
 				E0F5D63C295C82BB008259D7 /* CustomButton.swift in Sources */,
+				E0FC93AC2989768B00698EB0 /* AppSettingsViewController.swift in Sources */,
 				E0CF3F05298198FE0001A9F2 /* FirstPageVCMainView.swift in Sources */,
+				E0FC93B02989797000698EB0 /* AppSettingsMenuItemView.swift in Sources */,
 				E0BEAFC9297EE41200292EAD /* AddWaterMainView.swift in Sources */,
 				E0CAAB8729842C8300602FE6 /* PhysicalActivityView.swift in Sources */,
 				E01A905029705C970097DEB3 /* WeeklyStatisticsView.swift in Sources */,
@@ -759,6 +786,7 @@
 				E0EDEF0F296DAEF400303A41 /* BaseChartView.swift in Sources */,
 				E00288D92975BE1F00B13CE4 /* DailyPercentView.swift in Sources */,
 				E05DE9D0295B590200C81B15 /* BaseInfoView.swift in Sources */,
+				E0FC93AE298978B500698EB0 /* AppSettingsMainView.swift in Sources */,
 				E0FBFD73295A102700AFE420 /* StatisticsViewController.swift in Sources */,
 				E0FDF12C298819E000FF2C07 /* SettingsMainView.swift in Sources */,
 				E08B51D82983E5F7009453D9 /* FinalPageMainView.swift in Sources */,
