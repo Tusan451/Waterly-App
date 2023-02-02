@@ -35,7 +35,7 @@ final class AppSettingsMenuItemView: BaseView {
         self.mainTitleLabel.text = title
     }
     
-    func setSecondaryTitle(_ title: String) {
+    func setSecondaryTitle(_ title: String?) {
         self.secondaryTitleLabel.text = title
     }
 }
