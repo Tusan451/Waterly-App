@@ -17,9 +17,11 @@ class SettingsModuleAssambly: SettingsAssamblyInputProtocol {
         let viewController = SettingsViewController()
         let presenter = SettingsPresenter(view: viewController)
         let interactor = SettingsInteractor(presenter: presenter)
+        let router = SettingsRouter(viewController)
         
         viewController.presenter = presenter
         presenter.interactor = interactor
+        presenter.router = router
         
         return viewController
     }
