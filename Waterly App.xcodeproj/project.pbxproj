@@ -12,6 +12,15 @@
 		E00288D92975BE1F00B13CE4 /* DailyPercentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00288D82975BE1F00B13CE4 /* DailyPercentView.swift */; };
 		E01A905029705C970097DEB3 /* WeeklyStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A904F29705C970097DEB3 /* WeeklyStatisticsView.swift */; };
 		E01A9053297063AD0097DEB3 /* WaterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01A9052297063AD0097DEB3 /* WaterData.swift */; };
+		E01CF372298ABB95001F1445 /* AppSettingsViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CF371298ABB95001F1445 /* AppSettingsViewInputProtocol.swift */; };
+		E01CF374298ABBA7001F1445 /* AppSettingsViewOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CF373298ABBA7001F1445 /* AppSettingsViewOutputProtocol.swift */; };
+		E01CF377298ABD8D001F1445 /* AppSettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CF376298ABD8D001F1445 /* AppSettingsPresenter.swift */; };
+		E01CF37A298AC0CA001F1445 /* AppSettingsInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CF379298AC0CA001F1445 /* AppSettingsInteractorInputProtocol.swift */; };
+		E01CF37C298AC0E6001F1445 /* AppSettingsInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CF37B298AC0E6001F1445 /* AppSettingsInteractorOutputProtocol.swift */; };
+		E01CF37E298AC5DB001F1445 /* AppSettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CF37D298AC5DB001F1445 /* AppSettingsInteractor.swift */; };
+		E01CF381298AC700001F1445 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CF380298AC700001F1445 /* DataManager.swift */; };
+		E01CF384298AD1CD001F1445 /* AppSettingsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CF383298AD1CD001F1445 /* AppSettingsAssembly.swift */; };
+		E01CF387298AD346001F1445 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CF386298AD346001F1445 /* SettingsRouter.swift */; };
 		E03021CB2959CF5C00126AE7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03021CA2959CF5C00126AE7 /* TabBarController.swift */; };
 		E03E56A3298911F5004E0E3B /* SettingsInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03E56A2298911F5004E0E3B /* SettingsInteractorInputProtocol.swift */; };
 		E03E56A529891218004E0E3B /* SettingsInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03E56A429891218004E0E3B /* SettingsInteractorOutputProtocol.swift */; };
@@ -104,6 +113,15 @@
 		E00288D82975BE1F00B13CE4 /* DailyPercentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPercentView.swift; sourceTree = "<group>"; };
 		E01A904F29705C970097DEB3 /* WeeklyStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyStatisticsView.swift; sourceTree = "<group>"; };
 		E01A9052297063AD0097DEB3 /* WaterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterData.swift; sourceTree = "<group>"; };
+		E01CF371298ABB95001F1445 /* AppSettingsViewInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsViewInputProtocol.swift; sourceTree = "<group>"; };
+		E01CF373298ABBA7001F1445 /* AppSettingsViewOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsViewOutputProtocol.swift; sourceTree = "<group>"; };
+		E01CF376298ABD8D001F1445 /* AppSettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsPresenter.swift; sourceTree = "<group>"; };
+		E01CF379298AC0CA001F1445 /* AppSettingsInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsInteractorInputProtocol.swift; sourceTree = "<group>"; };
+		E01CF37B298AC0E6001F1445 /* AppSettingsInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsInteractorOutputProtocol.swift; sourceTree = "<group>"; };
+		E01CF37D298AC5DB001F1445 /* AppSettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsInteractor.swift; sourceTree = "<group>"; };
+		E01CF380298AC700001F1445 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		E01CF383298AD1CD001F1445 /* AppSettingsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsAssembly.swift; sourceTree = "<group>"; };
+		E01CF386298AD346001F1445 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		E03021CA2959CF5C00126AE7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E03E56A2298911F5004E0E3B /* SettingsInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractorInputProtocol.swift; sourceTree = "<group>"; };
 		E03E56A429891218004E0E3B /* SettingsInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractorOutputProtocol.swift; sourceTree = "<group>"; };
@@ -250,6 +268,48 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		E01CF375298ABD70001F1445 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E01CF376298ABD8D001F1445 /* AppSettingsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E01CF378298AC0A9001F1445 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E01CF379298AC0CA001F1445 /* AppSettingsInteractorInputProtocol.swift */,
+				E01CF37B298AC0E6001F1445 /* AppSettingsInteractorOutputProtocol.swift */,
+				E01CF37D298AC5DB001F1445 /* AppSettingsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E01CF37F298AC6E7001F1445 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E01CF380298AC700001F1445 /* DataManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E01CF382298AD19B001F1445 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				E01CF383298AD1CD001F1445 /* AppSettingsAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		E01CF385298AD332001F1445 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E01CF386298AD346001F1445 /* SettingsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		E03E56A1298911B8004E0E3B /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +331,7 @@
 		E04FE9282987F3B1007F8726 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
+				E01CF385298AD332001F1445 /* Router */,
 				E03E56A629891383004E0E3B /* Assambly */,
 				E03E56A1298911B8004E0E3B /* Interactor */,
 				E0FDF12F2988363E00FF2C07 /* View */,
@@ -357,6 +418,7 @@
 		E0A773AB2959C3F8005FF95B /* Waterly App */ = {
 			isa = PBXGroup;
 			children = (
+				E01CF37F298AC6E7001F1445 /* Services */,
 				E01A9051297063870097DEB3 /* Data */,
 				E0BA84972959D89B00D30B1C /* Helpers */,
 				E0A773C02959C62B005FF95B /* Application */,
@@ -607,6 +669,9 @@
 		E0FC93A92989763000698EB0 /* AppSettingsModule */ = {
 			isa = PBXGroup;
 			children = (
+				E01CF382298AD19B001F1445 /* Assembly */,
+				E01CF378298AC0A9001F1445 /* Interactor */,
+				E01CF375298ABD70001F1445 /* Presenter */,
 				E0FC93AA2989766500698EB0 /* View */,
 			);
 			path = AppSettingsModule;
@@ -618,6 +683,8 @@
 				E0FC93AB2989768B00698EB0 /* AppSettingsViewController.swift */,
 				E0FC93AD298978B500698EB0 /* AppSettingsMainView.swift */,
 				E0FC93AF2989797000698EB0 /* AppSettingsMenuItemView.swift */,
+				E01CF371298ABB95001F1445 /* AppSettingsViewInputProtocol.swift */,
+				E01CF373298ABBA7001F1445 /* AppSettingsViewOutputProtocol.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -762,6 +829,7 @@
 				E0CF3F05298198FE0001A9F2 /* FirstPageVCMainView.swift in Sources */,
 				E0FC93B02989797000698EB0 /* AppSettingsMenuItemView.swift in Sources */,
 				E0BEAFC9297EE41200292EAD /* AddWaterMainView.swift in Sources */,
+				E01CF37A298AC0CA001F1445 /* AppSettingsInteractorInputProtocol.swift in Sources */,
 				E0CAAB8729842C8300602FE6 /* PhysicalActivityView.swift in Sources */,
 				E01A905029705C970097DEB3 /* WeeklyStatisticsView.swift in Sources */,
 				E08E3FD92971CDF5007B5B3C /* ModalViewControllerDelegate.swift in Sources */,
@@ -773,6 +841,8 @@
 				E0E1AC92295B356500D2AA9C /* UIView + ext.swift in Sources */,
 				E053B725295F32E200F71F20 /* WaterHistoryView.swift in Sources */,
 				E08B51DC2983EB02009453D9 /* RadioButton.swift in Sources */,
+				E01CF372298ABB95001F1445 /* AppSettingsViewInputProtocol.swift in Sources */,
+				E01CF384298AD1CD001F1445 /* AppSettingsAssembly.swift in Sources */,
 				E0A773AD2959C3F8005FF95B /* AppDelegate.swift in Sources */,
 				E0BA84992959D8D300D30B1C /* Resources.swift in Sources */,
 				E097194B29840F40001BB930 /* SelectGenderView.swift in Sources */,
@@ -780,7 +850,9 @@
 				E08E3FD42971ADAE007B5B3C /* DailyGoalTextFieldView.swift in Sources */,
 				E0FDF1332988369400FF2C07 /* SettingsViewOutputProtocol.swift in Sources */,
 				E0CAAB8329841BAB00602FE6 /* BirthDateView.swift in Sources */,
+				E01CF381298AC700001F1445 /* DataManager.swift in Sources */,
 				E0E1AC98295B3B1900D2AA9C /* HeaderView.swift in Sources */,
+				E01CF37E298AC5DB001F1445 /* AppSettingsInteractor.swift in Sources */,
 				E08B51DA2983E67E009453D9 /* NameTextFieldView.swift in Sources */,
 				E0BEAFCB297EEF0E00292EAD /* AddWaterPresenter.swift in Sources */,
 				E0EDEF0F296DAEF400303A41 /* BaseChartView.swift in Sources */,
@@ -789,6 +861,7 @@
 				E0FC93AE298978B500698EB0 /* AppSettingsMainView.swift in Sources */,
 				E0FBFD73295A102700AFE420 /* StatisticsViewController.swift in Sources */,
 				E0FDF12C298819E000FF2C07 /* SettingsMainView.swift in Sources */,
+				E01CF387298AD346001F1445 /* SettingsRouter.swift in Sources */,
 				E08B51D82983E5F7009453D9 /* FinalPageMainView.swift in Sources */,
 				E03E56A529891218004E0E3B /* SettingsInteractorOutputProtocol.swift in Sources */,
 				E0A773AF2959C3F8005FF95B /* SceneDelegate.swift in Sources */,
@@ -799,11 +872,14 @@
 				E0EBF2152982EB8D00453A6B /* ScreenPageViewController.swift in Sources */,
 				E0FBFD6D295A0F1900AFE420 /* SettingsViewController.swift in Sources */,
 				E076DF3E2976DF9D008C9729 /* CurrentDailyProgressView.swift in Sources */,
+				E01CF37C298AC0E6001F1445 /* AppSettingsInteractorOutputProtocol.swift in Sources */,
 				E0D1CA2C297841B40054F859 /* RecomendDailyWaterViewModel.swift in Sources */,
+				E01CF374298ABBA7001F1445 /* AppSettingsViewOutputProtocol.swift in Sources */,
 				E0CF3F03298198170001A9F2 /* FirstPageVC.swift in Sources */,
 				E05D7886297C2A6200CCC5D0 /* Assambly.swift in Sources */,
 				E0FDF1312988367E00FF2C07 /* SettingsViewInputProtocol.swift in Sources */,
 				E0F5D637295C7A34008259D7 /* ProgressView.swift in Sources */,
+				E01CF377298ABD8D001F1445 /* AppSettingsPresenter.swift in Sources */,
 				E05DE9D2295B62F200C81B15 /* DashboardInfoView.swift in Sources */,
 				E0F5D634295C78DA008259D7 /* CounterView.swift in Sources */,
 				E0EDEF11296DB69800303A41 /* WeeklySummaryView.swift in Sources */,
