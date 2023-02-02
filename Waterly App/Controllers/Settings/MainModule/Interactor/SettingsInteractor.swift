@@ -54,9 +54,4 @@ class SettingsInteractor: SettingsInteractorInputProtocol {
         let message = "userSettingsMenuItemTapped"
         presenter.receiveUserSettingsMenuItemAction(with: message)
     }
-    
-    func performAppSettingsMenuItemAction() {
-        let message = "appSettingsMenuItemTapped"
-        presenter.receiveAppSettingsMenuItemAction(with: message)
-    }
 }
