@@ -15,5 +15,4 @@ protocol SettingsInteractorInputProtocol {
     func provideNavigationBarTitle()
     func provideTabBarTitle()
     func performUserSettingsMenuItemAction()
-    func performAppSettingsMenuItemAction()
 }
