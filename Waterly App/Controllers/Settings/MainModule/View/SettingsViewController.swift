@@ -50,8 +50,6 @@ extension SettingsViewController: SettingsMainViewDelegate {
     
     func appSettingsMenuItemTapped() {
         presenter.didTapAppSettingsMenuItem()
-        let appSettingsVc = AppSettingsViewController()
-        navigationController?.pushViewController(appSettingsVc, animated: true)
     }
 }
 
