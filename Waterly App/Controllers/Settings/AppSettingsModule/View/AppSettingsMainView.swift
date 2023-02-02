@@ -58,28 +58,25 @@ extension AppSettingsMainView {
     override func configureViews() {
         super.configureViews()
         
-        notificationsMenuItemView.setMainTitle(
-            Resources.Strings.SettingsModule.AppSettingsModule.notificationsMainTitle
-        )
-        notificationsMenuItemView.setSecondaryTitle(
-            Resources.Strings.SettingsModule.AppSettingsModule.notificationsSecondaryTitle
-        )
-        
-        lightThemeMenuItemView.setMainTitle(
-            Resources.Strings.SettingsModule.AppSettingsModule.lightThemeMainTitle
-        )
-        
-        darkThemeMenuItemView.setMainTitle(
-            Resources.Strings.SettingsModule.AppSettingsModule.darkThemeMainTitle
-        )
-        
-        systemThemeMenuItemView.setMainTitle(
-            Resources.Strings.SettingsModule.AppSettingsModule.systemThemeMainTitle
-        )
-        
-        notificationsMenuItemView.menuItemSwitch.setOn(true, animated: true)
-        lightThemeMenuItemView.menuItemSwitch.setOn(true, animated: true)
-        
+//        notificationsMenuItemView.setMainTitle(
+//            Resources.Strings.SettingsModule.AppSettingsModule.notificationsMainTitle
+//        )
+//        notificationsMenuItemView.setSecondaryTitle(
+//            Resources.Strings.SettingsModule.AppSettingsModule.notificationsSecondaryTitle
+//        )
+//        
+//        lightThemeMenuItemView.setMainTitle(
+//            Resources.Strings.SettingsModule.AppSettingsModule.lightThemeMainTitle
+//        )
+//        
+//        darkThemeMenuItemView.setMainTitle(
+//            Resources.Strings.SettingsModule.AppSettingsModule.darkThemeMainTitle
+//        )
+//        
+//        systemThemeMenuItemView.setMainTitle(
+//            Resources.Strings.SettingsModule.AppSettingsModule.systemThemeMainTitle
+//        )
+                
         notificationsMenuItemView.menuItemSwitch.addTarget(
             self,
             action: #selector(notificationsMenuItemAction),
