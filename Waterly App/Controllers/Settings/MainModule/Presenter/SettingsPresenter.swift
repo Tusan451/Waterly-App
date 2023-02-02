@@ -25,6 +25,8 @@ class SettingsPresenter: SettingsViewOutputProtocol {
     
     var interactor: SettingsInteractorInputProtocol!
     
+    var router: SettingsRouterInputProtocol!
+    
     required init(view: SettingsViewInputProtocol) {
         self.view = view
     }
@@ -54,7 +56,7 @@ class SettingsPresenter: SettingsViewOutputProtocol {
     }
     
     func didTapAppSettingsMenuItem() {
-        interactor.performAppSettingsMenuItemAction()
+        router.goToAppSettingsModule()
     }
 }
 
