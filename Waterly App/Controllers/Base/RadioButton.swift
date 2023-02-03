@@ -17,7 +17,7 @@ final class RadioButton: UIButton {
     private var buttonState: RadioButtonState = .normal
     private let iconView = UIImageView()
     
-    init(_ state: RadioButtonState, color: UIColor) {
+    init(_ state: RadioButtonState, color: UIColor?) {
         self.buttonState = state
         self.iconView.tintColor = color
         super.init(frame: .zero)
