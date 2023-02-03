@@ -128,10 +128,10 @@ extension BaseTextField: UITextFieldDelegate {
         
         viewModel.changeText(newValue: text)
         
-        if text.isEmpty {
-            viewModel.changePlaceholder(
-                newValue: Resources.Strings.MainController.AddDayGoalController.placeholder
-            )
-        }
+//        if text.isEmpty {
+//            viewModel.changePlaceholder(
+//                newValue: Resources.Strings.MainController.AddDayGoalController.placeholder
+//            )
+//        }
     }
 }
