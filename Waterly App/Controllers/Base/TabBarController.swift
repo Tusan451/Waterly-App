@@ -61,7 +61,7 @@ final class TabBarController: UITabBarController {
     
     private func setupTabBarUI() {
         tabBar.backgroundColor = Resources.Colors.Back.tabBarBackColor
-        tabBar.layer.cornerRadius = 30
+//        tabBar.layer.cornerRadius = 30
         tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         tabBar.tintColor = Resources.Colors.Accent.accentMain
         
@@ -85,7 +85,7 @@ final class TabBarController: UITabBarController {
         customTabBarView.frame = tabBar.frame
         
         customTabBarView.backgroundColor = Resources.Colors.Back.tabBarBackColor
-        customTabBarView.layer.cornerRadius = 30
+//        customTabBarView.layer.cornerRadius = 30
         customTabBarView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
         customTabBarView.layer.masksToBounds = false
