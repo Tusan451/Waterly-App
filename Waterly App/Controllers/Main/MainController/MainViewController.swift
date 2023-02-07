@@ -72,6 +72,7 @@ extension MainViewController {
             weeklySummaryView.topAnchor.constraint(equalTo: waterHistoryView.bottomAnchor, constant: 32),
             weeklySummaryView.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
             weeklySummaryView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
+            weeklySummaryView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -32)
         ])
     }
     
@@ -89,9 +90,7 @@ extension MainViewController {
         
         counterView.editButtonAddAction(selector: #selector(editButtonTapped), target: self)
         counterView.addWaterButtonAction(selector: #selector(addWaterButtonTapped), target: self)
-        
-        setHightForScrollView()
-        
+                
         waterHistoryView.configure(items: recentlyAddedWater)
         
         weeklySummaryView.configure(items: [.init(value: 2000, title: "Пн"),
@@ -128,25 +127,6 @@ private extension MainViewController {
     func startPresentation() {
         let pageViewController = ModuleBuilder.configureNewUserPageModule(0)
         present(pageViewController, animated: true)
-    }
-    
-    func setHightForScrollView() {
-        
-        let screenHeight = UIScreen.main.bounds.height
-        var scrollViewHeight: CGFloat = 0
-        
-        switch screenHeight {
-        case 667:
-            scrollViewHeight = screenHeight + 130
-        case 812:
-            scrollViewHeight = screenHeight + 40
-        case 844:
-            scrollViewHeight = screenHeight + 30
-        default:
-            scrollViewHeight = screenHeight + 30
-        }
-        
-        scrollView.contentSize = CGSizeMake(self.view.frame.size.width, scrollViewHeight)
     }
 }
 
