@@ -11,16 +11,14 @@ final class PhysicalActivityView: BaseView {
     
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = Resources.Fonts.sfProRegular(size: 20)
-        label.text = Resources.Strings.NewUserPageVC.FinalPage.physicalActivityTitle
-        label.textColor = .white
+        label.font = Resources.Fonts.sfProRegular(size: 14)
+        label.textColor = Resources.Colors.Text.textSecondary
         return label
     }()
     
     let physicalActivityLabel: UILabel = {
         let label = UILabel()
         label.font = Resources.Fonts.sfProMedium(size: 16)
-        label.text = Resources.Strings.NewUserPageVC.FinalPage.mediumPhysicalActivity
         label.textColor = Resources.Colors.Other.yellow
         return label
     }()
@@ -31,7 +29,7 @@ final class PhysicalActivityView: BaseView {
         slider.maximumValue = 5
         slider.value = 2.5
         slider.minimumTrackTintColor = Resources.Colors.Other.yellow
-        slider.maximumTrackTintColor = Resources.Colors.Back.textFieldBack
+        slider.maximumTrackTintColor = Resources.Colors.Back.backSecondary
         return slider
     }()
 }
