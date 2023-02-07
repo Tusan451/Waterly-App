@@ -6,3 +6,29 @@
 //
 
 import Foundation
+
+typealias UserGender = UserDataModel.UserGender
+typealias UserActivity = UserDataModel.UserActivity
+
+struct UserDataModel {
+    let id: UUID
+    let name: String
+    let gender: UserGender
+    let age: String
+    let height: String
+    let weight: String
+    let activity: UserActivity
+}
+
+extension UserDataModel {
+    enum UserGender {
+        case male
+        case female
+    }
+    
+    enum UserActivity {
+        case low
+        case medium
+        case high
+    }
+}
