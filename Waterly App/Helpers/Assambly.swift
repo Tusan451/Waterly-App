@@ -48,14 +48,12 @@ class ModuleBuilder {
             message: Resources.Strings.NewUserPageVC.FivePage.message,
             imageName: Resources.Strings.NewUserPageVC.FivePage.image
         )
-//        let finalPageVc = ModuleBuilder.configureNewUserFinalPageModule()
         
         arrayOfVc.append(firstPageVc)
         arrayOfVc.append(secondPageVc)
         arrayOfVc.append(thirdPageVc)
         arrayOfVc.append(fourthPageVc)
         arrayOfVc.append(fivePageVc)
-//        arrayOfVc.append(finalPageVc)
         
         let pageViewController = NewUserPageViewController(array: arrayOfVc, targetPageIndex: targetPageIndex)
         return pageViewController
@@ -75,11 +73,6 @@ class ModuleBuilder {
                                             imageName: imageName,
                                             message: message)
         viewController.presenter = presenter
-        return viewController
-    }
-    
-    class func configureNewUserFinalPageModule() -> UIViewController {
-        let viewController = FinalPageViewController()
         return viewController
     }
 }
