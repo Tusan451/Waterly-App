@@ -9,6 +9,8 @@ import UIKit
 
 final class AddWaterViewController: BaseController {
     
+    let appDelegate = UIApplication.shared.delegate as? AppDelegate
+    
     weak var delegate: ModalViewControllerDelegate?
     
     var mainView = AddWaterMainView()
@@ -58,6 +60,8 @@ extension AddWaterViewController: AddWaterMainViewDelegate {
     
     func dismissButtonDidPressed() {
         dismiss(animated: true)
+        
+        appDelegate?.scheduleNotification(notificationType: "Вы не добавили воду!")
     }
     
     func saveButtonDidPressed() {
