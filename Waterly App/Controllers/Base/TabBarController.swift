@@ -21,7 +21,7 @@ final class TabBarController: UITabBarController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         configureTabs()
-        switchTo(tab: .main)
+        switchTo(tab: .settings)
     }
     
     required init?(coder: NSCoder) {
