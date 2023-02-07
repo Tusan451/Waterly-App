@@ -5,24 +5,33 @@
 //  Created by Olegio on 01.02.2023.
 //
 
-import Foundation
+import UIKit
 
 protocol SettingsRouterInputProtocol {
-    init(_ viewController: SettingsViewController)
+    init(_ viewController: UIViewController)
     func goToAppSettingsModule()
+    func goToUserSettingsModule()
 }
 
 class SettingsRouter: SettingsRouterInputProtocol {
     
-    unowned let viewController: SettingsViewController
+    unowned let viewController: UIViewController
     
-    required init(_ viewController: SettingsViewController) {
+    required init(_ viewController: UIViewController) {
         self.viewController = viewController
     }
     
     func goToAppSettingsModule() {
         let appSettingsAssemblyModule: AppSettingsAssemblyInputProtocol = AppSettingsModuleAssambly()
         let appSettingsVc = appSettingsAssemblyModule.configure()
+        let viewController = self.viewController as! SettingsViewController
         viewController.navigationController?.pushViewController(appSettingsVc, animated: true)
+    }
+    
+    func goToUserSettingsModule() {
+        let userSettingsAssemblyModule: UserSettingsAssemblyInputProtocol = UserSettingsAssembly()
+        let userSettingsVc = userSettingsAssemblyModule.configure()
+        let viewController = self.viewController as! SettingsViewController
+        viewController.navigationController?.pushViewController(userSettingsVc, animated: true)
     }
 }
