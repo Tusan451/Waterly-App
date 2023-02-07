@@ -52,7 +52,7 @@ class SettingsPresenter: SettingsViewOutputProtocol {
     }
     
     func didTapUserSettingsMenuItem() {
-        interactor.performUserSettingsMenuItemAction()
+        router.goToUserSettingsModule()
     }
     
     func didTapAppSettingsMenuItem() {
