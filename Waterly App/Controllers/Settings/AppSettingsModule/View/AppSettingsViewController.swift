@@ -17,6 +17,7 @@ final class AppSettingsViewController: BaseController {
 extension AppSettingsViewController {
     
     override func loadView() {
+        super.loadView()
         view = mainView
     }
     
