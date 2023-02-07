@@ -94,33 +94,6 @@ enum Resources {
                 static let title = "Темная тема"
                 static let message = "Выбирай интерфейс под себя с новой темной темой"
             }
-            
-//            enum FinalPage {
-//                static let title = "Определение нормы воды"
-//                
-//                static let nameTextFieldTitle = "Ваше имя"
-//                static let genderTitle = "Ваш пол"
-//                static let male = "Я мужчина"
-//                static let female = "Я женщина"
-//                
-//                static let birthDateTextFieldTitle = "Дата рождения"
-//                static let dayPlaceholder = "дд"
-//                static let monthPlaceholder = "мм"
-//                static let yearPlaceholder = "гггг"
-//                
-//                static let heightTitle = "Ваш рост"
-//                static let weightTitle = "Ваш вес"
-//                static let heightPlaceholder = "см"
-//                static let weightPlaceholder = "кг"
-//                
-//                static let physicalActivityTitle = "Уровень физической активности"
-//                static let lowPhysicalActivity = "Низкий"
-//                static let mediumPhysicalActivity = "Средний"
-//                static let highPhysicalActivity = "Высокий"
-//                
-//                static let saveButtonTitle = "Сохранить"
-//                static let disclaimer = "Мы анализируем полученные данные и считаем рекомендуемую дневную норму воды. Вводите данные как можно точнее."
-//            }
         }
         
         enum TabBar {
