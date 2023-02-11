@@ -21,7 +21,7 @@ final class TabBarController: UITabBarController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         configureTabs()
-        switchTo(tab: .settings)
+        switchTo(tab: .main)
     }
     
     required init?(coder: NSCoder) {
@@ -61,7 +61,6 @@ final class TabBarController: UITabBarController {
     
     private func setupTabBarUI() {
         tabBar.backgroundColor = Resources.Colors.Back.tabBarBackColor
-//        tabBar.layer.cornerRadius = 30
         tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         tabBar.tintColor = Resources.Colors.Accent.accentMain
         
@@ -85,7 +84,6 @@ final class TabBarController: UITabBarController {
         customTabBarView.frame = tabBar.frame
         
         customTabBarView.backgroundColor = Resources.Colors.Back.tabBarBackColor
-//        customTabBarView.layer.cornerRadius = 30
         customTabBarView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
         customTabBarView.layer.masksToBounds = false
@@ -100,7 +98,10 @@ final class TabBarController: UITabBarController {
     
     private func configureTabs() {
         let statisticsController = StatisticsViewController()
-        let mainController = MainViewController()
+//        let mainController = MainViewController()
+        
+        let mainModuleConfigurator: MainConfiguratorInputProtocol = MainConfigurator()
+        let mainController = mainModuleConfigurator.configure()
         
         let assamblySettingsModule: SettingsAssamblyInputProtocol = SettingsModuleAssambly()
         let settingsController = assamblySettingsModule.configure()
