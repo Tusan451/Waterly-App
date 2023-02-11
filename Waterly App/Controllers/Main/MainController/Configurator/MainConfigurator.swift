@@ -5,4 +5,24 @@
 //  Created by Olegio on 09.02.2023.
 //
 
-import Foundation
+import UIKit
+
+protocol MainConfiguratorInputProtocol {
+    func configure() -> UIViewController
+}
+
+class MainConfigurator: MainConfiguratorInputProtocol {
+    
+    func configure() -> UIViewController {
+        let viewController = MainViewController()
+        let presenter = MainPresenter(viewController)
+        let interactor = MainInteractor(presenter)
+//        let router = SettingsRouter(viewController)
+        
+        viewController.presenter = presenter
+        presenter.interactor = interactor
+//        presenter.router = router
+        
+        return viewController
+    }
+}
