@@ -9,8 +9,20 @@ import UIKit
 
 final class WeeklyStatisticsView: BaseView {
     
-    private let hitGoalsView = BaseInfoView(with: Resources.Strings.MainController.hitGoals)
-    private let averageDrinkedView = BaseInfoView(with: Resources.Strings.MainController.averageDrinked)
+//    private let hitGoalsView = BaseInfoView(with: Resources.Strings.MainController.hitGoals)
+//    private let averageDrinkedView = BaseInfoView(with: Resources.Strings.MainController.averageDrinked)
+    
+    private let hitGoalsView: BaseInfoView = {
+        let view = BaseInfoView()
+        view.titleLabel.text = Resources.Strings.MainController.hitGoals
+        return view
+    }()
+
+    private let averageDrinkedView: BaseInfoView = {
+        let view = BaseInfoView()
+        view.titleLabel.text = Resources.Strings.MainController.averageDrinked
+        return view
+    }()
     
     private let stackView: UIStackView = {
         let view = UIStackView()
