@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+protocol MainViewInputProtocol: AnyObject {
+    func setNavigationBarTitle(navBarTitle: String)
+    func setMainTitle(title: String)
+    func setDailyWaterView(title: String, image: String, value: String)
+    func setActivityView(title: String, image: String, activityType: ActivityType)
+}
