@@ -8,121 +8,69 @@
 import UIKit
 
 final class MainViewController: BaseController {
+    
+    var mainView = MainView()
+    var presenter: MainViewOutputProtocol!
+}
 
-    private let scrollView = UIScrollView()
+extension MainViewController: MainViewDelegate {
     
-    private let headerView = HeaderView()
-    private let dashboardInfoView = DashboardInfoView()
-    private let counterView = CounterView()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        mainView.delegate = self
+    }
     
-    private let waterHistoryView = WaterHistoryView()
+    func editButtonDidPressed() {
+        print("editButtonDidPressed")
+    }
     
-    private let weeklySummaryView = WeeklySummaryView()
+    func addWaterButtonDidPressed() {
+        print("addWaterButtonDidPressed")
+    }
 }
 
 extension MainViewController {
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//
-//        startPresentation()
-//    }
-    
-    override func addViews() {
-        super.addViews()
-                
-        scrollView.addView(headerView)
-        scrollView.addView(dashboardInfoView)
-        scrollView.addView(counterView)
-        scrollView.addView(waterHistoryView)
-        scrollView.addView(weeklySummaryView)
-        
-        view.addView(scrollView)
+    override func loadView() {
+        super.loadView()
+        view = mainView
     }
     
-    override func layoutViews() {
-        super.layoutViews()
-        
-        NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 8),
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
-            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            headerView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 8),
-            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            headerView.bottomAnchor.constraint(equalTo: dashboardInfoView.topAnchor, constant: -20),
-            
-            dashboardInfoView.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
-            dashboardInfoView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 20),
-            dashboardInfoView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
-            dashboardInfoView.bottomAnchor.constraint(equalTo: counterView.topAnchor, constant: -32),
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 
-            counterView.topAnchor.constraint(equalTo: dashboardInfoView.bottomAnchor, constant: 32),
-            counterView.leadingAnchor.constraint(equalTo: dashboardInfoView.leadingAnchor),
-            counterView.trailingAnchor.constraint(equalTo: dashboardInfoView.trailingAnchor),
-            counterView.bottomAnchor.constraint(equalTo: waterHistoryView.topAnchor, constant: -32),
-            
-            waterHistoryView.topAnchor.constraint(equalTo: counterView.bottomAnchor, constant: 32),
-            waterHistoryView.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
-            waterHistoryView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
-            waterHistoryView.bottomAnchor.constraint(equalTo: weeklySummaryView.topAnchor, constant: -32),
-            
-            weeklySummaryView.topAnchor.constraint(equalTo: waterHistoryView.bottomAnchor, constant: 32),
-            weeklySummaryView.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
-            weeklySummaryView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
-            weeklySummaryView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -32)
-        ])
+//        startPresentation()
+        presenter.provideDashboardInfoValues()
     }
     
     override func configureViews() {
         super.configureViews()
         
-        navigationBarConfigure()
-        
-        headerView.configureMotivationLabel(with: "Не забывай пить воду.")
-        
-        dashboardInfoView.configureWith(recommendDailyValue: recommendDailyValue, and: .low)
-        
-        counterView.configure(goal: Double(dayGoal), progress: Double(dayProgress))
-        counterView.configureDailyGoalValue(dayGoal)
-        
-        counterView.editButtonAddAction(selector: #selector(editButtonTapped), target: self)
-        counterView.addWaterButtonAction(selector: #selector(addWaterButtonTapped), target: self)
-                
-        waterHistoryView.configure(items: recentlyAddedWater)
-        
-        weeklySummaryView.configure(items: [.init(value: 2000, title: "Пн"),
-                                            .init(value: 1500, title: "Вт"),
-                                            .init(value: 1000, title: "Ср"),
-                                            .init(value: 1800, title: "Чт"),
-                                            .init(value: 2000, title: "Пт"),
-                                            .init(value: 0, title: "Сб"),
-                                            .init(value: 1200, title: "Вс")],
-                                    size: .short,
-                                    type: .week)
+//        navigationBarConfigure()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        presenter.provideNavigationBarLabels()
     }
 }
 
-extension MainViewController: ModalViewControllerDelegate {
-    
-    func modalControllerWillDisapear(_ modal: BaseController) {
-        
-        counterView.configure(goal: Double(dayGoal), progress: Double(dayProgress))
-        counterView.configureDailyGoalValue(dayGoal)
-        
-        waterHistoryView.configure(items: recentlyAddedWater)
-    }
-}
+//extension MainViewController: ModalViewControllerDelegate {
+//    
+//    func modalControllerWillDisapear(_ modal: BaseController) {
+//        
+//        counterView.configure(goal: Double(dayGoal), progress: Double(dayProgress))
+//        counterView.configureDailyGoalValue(dayGoal)
+//        
+//        waterHistoryView.configure(items: recentlyAddedWater)
+//    }
+//}
 
 private extension MainViewController {
     
-    func navigationBarConfigure() {
-        title = "Привет, Олег!"
-        navigationController?.tabBarItem.title = Resources.Strings.TabBar.main
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
+//    func navigationBarConfigure() {
+//        title = "Привет, Олег!"
+//        navigationController?.tabBarItem.title = Resources.Strings.TabBar.main
+//        navigationController?.navigationBar.prefersLargeTitles = true
+//    }
     
     func startPresentation() {
         let pageViewController = ModuleBuilder.configureNewUserPageModule(0)
@@ -130,17 +78,48 @@ private extension MainViewController {
     }
 }
 
-@objc extension MainViewController {
+//@objc extension MainViewController {
+//    
+//    // MARK: - Вызов поп-ап окна с изменением дневной нормы
+//    func editButtonTapped() {
+//        let addDayGoalVc = ModuleBuilder.configureAddDayGoalModule(self)
+//        self.present(addDayGoalVc, animated: true)
+//    }
+//    
+//    // MARK: - Добавление выпитой воды
+//    func addWaterButtonTapped() {
+//        let addWaterVc = ModuleBuilder.configureAddWaterModule(self)
+//        self.present(addWaterVc, animated: true)
+//    }
+//}
+
+// MARK: - MainViewInputProtocol
+
+extension MainViewController: MainViewInputProtocol {
     
-    // MARK: - Вызов поп-ап окна с изменением дневной нормы
-    func editButtonTapped() {
-        let addDayGoalVc = ModuleBuilder.configureAddDayGoalModule(self)
-        self.present(addDayGoalVc, animated: true)
+    func setNavigationBarTitle(navBarTitle: String) {
+        self.navigationItem.title = navBarTitle
+    }
+
+    func setMainTitle(title: String) {
+        navigationController?.tabBarItem.title = title
     }
     
-    // MARK: - Добавление выпитой воды
-    func addWaterButtonTapped() {
-        let addWaterVc = ModuleBuilder.configureAddWaterModule(self)
-        self.present(addWaterVc, animated: true)
+    func setDailyWaterView(title: String, image: String, value: String) {
+        mainView.dashboardInfoView.dailyWaterGoalView.titleLabel.text = title
+        mainView.dashboardInfoView.dailyWaterGoalView.iconView.image =
+        UIImage(named: image)?.withRenderingMode(.alwaysTemplate)
+        mainView.dashboardInfoView.configureDailyValue(
+            recommendDailyValue: value
+        )
+    }
+    
+    func setActivityView(title: String, image: String, activityType: ActivityType) {
+        mainView.dashboardInfoView.activityModeView.titleLabel.text = title
+        mainView.dashboardInfoView.activityModeView.iconView.image =
+        UIImage(named: image)?.withRenderingMode(.alwaysTemplate)
+        mainView.dashboardInfoView.configureactivityType(
+            activityType: activityType
+        )
     }
 }
