@@ -9,7 +9,7 @@ import Foundation
 
 class AppSettingsInteractor: AppSettingsInteractorInputProtocol {
     
-    unowned let presenter: AppSettingsInteractorOutputProtocol
+    unowned let presenter: AppSettingsInteractorOutputProtocol!
     
     var notificationsIsOn: Bool {
         get {
