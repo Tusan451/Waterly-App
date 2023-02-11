@@ -22,11 +22,11 @@ final class MainViewController: BaseController {
 
 extension MainViewController {
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        startPresentation()
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//
+//        startPresentation()
+//    }
     
     override func addViews() {
         super.addViews()
