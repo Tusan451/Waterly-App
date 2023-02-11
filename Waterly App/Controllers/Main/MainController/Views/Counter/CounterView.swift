@@ -144,7 +144,7 @@ private extension CounterView {
         var water = 0
         var labelPercent = 0
         
-        Timer.scheduledTimer(withTimeInterval: 0.00001,
+        let waterProgressTimer = Timer.scheduledTimer(withTimeInterval: 0.00001,
                                          repeats: true) { [weak self] timer in
             guard let self = self else { return }
             water += 1
@@ -155,7 +155,7 @@ private extension CounterView {
             }
         }
         
-        Timer.scheduledTimer(withTimeInterval: 0.01,
+        let percentProgressTimer = Timer.scheduledTimer(withTimeInterval: 0.01,
                              repeats: true) { [weak self] timer in
             guard let self = self else { return }
             labelPercent += 1
@@ -165,5 +165,8 @@ private extension CounterView {
                 timer.invalidate()
             }
         }
+        
+        RunLoop.main.add(waterProgressTimer, forMode: .common)
+        RunLoop.main.add(percentProgressTimer, forMode: .common)
     }
 }
