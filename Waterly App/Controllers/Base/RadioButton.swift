@@ -21,15 +21,44 @@ final class RadioButton: UIButton {
         self.buttonState = state
         self.iconView.tintColor = color
         super.init(frame: .zero)
-        
+
         addViews()
         layoutViews()
         configure()
     }
     
+//    init(color: UIColor?) {
+//        super.init(frame: .zero)
+//        self.iconView.tintColor = color
+//
+//        addViews()
+//        layoutViews()
+////        configure()
+//    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func switchState(to state: RadioButtonState) {
+        buttonState = state
+        switch buttonState {
+        case .normal:
+            iconView.image = Resources.Images.RadioButton.normal?.withRenderingMode(.alwaysTemplate)
+        case .selected:
+            iconView.image = Resources.Images.RadioButton.selected?.withRenderingMode(.alwaysTemplate)
+        }
+        
+        makeSystem(self)
+    }
+    
+    func getState() -> RadioButtonState {
+        return buttonState
+    }
+    
+//    func setColor(color: UIColor) {
+//        iconView.tintColor = color
+//    }
 }
 
 private extension RadioButton {
@@ -49,14 +78,14 @@ private extension RadioButton {
     }
     
     func configure() {
-        
+
         switch buttonState {
         case .normal:
             iconView.image = Resources.Images.RadioButton.normal?.withRenderingMode(.alwaysTemplate)
         case .selected:
             iconView.image = Resources.Images.RadioButton.selected?.withRenderingMode(.alwaysTemplate)
         }
-        
+
         makeSystem(self)
     }
 }
