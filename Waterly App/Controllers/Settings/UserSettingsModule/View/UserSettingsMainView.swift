@@ -192,69 +192,8 @@ extension UserSettingsMainView {
     override func configureViews() {
         super.configureViews()
         
-        nameTextFieldView.setTitle(
-            Resources.Strings.SettingsModule.UserSettingsModule.nameTextFieldTitle
-        )
-        
-        nameTextFieldView.textField.viewModel = BaseTextFieldViewModel(
-            text: nil,
-            placeholder: nil,
-            valueText: nil
-        )
-        
-        selectGenderView.titleLabel.text =
-        Resources.Strings.SettingsModule.UserSettingsModule.genderTitle
-        
-        selectGenderView.maleLabel.text =
-        Resources.Strings.SettingsModule.UserSettingsModule.male
-        
-        selectGenderView.femaleLabel.text =
-        Resources.Strings.SettingsModule.UserSettingsModule.female
-        
-        ageTextFieldView.setTitle(
-            Resources.Strings.SettingsModule.UserSettingsModule.ageTitle
-        )
-        
-        ageTextFieldView.textField.viewModel = BaseTextFieldViewModel(
-            text: nil,
-            placeholder: nil,
-            valueText: Resources.Strings.SettingsModule.UserSettingsModule.agePlaceholder
-        )
-        
-        heightTextFieldView.setTitle(
-            Resources.Strings.SettingsModule.UserSettingsModule.heightTitle
-        )
-        
-        heightTextFieldView.textField.viewModel = BaseTextFieldViewModel(
-            text: nil,
-            placeholder: nil,
-            valueText: Resources.Strings.SettingsModule.UserSettingsModule.heightPlaceholder
-        )
-        
-        weightTextFieldView.setTitle(
-            Resources.Strings.SettingsModule.UserSettingsModule.weightTitle
-        )
-        
-        weightTextFieldView.textField.viewModel = BaseTextFieldViewModel(
-            text: nil,
-            placeholder: nil,
-            valueText: Resources.Strings.SettingsModule.UserSettingsModule.weightPlaceholder
-        )
-        
-        physicalActivityView.titleLabel.text =
-        Resources.Strings.SettingsModule.UserSettingsModule.physicalActivityTitle
-        
-        physicalActivityView.physicalActivityLabel.text =
-        Resources.Strings.SettingsModule.UserSettingsModule.mediumPhysicalActivity
-        
         saveButton.setColor(for: Resources.Colors.Accent.accentMain, title: .white)
-        saveButton.setTitle(
-            with: Resources.Strings.SettingsModule.UserSettingsModule.saveButtonTitle
-        )
         saveButton.addTarget(self, action: #selector(saveButtonAction), for: .touchUpInside)
-        
-        disclaimerLabel.text =
-        Resources.Strings.SettingsModule.UserSettingsModule.disclaimer
         
         selectGenderView.maleRadioButton.addTarget(self,
                                                    action: #selector(maleRadioButtonTapped),
