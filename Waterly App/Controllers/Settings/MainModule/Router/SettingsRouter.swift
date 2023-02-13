@@ -29,7 +29,7 @@ class SettingsRouter: SettingsRouterInputProtocol {
     }
     
     func goToUserSettingsModule() {
-        let userSettingsAssemblyModule: UserSettingsAssemblyInputProtocol = UserSettingsAssembly()
+        let userSettingsAssemblyModule: UserSettingsAssembleyInputProtocol = UserSettingsAssembley()
         let userSettingsVc = userSettingsAssemblyModule.configure()
         let viewController = self.viewController as! SettingsViewController
         viewController.navigationController?.pushViewController(userSettingsVc, animated: true)
