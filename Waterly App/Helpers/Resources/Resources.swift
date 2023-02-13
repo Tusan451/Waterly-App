@@ -118,6 +118,11 @@ enum Resources {
             static let hitGoals = "Выполнено целей"
             static let averageDrinked = "В среднем выпили"
             
+            static let defaultUserName = "Имя пользователя"
+            
+            static let waterImageName = "water"
+            static let activityImageName = "activity"
+            
             enum AddDayGoalController {
                 static let dayGoal = "Цель дня"
                 static let currentGoal = "Текущая цель дня"
@@ -182,6 +187,10 @@ enum Resources {
                 
                 static let saveButtonTitle = "Сохранить"
                 static let disclaimer = "Мы анализируем полученные данные и считаем рекомендуемую дневную норму воды. Вводите данные как можно точнее."
+                
+                static let alertTitle = "Ваши данные сохранены"
+                static let alertMessage = "На главном экране будет отображена вашая дневная норма воды"
+                static let alertActionTitle = "На главный экран"
             }
         }
         
@@ -261,13 +270,19 @@ enum Resources {
         static let minimumAddWaterValue = 50
         static let maximumAddWaterValue = 1000
         
+        static let activitySliderDefaultValue: Float = 2.5
+        static let activitySliderLowValue: Float = 1
+        static let activitySliderHighValue: Float = 4
+        static let activitySliderMinimumValue: Float = 0
+        static let activitySliderMaximumValue: Float = 5
+        
         enum PageVCScreenWidth {
             static let iPhoneSE: CGFloat = 222
             static let iPhone12: CGFloat = 337
             static let iPhoneMini: CGFloat = 325
             static let iPhoneProMax: CGFloat = 380
         }
-        
+
         enum PageVCScreenHeight {
             static let iPhoneSE: CGFloat = 353
             static let iPhone12: CGFloat = 535
