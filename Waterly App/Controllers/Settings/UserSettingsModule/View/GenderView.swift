@@ -18,7 +18,7 @@ final class GenderView: BaseView {
     
     let maleRadioButton = RadioButton(.selected,
                                       color: Resources.Colors.Accent.accentMain)
-    
+        
     let maleLabel: UILabel = {
         let label = UILabel()
         label.font = Resources.Fonts.sfProRegular(size: 16)
@@ -28,7 +28,7 @@ final class GenderView: BaseView {
     
     let femaleRadioButton = RadioButton(.normal,
                                         color: Resources.Colors.Accent.accentMain)
-    
+        
     let femaleLabel: UILabel = {
         let label = UILabel()
         label.font = Resources.Fonts.sfProRegular(size: 16)
