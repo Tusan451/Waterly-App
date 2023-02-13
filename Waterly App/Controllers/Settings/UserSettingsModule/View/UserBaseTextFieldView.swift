@@ -51,9 +51,9 @@ final class UserBaseTextFieldView: BaseView {
         titleLabel.text = title
     }
     
-//    func getCurrentTextFieldText() -> String {
-//        textField.viewModel.text ?? ""
-//    }
+    func getCurrentTextFieldText() -> String {
+        textField.viewModel.text ?? ""
+    }
 }
 
 extension UserBaseTextFieldView {
