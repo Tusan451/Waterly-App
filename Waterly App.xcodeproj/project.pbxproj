@@ -28,6 +28,8 @@
 		E03E56A3298911F5004E0E3B /* SettingsInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03E56A2298911F5004E0E3B /* SettingsInteractorInputProtocol.swift */; };
 		E03E56A529891218004E0E3B /* SettingsInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03E56A429891218004E0E3B /* SettingsInteractorOutputProtocol.swift */; };
 		E03E56A8298913AB004E0E3B /* SettingsAssamblyInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03E56A7298913AB004E0E3B /* SettingsAssamblyInputProtocol.swift */; };
+		E04B8E3D2993ECF60044C939 /* ConfigAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04B8E3C2993ECF60044C939 /* ConfigAlertService.swift */; };
+		E04B8E402993EF530044C939 /* UserSettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04B8E3F2993EF530044C939 /* UserSettingsRouter.swift */; };
 		E053B725295F32E200F71F20 /* WaterHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E053B724295F32E200F71F20 /* WaterHistoryView.swift */; };
 		E053B727295F42A400F71F20 /* AddedWaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E053B726295F42A400F71F20 /* AddedWaterView.swift */; };
 		E05D7886297C2A6200CCC5D0 /* Assambly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D7885297C2A6200CCC5D0 /* Assambly.swift */; };
@@ -45,7 +47,6 @@
 		E0A6CEF8298BFE43007EC813 /* UserSettingsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A6CEF7298BFE43007EC813 /* UserSettingsMainView.swift */; };
 		E0A6CEFA298C005B007EC813 /* UserBaseTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A6CEF9298C005B007EC813 /* UserBaseTextFieldView.swift */; };
 		E0A6CEFC298C07BC007EC813 /* GenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A6CEFB298C07BC007EC813 /* GenderView.swift */; };
-		E0A6CEFF298C10EF007EC813 /* UserSettingsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A6CEFE298C10EF007EC813 /* UserSettingsAssembly.swift */; };
 		E0A773AD2959C3F8005FF95B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A773AC2959C3F8005FF95B /* AppDelegate.swift */; };
 		E0A773AF2959C3F8005FF95B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A773AE2959C3F8005FF95B /* SceneDelegate.swift */; };
 		E0A773B12959C3F8005FF95B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A773B02959C3F8005FF95B /* MainViewController.swift */; };
@@ -55,6 +56,14 @@
 		E0BA84992959D8D300D30B1C /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BA84982959D8D300D30B1C /* Resources.swift */; };
 		E0BEAFC9297EE41200292EAD /* AddWaterMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BEAFC8297EE41200292EAD /* AddWaterMainView.swift */; };
 		E0BEAFCB297EEF0E00292EAD /* AddWaterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BEAFCA297EEF0E00292EAD /* AddWaterPresenter.swift */; };
+		E0CA63CD29955E9F0078ECD8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA63CC29955E9F0078ECD8 /* MainView.swift */; };
+		E0CA63CF299564590078ECD8 /* MainViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA63CE299564590078ECD8 /* MainViewInputProtocol.swift */; };
+		E0CA63D12995646C0078ECD8 /* MainViewOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA63D02995646C0078ECD8 /* MainViewOutputProtocol.swift */; };
+		E0CA63D7299564FA0078ECD8 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA63D6299564FA0078ECD8 /* MainPresenter.swift */; };
+		E0CA63D92995651E0078ECD8 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA63D82995651E0078ECD8 /* MainInteractor.swift */; };
+		E0CA63DB299565340078ECD8 /* MainInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA63DA299565340078ECD8 /* MainInteractorInputProtocol.swift */; };
+		E0CA63DD299565490078ECD8 /* MainInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA63DC299565490078ECD8 /* MainInteractorOutputProtocol.swift */; };
+		E0CA63DF29956B110078ECD8 /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA63DE29956B110078ECD8 /* MainConfigurator.swift */; };
 		E0CAAB8729842C8300602FE6 /* PhysicalActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAAB8629842C8300602FE6 /* PhysicalActivityView.swift */; };
 		E0CF3F01298196290001A9F2 /* NewUserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3F00298196290001A9F2 /* NewUserPageViewController.swift */; };
 		E0CF3F03298198170001A9F2 /* FirstPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3F02298198170001A9F2 /* FirstPageVC.swift */; };
@@ -63,6 +72,13 @@
 		E0D1CA2C297841B40054F859 /* RecomendDailyWaterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1CA2B297841B40054F859 /* RecomendDailyWaterViewModel.swift */; };
 		E0D1CA2F29784DC90054F859 /* BaseTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1CA2E29784DC90054F859 /* BaseTextFieldViewModel.swift */; };
 		E0D1CA3129785F2B0054F859 /* DailyGoalTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1CA3029785F2B0054F859 /* DailyGoalTextFieldViewModel.swift */; };
+		E0D8291F299269F9004307A9 /* UserSettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D8291E299269F9004307A9 /* UserSettingsPresenter.swift */; };
+		E0D8292129926A2B004307A9 /* UserSettingsViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D8292029926A2B004307A9 /* UserSettingsViewInputProtocol.swift */; };
+		E0D8292329926A38004307A9 /* UserSettingsViewOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D8292229926A38004307A9 /* UserSettingsViewOutputProtocol.swift */; };
+		E0D8292629926A54004307A9 /* UserSettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D8292529926A54004307A9 /* UserSettingsInteractor.swift */; };
+		E0D8292829926A6A004307A9 /* UserSettingsInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D8292729926A6A004307A9 /* UserSettingsInteractorInputProtocol.swift */; };
+		E0D8292A29926A7B004307A9 /* UserSettingsInteractotOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D8292929926A7B004307A9 /* UserSettingsInteractotOutputProtocol.swift */; };
+		E0D8292D299275B1004307A9 /* UserSettingsAssembley.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D8292C299275B1004307A9 /* UserSettingsAssembley.swift */; };
 		E0D95B262980495400F77577 /* Waterly_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D95B252980495400F77577 /* Waterly_AppTests.swift */; };
 		E0D95B3029804BB300F77577 /* AddWaterPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D95B2F29804BB300F77577 /* AddWaterPresenterTest.swift */; };
 		E0E1AC8C295B301000D2AA9C /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0E1AC88295B301000D2AA9C /* SFProDisplay-Regular.ttf */; };
@@ -131,6 +147,8 @@
 		E03E56A2298911F5004E0E3B /* SettingsInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractorInputProtocol.swift; sourceTree = "<group>"; };
 		E03E56A429891218004E0E3B /* SettingsInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractorOutputProtocol.swift; sourceTree = "<group>"; };
 		E03E56A7298913AB004E0E3B /* SettingsAssamblyInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAssamblyInputProtocol.swift; sourceTree = "<group>"; };
+		E04B8E3C2993ECF60044C939 /* ConfigAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigAlertService.swift; sourceTree = "<group>"; };
+		E04B8E3F2993EF530044C939 /* UserSettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsRouter.swift; sourceTree = "<group>"; };
 		E053B724295F32E200F71F20 /* WaterHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterHistoryView.swift; sourceTree = "<group>"; };
 		E053B726295F42A400F71F20 /* AddedWaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedWaterView.swift; sourceTree = "<group>"; };
 		E05D7885297C2A6200CCC5D0 /* Assambly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assambly.swift; sourceTree = "<group>"; };
@@ -148,7 +166,6 @@
 		E0A6CEF7298BFE43007EC813 /* UserSettingsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsMainView.swift; sourceTree = "<group>"; };
 		E0A6CEF9298C005B007EC813 /* UserBaseTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBaseTextFieldView.swift; sourceTree = "<group>"; };
 		E0A6CEFB298C07BC007EC813 /* GenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
-		E0A6CEFE298C10EF007EC813 /* UserSettingsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsAssembly.swift; sourceTree = "<group>"; };
 		E0A773A92959C3F8005FF95B /* Waterly App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Waterly App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0A773AC2959C3F8005FF95B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0A773AE2959C3F8005FF95B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +177,14 @@
 		E0BA84982959D8D300D30B1C /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		E0BEAFC8297EE41200292EAD /* AddWaterMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWaterMainView.swift; sourceTree = "<group>"; };
 		E0BEAFCA297EEF0E00292EAD /* AddWaterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWaterPresenter.swift; sourceTree = "<group>"; };
+		E0CA63CC29955E9F0078ECD8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E0CA63CE299564590078ECD8 /* MainViewInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewInputProtocol.swift; sourceTree = "<group>"; };
+		E0CA63D02995646C0078ECD8 /* MainViewOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewOutputProtocol.swift; sourceTree = "<group>"; };
+		E0CA63D6299564FA0078ECD8 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		E0CA63D82995651E0078ECD8 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		E0CA63DA299565340078ECD8 /* MainInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorInputProtocol.swift; sourceTree = "<group>"; };
+		E0CA63DC299565490078ECD8 /* MainInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorOutputProtocol.swift; sourceTree = "<group>"; };
+		E0CA63DE29956B110078ECD8 /* MainConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfigurator.swift; sourceTree = "<group>"; };
 		E0CAAB8629842C8300602FE6 /* PhysicalActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicalActivityView.swift; sourceTree = "<group>"; };
 		E0CF3F00298196290001A9F2 /* NewUserPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserPageViewController.swift; sourceTree = "<group>"; };
 		E0CF3F02298198170001A9F2 /* FirstPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageVC.swift; sourceTree = "<group>"; };
@@ -168,6 +193,13 @@
 		E0D1CA2B297841B40054F859 /* RecomendDailyWaterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendDailyWaterViewModel.swift; sourceTree = "<group>"; };
 		E0D1CA2E29784DC90054F859 /* BaseTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextFieldViewModel.swift; sourceTree = "<group>"; };
 		E0D1CA3029785F2B0054F859 /* DailyGoalTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoalTextFieldViewModel.swift; sourceTree = "<group>"; };
+		E0D8291E299269F9004307A9 /* UserSettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsPresenter.swift; sourceTree = "<group>"; };
+		E0D8292029926A2B004307A9 /* UserSettingsViewInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsViewInputProtocol.swift; sourceTree = "<group>"; };
+		E0D8292229926A38004307A9 /* UserSettingsViewOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsViewOutputProtocol.swift; sourceTree = "<group>"; };
+		E0D8292529926A54004307A9 /* UserSettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsInteractor.swift; sourceTree = "<group>"; };
+		E0D8292729926A6A004307A9 /* UserSettingsInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsInteractorInputProtocol.swift; sourceTree = "<group>"; };
+		E0D8292929926A7B004307A9 /* UserSettingsInteractotOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsInteractotOutputProtocol.swift; sourceTree = "<group>"; };
+		E0D8292C299275B1004307A9 /* UserSettingsAssembley.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsAssembley.swift; sourceTree = "<group>"; };
 		E0D95B232980495400F77577 /* Waterly AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Waterly AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0D95B252980495400F77577 /* Waterly_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waterly_AppTests.swift; sourceTree = "<group>"; };
 		E0D95B2F29804BB300F77577 /* AddWaterPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWaterPresenterTest.swift; sourceTree = "<group>"; };
@@ -296,6 +328,7 @@
 				E01CF380298AC700001F1445 /* DataManager.swift */,
 				E026756F299166DF00A5BFEA /* UserDataManager.swift */,
 				E026757129916B2700A5BFEA /* WaterRateCalculation.swift */,
+				E04B8E3C2993ECF60044C939 /* ConfigAlertService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -342,6 +375,14 @@
 			path = Assambly;
 			sourceTree = "<group>";
 		};
+		E04B8E3E2993EF290044C939 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E04B8E3F2993EF530044C939 /* UserSettingsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		E04FE9282987F3B1007F8726 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,8 +407,11 @@
 		E05DD2B829716F5800BBE2E3 /* MainController */ = {
 			isa = PBXGroup;
 			children = (
+				E0CA63D5299564A40078ECD8 /* Configurator */,
+				E0CA63D42995649F0078ECD8 /* Router */,
+				E0CA63D3299564960078ECD8 /* Interactor */,
+				E0CA63D22995648D0078ECD8 /* Presenter */,
 				E0E1AC93295B3A1400D2AA9C /* Views */,
-				E0A773B02959C3F8005FF95B /* MainViewController.swift */,
 			);
 			path = MainController;
 			sourceTree = "<group>";
@@ -400,7 +444,10 @@
 		E0A6CEF3298BFDB8007EC813 /* UserSettingsModule */ = {
 			isa = PBXGroup;
 			children = (
-				E0A6CEFD298C10D0007EC813 /* Assembly */,
+				E04B8E3E2993EF290044C939 /* Router */,
+				E0D8292B2992759C004307A9 /* Assembley */,
+				E0D8292429926A44004307A9 /* Interactor */,
+				E0D8291D299269D5004307A9 /* Presenter */,
 				E0A6CEF4298BFDC9007EC813 /* View */,
 			);
 			path = UserSettingsModule;
@@ -414,16 +461,10 @@
 				E0A6CEF9298C005B007EC813 /* UserBaseTextFieldView.swift */,
 				E0A6CEFB298C07BC007EC813 /* GenderView.swift */,
 				E0CAAB8629842C8300602FE6 /* PhysicalActivityView.swift */,
+				E0D8292029926A2B004307A9 /* UserSettingsViewInputProtocol.swift */,
+				E0D8292229926A38004307A9 /* UserSettingsViewOutputProtocol.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		E0A6CEFD298C10D0007EC813 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				E0A6CEFE298C10EF007EC813 /* UserSettingsAssembly.swift */,
-			);
-			path = Assembly;
 			sourceTree = "<group>";
 		};
 		E0A773A02959C3F8005FF95B = {
@@ -497,6 +538,39 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		E0CA63D22995648D0078ECD8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E0CA63D6299564FA0078ECD8 /* MainPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E0CA63D3299564960078ECD8 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E0CA63D82995651E0078ECD8 /* MainInteractor.swift */,
+				E0CA63DA299565340078ECD8 /* MainInteractorInputProtocol.swift */,
+				E0CA63DC299565490078ECD8 /* MainInteractorOutputProtocol.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E0CA63D42995649F0078ECD8 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E0CA63D5299564A40078ECD8 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				E0CA63DE29956B110078ECD8 /* MainConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
 		E0CF3EFF298195480001A9F2 /* NewUserPresentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +589,32 @@
 				E0CF3F072981A1DF0001A9F2 /* FirstPagePresenter.swift */,
 			);
 			path = FirstPage;
+			sourceTree = "<group>";
+		};
+		E0D8291D299269D5004307A9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E0D8291E299269F9004307A9 /* UserSettingsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E0D8292429926A44004307A9 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E0D8292529926A54004307A9 /* UserSettingsInteractor.swift */,
+				E0D8292729926A6A004307A9 /* UserSettingsInteractorInputProtocol.swift */,
+				E0D8292929926A7B004307A9 /* UserSettingsInteractotOutputProtocol.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E0D8292B2992759C004307A9 /* Assembley */ = {
+			isa = PBXGroup;
+			children = (
+				E0D8292C299275B1004307A9 /* UserSettingsAssembley.swift */,
+			);
+			path = Assembley;
 			sourceTree = "<group>";
 		};
 		E0D95B242980495400F77577 /* Waterly AppTests */ = {
@@ -567,6 +667,10 @@
 		E0E1AC93295B3A1400D2AA9C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E0A773B02959C3F8005FF95B /* MainViewController.swift */,
+				E0CA63CC29955E9F0078ECD8 /* MainView.swift */,
+				E0CA63CE299564590078ECD8 /* MainViewInputProtocol.swift */,
+				E0CA63D02995646C0078ECD8 /* MainViewOutputProtocol.swift */,
 				E0EDEF07296DA34700303A41 /* WeeklySummary */,
 				E053B723295F32A000F71F20 /* History */,
 				E0F5D635295C7A20008259D7 /* Counter */,
@@ -842,10 +946,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0CA63D92995651E0078ECD8 /* MainInteractor.swift in Sources */,
 				E0A773B12959C3F8005FF95B /* MainViewController.swift in Sources */,
+				E0CA63CD29955E9F0078ECD8 /* MainView.swift in Sources */,
 				E0D1CA2F29784DC90054F859 /* BaseTextFieldViewModel.swift in Sources */,
+				E0D8292829926A6A004307A9 /* UserSettingsInteractorInputProtocol.swift in Sources */,
 				E0CF3F01298196290001A9F2 /* NewUserPageViewController.swift in Sources */,
+				E0D8292329926A38004307A9 /* UserSettingsViewOutputProtocol.swift in Sources */,
 				E0F5D63A295C7FAA008259D7 /* GoalView.swift in Sources */,
+				E0CA63DD299565490078ECD8 /* MainInteractorOutputProtocol.swift in Sources */,
+				E04B8E3D2993ECF60044C939 /* ConfigAlertService.swift in Sources */,
 				E00288D32975A55800B13CE4 /* AddWaterViewController.swift in Sources */,
 				E0A2663929718D9C0046C6FD /* BaseTextField.swift in Sources */,
 				E0EDEF13296DD14A00303A41 /* XAxisView.swift in Sources */,
@@ -854,17 +964,18 @@
 				E0FBFD68295A04E400AFE420 /* NavBarController.swift in Sources */,
 				E0EBF2172982EC0C00453A6B /* ScreenPageMainView.swift in Sources */,
 				E0F5D63C295C82BB008259D7 /* CustomButton.swift in Sources */,
-				E0A6CEFF298C10EF007EC813 /* UserSettingsAssembly.swift in Sources */,
 				E0FC93AC2989768B00698EB0 /* AppSettingsViewController.swift in Sources */,
 				E0CF3F05298198FE0001A9F2 /* FirstPageVCMainView.swift in Sources */,
 				E0FC93B02989797000698EB0 /* AppSettingsMenuItemView.swift in Sources */,
 				E0BEAFC9297EE41200292EAD /* AddWaterMainView.swift in Sources */,
+				E0D8292D299275B1004307A9 /* UserSettingsAssembley.swift in Sources */,
 				E0A6CEF8298BFE43007EC813 /* UserSettingsMainView.swift in Sources */,
 				E01CF37A298AC0CA001F1445 /* AppSettingsInteractorInputProtocol.swift in Sources */,
 				E0CAAB8729842C8300602FE6 /* PhysicalActivityView.swift in Sources */,
 				E01A905029705C970097DEB3 /* WeeklyStatisticsView.swift in Sources */,
 				E08E3FD92971CDF5007B5B3C /* ModalViewControllerDelegate.swift in Sources */,
 				E0F3A42E2977118D00E598F8 /* UIStackView + ext.swift in Sources */,
+				E0D8292129926A2B004307A9 /* UserSettingsViewInputProtocol.swift in Sources */,
 				E0FBFD6B295A0B5900AFE420 /* BaseController.swift in Sources */,
 				E0EDEF0C296DAD6B00303A41 /* YAxisView.swift in Sources */,
 				E03021CB2959CF5C00126AE7 /* TabBarController.swift in Sources */,
@@ -884,25 +995,31 @@
 				E01CF381298AC700001F1445 /* DataManager.swift in Sources */,
 				E0E1AC98295B3B1900D2AA9C /* HeaderView.swift in Sources */,
 				E0A6CEF6298BFDF3007EC813 /* UserSettingsViewController.swift in Sources */,
+				E0D8291F299269F9004307A9 /* UserSettingsPresenter.swift in Sources */,
 				E01CF37E298AC5DB001F1445 /* AppSettingsInteractor.swift in Sources */,
 				E0BEAFCB297EEF0E00292EAD /* AddWaterPresenter.swift in Sources */,
 				E0EDEF0F296DAEF400303A41 /* BaseChartView.swift in Sources */,
+				E0CA63DF29956B110078ECD8 /* MainConfigurator.swift in Sources */,
 				E00288D92975BE1F00B13CE4 /* DailyPercentView.swift in Sources */,
 				E05DE9D0295B590200C81B15 /* BaseInfoView.swift in Sources */,
 				E0FC93AE298978B500698EB0 /* AppSettingsMainView.swift in Sources */,
 				E0FBFD73295A102700AFE420 /* StatisticsViewController.swift in Sources */,
 				E0FDF12C298819E000FF2C07 /* SettingsMainView.swift in Sources */,
+				E0CA63D7299564FA0078ECD8 /* MainPresenter.swift in Sources */,
+				E0CA63DB299565340078ECD8 /* MainInteractorInputProtocol.swift in Sources */,
 				E01CF387298AD346001F1445 /* SettingsRouter.swift in Sources */,
 				E03E56A529891218004E0E3B /* SettingsInteractorOutputProtocol.swift in Sources */,
 				E0A773AF2959C3F8005FF95B /* SceneDelegate.swift in Sources */,
 				E026757229916B2700A5BFEA /* WaterRateCalculation.swift in Sources */,
 				E0E1AC96295B3AAF00D2AA9C /* BaseView.swift in Sources */,
+				E0D8292629926A54004307A9 /* UserSettingsInteractor.swift in Sources */,
 				E0F8BB6A297B0335004AE4E2 /* AddDayGoalMainView.swift in Sources */,
 				E0CF3F082981A1DF0001A9F2 /* FirstPagePresenter.swift in Sources */,
 				E0B0B877298920300012823A /* SettingsInteractor.swift in Sources */,
 				E0EBF2152982EB8D00453A6B /* ScreenPageViewController.swift in Sources */,
 				E0FBFD6D295A0F1900AFE420 /* SettingsViewController.swift in Sources */,
 				E076DF3E2976DF9D008C9729 /* CurrentDailyProgressView.swift in Sources */,
+				E04B8E402993EF530044C939 /* UserSettingsRouter.swift in Sources */,
 				E01CF37C298AC0E6001F1445 /* AppSettingsInteractorOutputProtocol.swift in Sources */,
 				E0D1CA2C297841B40054F859 /* RecomendDailyWaterViewModel.swift in Sources */,
 				E01CF374298ABBA7001F1445 /* AppSettingsViewOutputProtocol.swift in Sources */,
@@ -918,10 +1035,13 @@
 				E0A6CEFC298C07BC007EC813 /* GenderView.swift in Sources */,
 				E03E56A8298913AB004E0E3B /* SettingsAssamblyInputProtocol.swift in Sources */,
 				E07FAD14297987F80035284E /* AddDayGoalViewModel.swift in Sources */,
+				E0CA63CF299564590078ECD8 /* MainViewInputProtocol.swift in Sources */,
 				E053B727295F42A400F71F20 /* AddedWaterView.swift in Sources */,
 				E0FDF13629883C6600FF2C07 /* SettingsPresenter.swift in Sources */,
 				E05DD2BB2971708E00BBE2E3 /* AddDayGoalViewController.swift in Sources */,
+				E0CA63D12995646C0078ECD8 /* MainViewOutputProtocol.swift in Sources */,
 				E0D1CA3129785F2B0054F859 /* DailyGoalTextFieldViewModel.swift in Sources */,
+				E0D8292A29926A7B004307A9 /* UserSettingsInteractotOutputProtocol.swift in Sources */,
 				E08E3FD62971B0EF007B5B3C /* ReccomendDailyWaterView.swift in Sources */,
 				E00288D72975B91200B13CE4 /* WaterValueTextFieldView.swift in Sources */,
 			);
