@@ -23,11 +23,11 @@ final class PhysicalActivityView: BaseView {
         return label
     }()
     
-    let physicalActivitySlider: UISlider = {
+    var physicalActivitySlider: UISlider = {
         let slider = UISlider()
-        slider.minimumValue = 0
-        slider.maximumValue = 5
-        slider.value = 2.5
+        slider.minimumValue = Resources.Values.activitySliderMinimumValue
+        slider.maximumValue = Resources.Values.activitySliderMaximumValue
+//        slider.value = Resources.Values.activitySliderDefaultValue
         slider.minimumTrackTintColor = Resources.Colors.Other.yellow
         slider.maximumTrackTintColor = Resources.Colors.Back.backSecondary
         return slider
@@ -35,6 +35,11 @@ final class PhysicalActivityView: BaseView {
 }
 
 extension PhysicalActivityView {
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setSliderValue()
+    }
     
     override func addViews() {
         super.addViews()
@@ -66,5 +71,20 @@ extension PhysicalActivityView {
             physicalActivitySlider.heightAnchor.constraint(equalToConstant: 26),
             physicalActivitySlider.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+    }
+}
+
+private extension PhysicalActivityView {
+    func setSliderValue() {
+        switch physicalActivityLabel.text {
+        case Resources.Strings.SettingsModule.UserSettingsModule.lowPhysicalActivity:
+            physicalActivitySlider.value = Resources.Values.activitySliderLowValue
+        case Resources.Strings.SettingsModule.UserSettingsModule.mediumPhysicalActivity:
+            physicalActivitySlider.value = Resources.Values.activitySliderDefaultValue
+        case Resources.Strings.SettingsModule.UserSettingsModule.highPhysicalActivity:
+            physicalActivitySlider.value = Resources.Values.activitySliderHighValue
+        default:
+            break
+        }
     }
 }
