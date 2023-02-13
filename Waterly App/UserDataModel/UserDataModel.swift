@@ -10,7 +10,7 @@ import Foundation
 typealias UserGender = UserDataModel.UserGender
 typealias UserActivity = UserDataModel.UserActivity
 
-struct UserDataModel {
+struct UserDataModel: Codable {
     let id: UUID
     let name: String
     let gender: UserGender
@@ -21,12 +21,12 @@ struct UserDataModel {
 }
 
 extension UserDataModel {
-    enum UserGender {
+    enum UserGender: Codable {
         case male
         case female
     }
     
-    enum UserActivity {
+    enum UserActivity: Codable {
         case low
         case medium
         case high
