@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct WaterProgress: Codable {
+    var progressArray: [WaterCapacity]
+}
+
+struct WaterCapacity: Codable {
+    let capacity: Int
+    let date: String?
+}
