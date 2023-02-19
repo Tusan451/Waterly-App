@@ -9,9 +9,8 @@ import UIKit
 
 final class WaterHistoryView: BaseView {
     
-    private let titleLabel: UILabel = {
+    let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = Resources.Strings.MainController.recentlyAdded
         label.font = Resources.Fonts.sfProMedium(size: 16)
         label.textColor = Resources.Colors.Text.textMain
         return label
@@ -24,12 +23,12 @@ final class WaterHistoryView: BaseView {
         return view
     }()
     
-    func configure(items: [RecentlyAddedWater]) {
+    func configure(items: [WaterCapacity]) {
         
         addedWaterStackView.removeAllArrangedSubviews()
         
         items.forEach {
-            let addedWaterItem = AddedWaterView(value: $0.value)
+            let addedWaterItem = AddedWaterView(value: $0.capacity)
             addedWaterStackView.addArrangedSubview(addedWaterItem)
         }
         
