@@ -96,8 +96,34 @@ extension BaseTextField {
         super.configureViews()
         
         self.backgroundColor = .clear
-        
         textField.delegate = self
+        addDoneButtonOnKeyboard()
+    }
+    
+    // MARK: - Add UIToolbar above keyboard
+    
+    func addDoneButtonOnKeyboard() {
+        let doneToolBar = UIToolbar(
+            frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 30)
+        )
+        doneToolBar.barStyle = .default
+        
+        let flexSpaceItem = UIBarButtonItem(
+            barButtonSystemItem: .flexibleSpace, target: nil, action: nil
+        )
+        let doneButtonItem = UIBarButtonItem(
+            title: Resources.Strings.MainController.doneKeyboardButton,
+            style: .done,
+            target: self,
+            action: #selector(keyboardButtonAction)
+        )
+        doneButtonItem.tintColor = Resources.Colors.Accent.accentMain
+        
+        let items = [flexSpaceItem, doneButtonItem]
+        doneToolBar.items = items
+        doneToolBar.sizeToFit()
+        
+        textField.inputAccessoryView = doneToolBar
     }
 }
 
@@ -133,5 +159,11 @@ extension BaseTextField: UITextFieldDelegate {
 //                newValue: Resources.Strings.MainController.AddDayGoalController.placeholder
 //            )
 //        }
+    }
+}
+
+@objc extension BaseTextField {
+    func keyboardButtonAction() {
+        textField.resignFirstResponder()
     }
 }
