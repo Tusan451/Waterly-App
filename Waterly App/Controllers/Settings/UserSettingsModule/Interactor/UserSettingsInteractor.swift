@@ -200,6 +200,10 @@ class UserSettingsInteractor: UserSettingsInteractorInputProtocol {
             activity: userActivity
         )
         
+        let waterRate = WaterRateCalculation.shared.calculateWaterRate(for: user)
+        
+        UserDataManager.shared.saveWaterGoal(waterRate, for: Resources.Keys.waterGoalKey)
+        UserDataManager.shared.saveWaterRate(waterRate, for: user.id)
         UserDataManager.shared.saveUserData(user)
         presenter.userDataDidSaved()
     }
