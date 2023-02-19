@@ -36,6 +36,8 @@
 		E05DD2BB2971708E00BBE2E3 /* AddDayGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05DD2BA2971708E00BBE2E3 /* AddDayGoalViewController.swift */; };
 		E05DE9D0295B590200C81B15 /* BaseInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05DE9CF295B590200C81B15 /* BaseInfoView.swift */; };
 		E05DE9D2295B62F200C81B15 /* DashboardInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05DE9D1295B62F200C81B15 /* DashboardInfoView.swift */; };
+		E069C482299E6C2600B8308F /* WaterProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C481299E6C2600B8308F /* WaterProgressModel.swift */; };
+		E069C484299E6CC300B8308F /* WaterDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C483299E6CC300B8308F /* WaterDataManager.swift */; };
 		E076DF3E2976DF9D008C9729 /* CurrentDailyProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E076DF3D2976DF9D008C9729 /* CurrentDailyProgressView.swift */; };
 		E07FAD14297987F80035284E /* AddDayGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07FAD13297987F80035284E /* AddDayGoalViewModel.swift */; };
 		E08B51DC2983EB02009453D9 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08B51DB2983EB02009453D9 /* RadioButton.swift */; };
@@ -96,6 +98,7 @@
 		E0EDEF11296DB69800303A41 /* WeeklySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDEF10296DB69800303A41 /* WeeklySummaryView.swift */; };
 		E0EDEF13296DD14A00303A41 /* XAxisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDEF12296DD14A00303A41 /* XAxisView.swift */; };
 		E0F3A42E2977118D00E598F8 /* UIStackView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F3A42D2977118D00E598F8 /* UIStackView + ext.swift */; };
+		E0F5004A299D4436007654F9 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F50049299D4436007654F9 /* MainRouter.swift */; };
 		E0F5D634295C78DA008259D7 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D633295C78DA008259D7 /* CounterView.swift */; };
 		E0F5D637295C7A34008259D7 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D636295C7A34008259D7 /* ProgressView.swift */; };
 		E0F5D63A295C7FAA008259D7 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D639295C7FAA008259D7 /* GoalView.swift */; };
@@ -155,6 +158,8 @@
 		E05DD2BA2971708E00BBE2E3 /* AddDayGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDayGoalViewController.swift; sourceTree = "<group>"; };
 		E05DE9CF295B590200C81B15 /* BaseInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInfoView.swift; sourceTree = "<group>"; };
 		E05DE9D1295B62F200C81B15 /* DashboardInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInfoView.swift; sourceTree = "<group>"; };
+		E069C481299E6C2600B8308F /* WaterProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterProgressModel.swift; sourceTree = "<group>"; };
+		E069C483299E6CC300B8308F /* WaterDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterDataManager.swift; sourceTree = "<group>"; };
 		E076DF3D2976DF9D008C9729 /* CurrentDailyProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDailyProgressView.swift; sourceTree = "<group>"; };
 		E07FAD13297987F80035284E /* AddDayGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDayGoalViewModel.swift; sourceTree = "<group>"; };
 		E08B51DB2983EB02009453D9 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
@@ -218,6 +223,7 @@
 		E0EDEF10296DB69800303A41 /* WeeklySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklySummaryView.swift; sourceTree = "<group>"; };
 		E0EDEF12296DD14A00303A41 /* XAxisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAxisView.swift; sourceTree = "<group>"; };
 		E0F3A42D2977118D00E598F8 /* UIStackView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + ext.swift"; sourceTree = "<group>"; };
+		E0F50049299D4436007654F9 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		E0F5D633295C78DA008259D7 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		E0F5D636295C7A34008259D7 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		E0F5D639295C7FAA008259D7 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
@@ -329,6 +335,7 @@
 				E026756F299166DF00A5BFEA /* UserDataManager.swift */,
 				E026757129916B2700A5BFEA /* WaterRateCalculation.swift */,
 				E04B8E3C2993ECF60044C939 /* ConfigAlertService.swift */,
+				E069C483299E6CC300B8308F /* WaterDataManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -353,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				E026756D2991654E00A5BFEA /* UserDataModel.swift */,
+				E069C481299E6C2600B8308F /* WaterProgressModel.swift */,
 			);
 			path = UserDataModel;
 			sourceTree = "<group>";
@@ -559,6 +567,7 @@
 		E0CA63D42995649F0078ECD8 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				E0F50049299D4436007654F9 /* MainRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -974,6 +983,7 @@
 				E0CAAB8729842C8300602FE6 /* PhysicalActivityView.swift in Sources */,
 				E01A905029705C970097DEB3 /* WeeklyStatisticsView.swift in Sources */,
 				E08E3FD92971CDF5007B5B3C /* ModalViewControllerDelegate.swift in Sources */,
+				E069C482299E6C2600B8308F /* WaterProgressModel.swift in Sources */,
 				E0F3A42E2977118D00E598F8 /* UIStackView + ext.swift in Sources */,
 				E0D8292129926A2B004307A9 /* UserSettingsViewInputProtocol.swift in Sources */,
 				E0FBFD6B295A0B5900AFE420 /* BaseController.swift in Sources */,
@@ -999,12 +1009,14 @@
 				E01CF37E298AC5DB001F1445 /* AppSettingsInteractor.swift in Sources */,
 				E0BEAFCB297EEF0E00292EAD /* AddWaterPresenter.swift in Sources */,
 				E0EDEF0F296DAEF400303A41 /* BaseChartView.swift in Sources */,
+				E0F5004A299D4436007654F9 /* MainRouter.swift in Sources */,
 				E0CA63DF29956B110078ECD8 /* MainConfigurator.swift in Sources */,
 				E00288D92975BE1F00B13CE4 /* DailyPercentView.swift in Sources */,
 				E05DE9D0295B590200C81B15 /* BaseInfoView.swift in Sources */,
 				E0FC93AE298978B500698EB0 /* AppSettingsMainView.swift in Sources */,
 				E0FBFD73295A102700AFE420 /* StatisticsViewController.swift in Sources */,
 				E0FDF12C298819E000FF2C07 /* SettingsMainView.swift in Sources */,
+				E069C484299E6CC300B8308F /* WaterDataManager.swift in Sources */,
 				E0CA63D7299564FA0078ECD8 /* MainPresenter.swift in Sources */,
 				E0CA63DB299565340078ECD8 /* MainInteractorInputProtocol.swift in Sources */,
 				E01CF387298AD346001F1445 /* SettingsRouter.swift in Sources */,
