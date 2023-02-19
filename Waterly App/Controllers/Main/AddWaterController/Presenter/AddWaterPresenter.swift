@@ -41,7 +41,6 @@ protocol AddWaterPresenterProtocol: AnyObject {
     var textFieldPlaceholder: String { get }
     var textFieldValuePlaceholder: String { get }
     var dailyPercentViewTitle: String { get }
-    var currentProgressValue: String { get }
     var currentProgressTitle: String { get }
     var saveButtonState: Resources.SaveButtonState { get }
     var minimumAddWaterValue: Int { get }
@@ -98,11 +97,6 @@ class AddWaterPresenter: AddWaterPresenterProtocol {
     
     var dailyPercentViewTitle: String {
         Resources.Strings.MainController.AddWaterController.dailyPercent
-    }
-    
-    var currentProgressValue: String {
-        let value = lround(Double(dayProgress) / Double(dayGoal / 100))
-        return "\(value)%"
     }
     
     var currentProgressTitle: String {
@@ -188,14 +182,32 @@ class AddWaterPresenter: AddWaterPresenterProtocol {
             
         } else {
             
-            dayProgress += intValue
-            
-            // TODO: - Контроль кол-ва элементов реализовать на уровне бека
-            if recentlyAddedWater.count == 6 {
-                recentlyAddedWater.removeFirst()
+            if var currentProgress = UserDataManager.shared.getWaterProgress(
+                for: Resources.Keys.waterProgressKey
+            ) {
+                currentProgress += intValue
+                UserDataManager.shared.saveWaterProgress(
+                    currentProgress,
+                    for: Resources.Keys.waterProgressKey
+                )
+            } else {
+                UserDataManager.shared.saveWaterProgress(
+                    intValue,
+                    for: Resources.Keys.waterProgressKey
+                )
             }
             
-            recentlyAddedWater.append(RecentlyAddedWater.init(value: intValue))
+            let waterCapacity = WaterCapacity(capacity: intValue, date: nil)
+            WaterDataManager.shared.saveWaterCapacity(waterCapacity, for: Resources.Keys.dayProgressKey)
+            
+//            dayProgress += intValue
+//
+//            // TODO: - Контроль кол-ва элементов реализовать на уровне бека
+//            if recentlyAddedWater.count == 6 {
+//                recentlyAddedWater.removeFirst()
+//            }
+//
+//            recentlyAddedWater.append(RecentlyAddedWater.init(value: intValue))
             self.view?.dismiss()
         }
     }
@@ -203,12 +215,27 @@ class AddWaterPresenter: AddWaterPresenterProtocol {
     func configureDailyPercentViewValue(_ value: String?) {
         
         guard let value = value else { return }
+        var waterRateValue = 0
+        
+        UserDataManager.shared.getUserData { result in
+            switch result {
+            case .success(let data):
+                if let waterRate = UserDataManager.shared.getWaterRate(for: "\(data.id)") {
+                    waterRateValue = waterRate
+                } else {
+                    waterRateValue = 0
+                }
+            case .failure(let error):
+                waterRateValue = 0
+                print(error)
+            }
+        }
         
         if value.isEmpty {
             self.view?.setDailyPercentViewValue(value: "0%", state: .notFocus)
         } else {
             guard let doubleValue = Double(value) else { return }
-            let percentFromDaily = lround(doubleValue / Double(recommendDailyValue / 100))
+            let percentFromDaily = lround(doubleValue / Double(waterRateValue / 100))
             self.view?.setDailyPercentViewValue(value: "\(percentFromDaily)%", state: .focus)
         }
     }
@@ -218,19 +245,25 @@ class AddWaterPresenter: AddWaterPresenterProtocol {
     }
     
     func setCurrentProgressViewValue() {
-        self.view?.setCurrentProgressViewValue(value: self.currentProgressValue)
+        let dayGoal = UserDataManager.shared.getWaterGoal(for: Resources.Keys.waterGoalKey)
+        let waterProgress = UserDataManager.shared.getWaterProgress(for: Resources.Keys.waterProgressKey)
+        
+        let value = lround(Double(waterProgress ?? 0) / Double((dayGoal ?? 0) / 100))
+        self.view?.setCurrentProgressViewValue(value: "\(value)%")
     }
     
     func configureCurrentProgressViewFor(value: String?) {
         
         guard let value = value else { return }
+        let dayGoal = UserDataManager.shared.getWaterGoal(for: Resources.Keys.waterGoalKey)
+        let waterProgress = UserDataManager.shared.getWaterProgress(for: Resources.Keys.waterProgressKey)
         
         if value.isEmpty {
             self.view?.setCurrentProgressViewValueFor(newValue: value, arrowState: .isHidden)
         } else {
             guard let doubleValue = Double(value) else { return }
-            let newDailyValue = Double(dayProgress) + doubleValue
-            let newDailyPercentProgress = lround(newDailyValue / Double(dayGoal / 100))
+            let newDailyValue = Double(waterProgress ?? 0) + doubleValue
+            let newDailyPercentProgress = lround(newDailyValue / Double((dayGoal ?? 0) / 100))
             self.view?.setCurrentProgressViewValueFor(newValue: "\(newDailyPercentProgress)%", arrowState: .show)
         }
     }
