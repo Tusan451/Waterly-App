@@ -18,6 +18,7 @@ enum WeightNorm {
 }
 
 class WaterRateCalculation: WaterRateCalculationProtocol {
+    static let shared = WaterRateCalculation()
     private let heightStatic = 100
     private var weightNorm: WeightNorm = .normal
     private var waterRate = 0
