@@ -9,9 +9,9 @@ import UIKit
 
 final class GoalView: BaseView {
     
-    private let iconView = UIImageView()
+    let iconView = UIImageView()
     
-    private let titleLabel: UILabel = {
+    let titleLabel: UILabel = {
         let label = UILabel()
         label.font = Resources.Fonts.sfProRegular(size: 13)
         label.textColor = Resources.Colors.Text.textSecondary
@@ -25,27 +25,27 @@ final class GoalView: BaseView {
         return label
     }()
     
-    private let editButton = CustomButton(with: .text)
+    let editButton = CustomButton(with: .text)
     
-    init(with title: String, iconImage: UIImage? = nil) {
-        titleLabel.text = title
-        iconView.image = iconImage?.withRenderingMode(.alwaysTemplate)
-        
-        super.init(frame: .zero)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    init(with title: String, iconImage: UIImage? = nil) {
+//        titleLabel.text = title
+//        iconView.image = iconImage?.withRenderingMode(.alwaysTemplate)
+//
+//        super.init(frame: .zero)
+//    }
+//
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     // TODO: - Изменить функцию установки значения в зависимости от данных из БД
-    func setValueLabel(with value: Int) {
-        valueLabel.text = "\(value) мл"
+    func setValueLabel(with value: String) {
+        valueLabel.text = value
     }
     
-    func addEditButtonAction(_ action: Selector, target: Any?) {
-        editButton.addTarget(target, action: action, for: .touchUpInside)
-    }
+//    func addEditButtonAction(_ action: Selector, target: Any?) {
+//        editButton.addTarget(target, action: action, for: .touchUpInside)
+//    }
 }
 
 extension GoalView {
