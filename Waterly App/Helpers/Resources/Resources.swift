@@ -113,6 +113,8 @@ enum Resources {
             static let recentlyAdded = "Недавно добавлено"
             static let noAddedWaterLabel = "Сегодня вы еще не добавляли воду"
             
+            static let glassOfWaterImageName = "glassOfWater"
+            
             static let weeklySummary = "Сводка за неделю"
             
             static let hitGoals = "Выполнено целей"
@@ -122,6 +124,8 @@ enum Resources {
             
             static let waterImageName = "water"
             static let activityImageName = "activity"
+            
+            static let doneKeyboardButton = "Готово"
             
             enum AddDayGoalController {
                 static let dayGoal = "Цель дня"
@@ -308,5 +312,13 @@ enum Resources {
         case iPhoneMini = 812
         case iPhoneProMax = 926
         case otherDevice
+    }
+    
+    enum Keys {
+        static let waterGoalKey = "waterGoalKey"
+        static let waterProgressKey = "waterProgressKey"
+        
+        static let dayProgressKey = "dayProgressKey"
+        static let weekProgressKey = "weekProgressKey"
     }
 }
