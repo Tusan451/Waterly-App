@@ -8,6 +8,7 @@
 import Foundation
 
 protocol AddDayGoalViewModelProtocol: AnyObject {
+    var dayGoal: Int { get }
     var dailyGoal: Int { get }
     var title: String { get }
     var textFieldPlaceholder: String { get }
@@ -29,7 +30,17 @@ protocol AddDayGoalViewModelProtocol: AnyObject {
 
 class AddDayGoalViewModel: AddDayGoalViewModelProtocol {
     
-    var dailyGoal: Int = dayGoal {
+    var dayGoal: Int {
+        get {
+            if let goal = UserDataManager.shared.getWaterGoal(for: Resources.Keys.waterGoalKey) {
+                return goal
+            } else {
+                return 0
+            }
+        }
+    }
+    
+    var dailyGoal: Int = 0 {
         didSet {
             viewDidChange?(self)
         }
@@ -100,7 +111,7 @@ class AddDayGoalViewModel: AddDayGoalViewModelProtocol {
         } else {
             alert = .notShow
             dailyGoal = value
-            dayGoal = value
+            UserDataManager.shared.saveWaterGoal(value, for: Resources.Keys.waterGoalKey)
         }
     }
     
