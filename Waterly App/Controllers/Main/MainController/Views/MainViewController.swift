@@ -22,11 +22,11 @@ extension MainViewController: MainViewDelegate {
     }
     
     func editButtonDidPressed() {
-        print("editButtonDidPressed")
+        presenter.editButtonDidPressed()
     }
     
     func addWaterButtonDidPressed() {
-        print("addWaterButtonDidPressed")
+        presenter.addWaterButtonDidPressed()
     }
 }
 
@@ -42,6 +42,10 @@ extension MainViewController {
 
 //        startPresentation()
         presenter.provideDashboardInfoValues()
+        presenter.provideNavigationBarLabels()
+        presenter.provideWaterGoalValue()
+        presenter.provideWaterProgress()
+        presenter.provideWaterHistoryValues()
     }
     
     override func configureViews() {
@@ -49,20 +53,24 @@ extension MainViewController {
         
 //        navigationBarConfigure()
         navigationController?.navigationBar.prefersLargeTitles = true
-        presenter.provideNavigationBarLabels()
+        presenter.provideGoalViewDefault()
+        presenter.provideWaterHistoryTitle()
     }
 }
 
-//extension MainViewController: ModalViewControllerDelegate {
-//    
-//    func modalControllerWillDisapear(_ modal: BaseController) {
-//        
+extension MainViewController: ModalViewControllerDelegate {
+    
+    func modalControllerWillDisapear(_ modal: BaseController) {
+        presenter.provideWaterGoalValue()
+        presenter.provideWaterProgress()
+        presenter.provideWaterHistoryValues()
+        
 //        counterView.configure(goal: Double(dayGoal), progress: Double(dayProgress))
 //        counterView.configureDailyGoalValue(dayGoal)
-//        
+        
 //        waterHistoryView.configure(items: recentlyAddedWater)
-//    }
-//}
+    }
+}
 
 private extension MainViewController {
     
@@ -77,21 +85,6 @@ private extension MainViewController {
         present(pageViewController, animated: true)
     }
 }
-
-//@objc extension MainViewController {
-//    
-//    // MARK: - Вызов поп-ап окна с изменением дневной нормы
-//    func editButtonTapped() {
-//        let addDayGoalVc = ModuleBuilder.configureAddDayGoalModule(self)
-//        self.present(addDayGoalVc, animated: true)
-//    }
-//    
-//    // MARK: - Добавление выпитой воды
-//    func addWaterButtonTapped() {
-//        let addWaterVc = ModuleBuilder.configureAddWaterModule(self)
-//        self.present(addWaterVc, animated: true)
-//    }
-//}
 
 // MARK: - MainViewInputProtocol
 
@@ -121,5 +114,27 @@ extension MainViewController: MainViewInputProtocol {
         mainView.dashboardInfoView.configureactivityType(
             activityType: activityType
         )
+    }
+    
+    func setGoalViewDefaults(title: String, image: String) {
+        mainView.counterView.goalView.titleLabel.text = title
+        mainView.counterView.goalView.iconView.image =
+        UIImage(named: image)?.withRenderingMode(.alwaysTemplate)
+    }
+    
+    func setWaterGoalValue(value: String) {
+        mainView.counterView.goalView.setValueLabel(with: value)
+    }
+    
+    func setWaterProgress(progress: Double, goal: Double, percent: CGFloat) {
+        mainView.counterView.configure(goal: goal, progress: progress, percent: percent)
+    }
+    
+    func setWaterHistoryTitle(title: String) {
+        mainView.waterHistoryView.titleLabel.text = title
+    }
+    
+    func setWaterCapacity(capacity: [WaterCapacity]) {
+        mainView.waterHistoryView.configure(items: capacity)
     }
 }
