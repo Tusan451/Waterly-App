@@ -17,11 +17,11 @@ class MainConfigurator: MainConfiguratorInputProtocol {
         let viewController = MainViewController()
         let presenter = MainPresenter(viewController)
         let interactor = MainInteractor(presenter)
-//        let router = SettingsRouter(viewController)
+        let router = MainRouter(viewController)
         
         viewController.presenter = presenter
         presenter.interactor = interactor
-//        presenter.router = router
+        presenter.router = router
         
         return viewController
     }
