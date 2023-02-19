@@ -82,13 +82,15 @@ extension MainView {
         
 //        dashboardInfoView.configureWith(recommendDailyValue: recommendDailyValue, and: .low)
         
-        counterView.configure(goal: Double(dayGoal), progress: Double(dayProgress))
-        counterView.configureDailyGoalValue(dayGoal)
+//        counterView.configure(goal: Double(dayGoal), progress: Double(dayProgress))
+//        counterView.configureDailyGoalValue(dayGoal)
         
-        counterView.editButtonAddAction(selector: #selector(editButtonTapped), target: self)
-        counterView.addWaterButtonAction(selector: #selector(addWaterButtonTapped), target: self)
+        counterView.addWaterButton.addTarget(self, action: #selector(addWaterButtonTapped), for: .touchUpInside)
+        counterView.goalView.editButton.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
+//        counterView.editButtonAddAction(selector: #selector(editButtonTapped), target: self)
+//        counterView.addWaterButtonAction(selector: #selector(addWaterButtonTapped), target: self)
                 
-        waterHistoryView.configure(items: recentlyAddedWater)
+//        waterHistoryView.configure(items: recentlyAddedWater)
         
         weeklySummaryView.configure(items: [.init(value: 2000, title: "Пн"),
                                             .init(value: 1500, title: "Вт"),
