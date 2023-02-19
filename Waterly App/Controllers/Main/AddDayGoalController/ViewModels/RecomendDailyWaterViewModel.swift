@@ -10,7 +10,6 @@ import Foundation
 protocol RecomendDailyWaterViewModelProtocol: AnyObject {
     var text: String { get }
     var value: String { get }
-    func setValue(_ value: Int) -> String
 }
 
 class RecomendDailyWaterViewModel: RecomendDailyWaterViewModelProtocol {
@@ -18,9 +17,26 @@ class RecomendDailyWaterViewModel: RecomendDailyWaterViewModelProtocol {
         Resources.Strings.MainController.AddDayGoalController.reccomendGoalText
     }
     
-    var value: String = ""
+    var value: String {
+        getWaterRate()
+    }
     
-    func setValue(_ value: Int) -> String {
-        "\(value)"
+    private func getWaterRate() -> String {
+        var waterRateReturn = 0
+        
+        UserDataManager.shared.getUserData { result in
+            switch result {
+            case .success(let data):
+                if let waterRate = UserDataManager.shared.getWaterRate(for: "\(data.id)") {
+                    waterRateReturn = waterRate
+                } else {
+                    waterRateReturn = 0
+                }
+            case .failure(let error):
+                waterRateReturn = 0
+                print("ERROR: \(error)")
+            }
+        }
+        return "\(waterRateReturn)"
     }
 }
