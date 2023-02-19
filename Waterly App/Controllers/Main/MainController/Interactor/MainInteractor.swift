@@ -78,4 +78,43 @@ class MainInteractor: MainInteractorInputProtocol {
             activityType: activityType
         )
     }
+    
+    func provideGoalViewDefault() {
+        let title = Resources.Strings.MainController.daylyGoal
+        let image = Resources.Strings.MainController.waterImageName
+        presenter.receiveGoalViewDefaults(title: title, image: image)
+    }
+    
+    func provideWaterGoalValue() {
+        let waterGoal = UserDataManager.shared.getWaterGoal(for: Resources.Keys.waterGoalKey)
+        waterGoal == nil ? presenter.receiveWaterGoal(value: 0) :
+        presenter.receiveWaterGoal(value: waterGoal!)
+    }
+    
+    func provideWaterProgress() {
+        let waterGoal = UserDataManager.shared.getWaterGoal(for: Resources.Keys.waterGoalKey)
+        let waterProgress = UserDataManager.shared.getWaterProgress(for: Resources.Keys.waterProgressKey)
+        presenter.receiveWaterProgress(progress: waterProgress, goal: waterGoal)
+    }
+    
+    func provideWaterHistoryTitle() {
+        let title = Resources.Strings.MainController.recentlyAdded
+        presenter.receiveWaterHistoryTitle(title: title)
+    }
+    
+    func provideWaterHistoryValues() {
+        var waterCapacity: [WaterCapacity]? = []
+        
+        WaterDataManager.shared.getWaterProgress(
+            for: Resources.Keys.dayProgressKey) { result in
+                switch result {
+                case .success(let data):
+                    waterCapacity = data.progressArray
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        
+        presenter.receiveWaterHistoryValues(values: waterCapacity)
+    }
 }
