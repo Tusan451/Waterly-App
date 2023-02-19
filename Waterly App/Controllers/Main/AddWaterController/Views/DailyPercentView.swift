@@ -51,8 +51,4 @@ extension DailyPercentView {
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
-    
-    override func configureViews() {
-        super.configureViews()
-    }
 }
