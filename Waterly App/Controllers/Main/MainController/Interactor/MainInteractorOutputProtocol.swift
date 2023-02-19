@@ -12,4 +12,9 @@ protocol MainInteractorOutputProtocol: AnyObject {
     func receiveUserName(name: String)
     func receiveDailyWaterValues(title: String, image: String, value: Int)
     func receiveActivityValues(title: String, image: String, activityType: ActivityType)
+    func receiveGoalViewDefaults(title: String, image: String)
+    func receiveWaterGoal(value: Int)
+    func receiveWaterProgress(progress: Int?, goal: Int?)
+    func receiveWaterHistoryTitle(title: String)
+    func receiveWaterHistoryValues(values: [WaterCapacity]?)
 }
