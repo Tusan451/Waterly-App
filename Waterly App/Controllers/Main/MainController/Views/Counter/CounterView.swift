@@ -11,7 +11,7 @@ final class CounterView: BaseView {
     
     private let progressView = ProgressView()
     
-    private var counterProgress: CGFloat = 0
+//    private var counterProgress: CGFloat = 0
     private var counterGoal = 0.0
     
     private let percentProgressValueLabel: UILabel = {
@@ -37,8 +37,7 @@ final class CounterView: BaseView {
         return view
     }()
     
-    private let goalView = GoalView(with: Resources.Strings.MainController.daylyGoal,
-                                    iconImage: Resources.Images.MainController.water)
+    let goalView = GoalView()
     
     private let stackView: UIStackView = {
         let view = UIStackView()
@@ -47,33 +46,33 @@ final class CounterView: BaseView {
         return view
     }()
     
-    private let addWaterButton = CustomButton(with: .fill)
+    let addWaterButton = CustomButton(with: .fill)
     
     // Конфигурация счетчика воды
-    func configure(goal: Double, progress: Double) {
-        counterGoal = goal
+    func configure(goal: Double, progress: Double, percent: CGFloat) {
+//        counterGoal = goal
         
         let tempCurrentValue = progress > goal ? goal : progress
         let goalValueDivider = goal == 0 ? 1 : goal
         let percent = tempCurrentValue / goalValueDivider
         
-        progressView.drawProgress(with: CGFloat(percent))
+        progressView.drawProgress(with: percent)
         valueLabelsAnimate(goal: goal, progress: progress)
     }
     
-    func configureDailyGoalValue(_ value: Int) {
-        goalView.setValueLabel(with: value)
-    }
+//    func configureDailyGoalValue(_ value: Int) {
+//        goalView.setValueLabel(with: value)
+//    }
     
     // Действие для кнопки изменения цели дня
-    func editButtonAddAction(selector: Selector, target: Any?) {
-        goalView.addEditButtonAction(selector, target: target)
-    }
+//    func editButtonAddAction(selector: Selector, target: Any?) {
+//        goalView.addEditButtonAction(selector, target: target)
+//    }
     
     // Действие для кнопки добавления воды
-    func addWaterButtonAction(selector: Selector, target: Any?) {
-        addWaterButton.addTarget(target, action: selector, for: .touchUpInside)
-    }
+//    func addWaterButtonAction(selector: Selector, target: Any?) {
+//        addWaterButton.addTarget(target, action: selector, for: .touchUpInside)
+//    }
 }
 
 extension CounterView {
@@ -148,9 +147,13 @@ private extension CounterView {
                                          repeats: true) { [weak self] timer in
             guard let self = self else { return }
             water += 1
-            self.waterProgressValueLabel.text = "\(water) мл"
+            if progress == 0.0 {
+                self.waterProgressValueLabel.text = "0 мл"
+            } else {
+                self.waterProgressValueLabel.text = "\(water) мл"
+            }
             
-            if water == Int(progress) {
+            if water >= Int(progress) {
                 timer.invalidate()
             }
         }
@@ -159,7 +162,11 @@ private extension CounterView {
                              repeats: true) { [weak self] timer in
             guard let self = self else { return }
             labelPercent += 1
-            self.percentProgressValueLabel.text = "\(labelPercent)%"
+            if progress == 0.0 {
+                self.percentProgressValueLabel.text = "0%"
+            } else {
+                self.percentProgressValueLabel.text = "\(labelPercent)%"
+            }
             
             if labelPercent == lround(progress / (goal / 100)) {
                 timer.invalidate()
