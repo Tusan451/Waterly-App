@@ -10,6 +10,7 @@ import Foundation
 class MainPresenter: MainViewOutputProtocol {
     unowned let view: MainViewInputProtocol
     var interactor: MainInteractorInputProtocol!
+    var router: MainRouterInputProtocol!
     
     required init(_ view: MainViewInputProtocol) {
         self.view = view
@@ -21,6 +22,34 @@ class MainPresenter: MainViewOutputProtocol {
     
     func provideDashboardInfoValues() {
         interactor.provideDashboardInfoValues()
+    }
+    
+    func provideGoalViewDefault() {
+        interactor.provideGoalViewDefault()
+    }
+    
+    func provideWaterGoalValue() {
+        interactor.provideWaterGoalValue()
+    }
+    
+    func provideWaterProgress() {
+        interactor.provideWaterProgress()
+    }
+    
+    func editButtonDidPressed() {
+        router.goToAddDayGoalModule()
+    }
+    
+    func addWaterButtonDidPressed() {
+        router.goToAddWaterModule()
+    }
+    
+    func provideWaterHistoryTitle() {
+        interactor.provideWaterHistoryTitle()
+    }
+    
+    func provideWaterHistoryValues() {
+        interactor.provideWaterHistoryValues()
     }
 }
 
@@ -44,5 +73,41 @@ extension MainPresenter: MainInteractorOutputProtocol {
     
     func receiveActivityValues(title: String, image: String, activityType: ActivityType) {
         view.setActivityView(title: title, image: image, activityType: activityType)
+    }
+    
+    func receiveGoalViewDefaults(title: String, image: String) {
+        view.setGoalViewDefaults(title: title, image: image)
+    }
+    
+    func receiveWaterGoal(value: Int) {
+        let waterGoal = "\(value) мл"
+        view.setWaterGoalValue(value: waterGoal)
+    }
+    
+    func receiveWaterProgress(progress: Int?, goal: Int?) {
+        let waterProgress: Double = progress != nil ? Double(progress!) : 0
+        let waterGoal: Double = goal != nil ? Double(goal!) : 0
+        
+        let tempCurrentValue = waterProgress > waterGoal ? waterGoal : waterProgress
+        let goalValueDivider = waterGoal == 0 ? 1 : waterGoal
+        let percent = tempCurrentValue / goalValueDivider
+        
+        view.setWaterProgress(
+            progress: waterProgress,
+            goal: waterGoal,
+            percent: CGFloat(percent)
+        )
+    }
+    
+    func receiveWaterHistoryTitle(title: String) {
+        view.setWaterHistoryTitle(title: title)
+    }
+    
+    func receiveWaterHistoryValues(values: [WaterCapacity]?) {
+        if let values = values {
+            view.setWaterCapacity(capacity: values)
+        } else {
+            view.setWaterCapacity(capacity: [])
+        }
     }
 }
