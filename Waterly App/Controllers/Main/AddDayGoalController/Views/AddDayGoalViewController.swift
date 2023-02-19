@@ -69,7 +69,7 @@ extension AddDayGoalViewController {
         addDayGoalViewModel = AddDayGoalViewModel()
 
         addDayGoalMainView.getTextFieldView().dailyGoalViewModel = DailyGoalTextFieldViewModel(
-            text: "\(addDayGoalViewModel.dailyGoal)",
+            text: "\(addDayGoalViewModel.dayGoal)",
             placeholder: addDayGoalViewModel.textFieldPlaceholder
         )
     }
