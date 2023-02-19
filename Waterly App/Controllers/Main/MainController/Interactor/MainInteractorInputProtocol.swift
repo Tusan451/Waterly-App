@@ -11,4 +11,9 @@ protocol MainInteractorInputProtocol {
     init(_ presenter: MainInteractorOutputProtocol)
     func provideNavigationBarLabels()
     func provideDashboardInfoValues()
+    func provideGoalViewDefault()
+    func provideWaterGoalValue()
+    func provideWaterProgress()
+    func provideWaterHistoryTitle()
+    func provideWaterHistoryValues()
 }
