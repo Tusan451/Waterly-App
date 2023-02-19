@@ -11,4 +11,11 @@ protocol MainViewOutputProtocol {
     init(_ view: MainViewInputProtocol)
     func provideNavigationBarLabels()
     func provideDashboardInfoValues()
+    func provideGoalViewDefault()
+    func provideWaterGoalValue()
+    func provideWaterProgress()
+    func editButtonDidPressed()
+    func addWaterButtonDidPressed()
+    func provideWaterHistoryTitle()
+    func provideWaterHistoryValues()
 }
