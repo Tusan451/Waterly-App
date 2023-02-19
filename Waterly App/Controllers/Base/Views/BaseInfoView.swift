@@ -90,8 +90,8 @@ extension BaseInfoView {
     override func layoutViews() {
         super.layoutViews()
         
-        let contentLeadingAnchor: NSLayoutAnchor = iconView.image == nil ? leadingAnchor : iconView.trailingAnchor
-        let contentLeadingOffset: CGFloat = iconView.image == nil ? 16 : 8
+//        let contentLeadingAnchor: NSLayoutAnchor = iconView.image == nil ? leadingAnchor : iconView.trailingAnchor
+//        let contentLeadingOffset: CGFloat = iconView.image == nil ? 16 : 8
         
         NSLayoutConstraint.activate([
             iconView.centerYAnchor.constraint(equalTo: centerYAnchor),
@@ -99,7 +99,7 @@ extension BaseInfoView {
             iconView.heightAnchor.constraint(equalToConstant: 32),
             iconView.widthAnchor.constraint(equalToConstant: 32),
             
-            stackView.leadingAnchor.constraint(equalTo: contentLeadingAnchor, constant: contentLeadingOffset),
+            stackView.leadingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: 8),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 16),
             stackView.topAnchor.constraint(equalTo: topAnchor, constant: 12),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12)
