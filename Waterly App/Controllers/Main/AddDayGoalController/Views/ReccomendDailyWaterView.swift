@@ -12,7 +12,7 @@ final class ReccomendDailyWaterView: BaseView {
     var viewModel: RecomendDailyWaterViewModelProtocol! {
         didSet {
             textLabel.text = viewModel.text
-            valueLabel.text = viewModel.setValue(recommendDailyValue)
+            valueLabel.text = viewModel.value
         }
     }
     
