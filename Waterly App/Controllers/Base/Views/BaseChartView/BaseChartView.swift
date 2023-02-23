@@ -14,7 +14,7 @@ final class BaseChartView: BaseView {
     
     private let barsView = UIView()
     
-    func configure(data: [WaterData],
+    func configure(data: [WeekWaterStatistic],
                    chartSize: ChartSize,
                    chartType: ChartType) {
         
@@ -111,12 +111,12 @@ private extension BaseChartView {
         layer.addSublayer(dashLayer)
     }
     
-    func addBarsFrom(data: [WaterData]) {
+    func addBarsFrom(data: [WeekWaterStatistic]) {
         
         var xPosition: CGFloat = 20
         
         data.forEach {
-            addBarWith(value: $0.value, at: xPosition)
+            addBarWith(value: $0.capacity, at: xPosition)
             xPosition += 46
         }
     }
