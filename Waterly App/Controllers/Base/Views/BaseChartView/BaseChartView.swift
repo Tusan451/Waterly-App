@@ -14,7 +14,7 @@ final class BaseChartView: BaseView {
     
     private let barsView = UIView()
     
-    func configure(data: [WaterData],
+    func configure(data: [WeekWaterStatistic],
                    chartSize: ChartSize,
                    chartType: ChartType) {
         
@@ -54,10 +54,6 @@ extension BaseChartView {
             barsView.trailingAnchor.constraint(equalTo: yAxisView.leadingAnchor, constant: -8),
             barsView.bottomAnchor.constraint(equalTo: xAxisView.topAnchor, constant: -16)
         ])
-    }
-    
-    override func configureViews() {
-        super.configureViews()
     }
 }
 
@@ -111,12 +107,12 @@ private extension BaseChartView {
         layer.addSublayer(dashLayer)
     }
     
-    func addBarsFrom(data: [WaterData]) {
+    func addBarsFrom(data: [WeekWaterStatistic]) {
         
         var xPosition: CGFloat = 20
         
         data.forEach {
-            addBarWith(value: $0.value, at: xPosition)
+            addBarWith(value: $0.capacity, at: xPosition)
             xPosition += 46
         }
     }
@@ -125,15 +121,17 @@ private extension BaseChartView {
         
         var barColor = UIColor()
         
+        let dayWaterGoal = UserDataManager.shared.getWaterGoal(for: Resources.Keys.waterGoalKey) ?? 0
+        
         if value == 0 {
             barColor = .clear
-        } else if value == dayGoal {
+        } else if value == dayWaterGoal {
             barColor = Resources.Colors.Accent.accentMain ?? .clear
         } else {
             barColor = Resources.Colors.Accent.accentInactive ?? .clear
         }
         
-        let heightMultiplier: CGFloat = CGFloat(value) / CGFloat(dayGoal)
+        let heightMultiplier: CGFloat = CGFloat(value) / CGFloat(dayWaterGoal)
         
         let startPoint = CGPoint(x: xPosition, y: barsView.bounds.height + 4)
         let endPoint = CGPoint(x: xPosition, y: barsView.bounds.height - (barsView.bounds.height * heightMultiplier) + 8)
