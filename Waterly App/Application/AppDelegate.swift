@@ -69,3 +69,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+// MARK: - Check date
+
+private extension AppDelegate {
+    
+    func checkDate() {
+        let currentDate = Date()
+        let currentStringFromDate = currentDate.fullDate
+        
+        DateManager.shared.getSavedDate { result in
+            switch result {
+            case .success(let savedDate):
+                print("SAVED DATE: \(savedDate)")
+                
+                let savedStringFromDate = savedDate.fullDate
+                
+                if currentStringFromDate != savedStringFromDate {
+                    
+                    DateManager.shared.saveDate(currentDate)
+                    
+                    if let waterDayProgress = UserDataManager.shared.getWaterProgress(
+                        for: Resources.Keys.waterProgressKey
+                    ) {
+                        
+                        let dayWaterCapacity = WaterCapacity(
+                            capacity: waterDayProgress,
+                            date: savedDate
+                        )
+                        WaterDataManager.shared.saveWaterCapacity(
+                            dayWaterCapacity,
+                            for: Resources.Keys.weekProgressKey
+                        )
+                        UserDataManager.shared.removeWaterProgress(
+                            for: Resources.Keys.waterProgressKey
+                        )
+                        WaterDataManager.shared.removeDayWaterProgress()
+                    }
+                }
+            case .failure(let error):
+                print(error)
+                DateManager.shared.saveDate(currentDate)
+            }
+        }
+    }
+}
