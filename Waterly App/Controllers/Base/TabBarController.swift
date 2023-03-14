@@ -98,7 +98,6 @@ final class TabBarController: UITabBarController {
     
     private func configureTabs() {
         let statisticsController = StatisticsViewController()
-//        let mainController = MainViewController()
         
         let mainModuleConfigurator: MainConfiguratorInputProtocol = MainConfigurator()
         let mainController = mainModuleConfigurator.configure()
