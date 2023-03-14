@@ -82,7 +82,7 @@ private extension CustomButton {
         switch type {
         case .fill:
             label.font = Resources.Fonts.sfProSemibold(size: 18)
-            layer.cornerRadius = 8
+            layer.cornerRadius = 14
         case .text:
             label.font = Resources.Fonts.sfProMedium(size: 15)
             label.textColor = Resources.Colors.Separator.separatorAccent
