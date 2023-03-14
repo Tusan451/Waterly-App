@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct WeekWaterStatistic {
+    let capacity: Int
+    let date: String?
+}
+
 class MainPresenter: MainViewOutputProtocol {
     unowned let view: MainViewInputProtocol
     var interactor: MainInteractorInputProtocol!
@@ -51,6 +56,18 @@ class MainPresenter: MainViewOutputProtocol {
     func provideWaterHistoryValues() {
         interactor.provideWaterHistoryValues()
     }
+    
+    func provideWeeklySummaryTitle() {
+        interactor.provideWeeklySummaryTitle()
+    }
+    
+    func provideWeeklySummary() {
+        interactor.provideWeeklySummary()
+    }
+    
+    func provideWeeklyStatisticDefault() {
+        interactor.provideWeeklyStatisticDefault()
+    }
 }
 
 // MARK: - MainInteractorOutputProtocol
@@ -62,7 +79,8 @@ extension MainPresenter: MainInteractorOutputProtocol {
     }
     
     func receiveUserName(name: String) {
-        let navigationTitle = "Привет, \(name)!"
+        let title = name.isEmpty ? "Привет!" : "Привет, \(name)!"
+        let navigationTitle = title
         view.setNavigationBarTitle(navBarTitle: navigationTitle)
     }
     
@@ -85,17 +103,12 @@ extension MainPresenter: MainInteractorOutputProtocol {
     }
     
     func receiveWaterProgress(progress: Int?, goal: Int?) {
-        let waterProgress: Double = progress != nil ? Double(progress!) : 0
-        let waterGoal: Double = goal != nil ? Double(goal!) : 0
-        
-        let tempCurrentValue = waterProgress > waterGoal ? waterGoal : waterProgress
-        let goalValueDivider = waterGoal == 0 ? 1 : waterGoal
-        let percent = tempCurrentValue / goalValueDivider
-        
+        let percentValue = goal == nil ? 0 : lround(Double(progress ?? 0) / Double((goal ?? 0) / 100))
+                
         view.setWaterProgress(
-            progress: waterProgress,
-            goal: waterGoal,
-            percent: CGFloat(percent)
+            progress: Double(progress ?? 0),
+            goal: Double(goal ?? 0),
+            percent: CGFloat(percentValue)
         )
     }
     
@@ -109,5 +122,29 @@ extension MainPresenter: MainInteractorOutputProtocol {
         } else {
             view.setWaterCapacity(capacity: [])
         }
+    }
+    
+    func receiveWeeklySummaryTitle(title: String) {
+        view.setWeeklySummaryTitle(title: title)
+    }
+    
+    func receiveWeeklySummary(summary: [WaterCapacity]) {
+        var weekWaterStatistic: [WeekWaterStatistic] = []
+        
+        summary.forEach {
+            weekWaterStatistic.append(
+                WeekWaterStatistic(capacity: $0.capacity, date: $0.date?.shortDate)
+            )
+        }
+        
+        view.setWeeklySummary(summary: weekWaterStatistic)
+    }
+    
+    func receiveGoalsDefault(title: String, imageName: String, type: ActivityType) {
+        view.setGoalsDefault(title: title, imageName: imageName, type: type)
+    }
+    
+    func receiveAverageDefault(title: String, imageName: String, type: ActivityType) {
+        view.setAverageDefault(title: title, imageName: imageName, type: type)
     }
 }
