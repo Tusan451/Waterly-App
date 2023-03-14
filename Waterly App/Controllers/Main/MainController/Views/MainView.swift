@@ -77,30 +77,10 @@ extension MainView {
     
     override func configureViews() {
         super.configureViews()
-                
         headerView.configureMotivationLabel(with: "Не забывай пить воду.")
-        
-//        dashboardInfoView.configureWith(recommendDailyValue: recommendDailyValue, and: .low)
-        
-//        counterView.configure(goal: Double(dayGoal), progress: Double(dayProgress))
-//        counterView.configureDailyGoalValue(dayGoal)
         
         counterView.addWaterButton.addTarget(self, action: #selector(addWaterButtonTapped), for: .touchUpInside)
         counterView.goalView.editButton.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
-//        counterView.editButtonAddAction(selector: #selector(editButtonTapped), target: self)
-//        counterView.addWaterButtonAction(selector: #selector(addWaterButtonTapped), target: self)
-                
-//        waterHistoryView.configure(items: recentlyAddedWater)
-        
-        weeklySummaryView.configure(items: [.init(value: 2000, title: "Пн"),
-                                            .init(value: 1500, title: "Вт"),
-                                            .init(value: 1000, title: "Ср"),
-                                            .init(value: 1800, title: "Чт"),
-                                            .init(value: 2000, title: "Пт"),
-                                            .init(value: 0, title: "Сб"),
-                                            .init(value: 1200, title: "Вс")],
-                                    size: .short,
-                                    type: .week)
     }
 }
 
