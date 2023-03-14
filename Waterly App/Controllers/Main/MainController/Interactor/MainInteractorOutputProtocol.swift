@@ -17,4 +17,8 @@ protocol MainInteractorOutputProtocol: AnyObject {
     func receiveWaterProgress(progress: Int?, goal: Int?)
     func receiveWaterHistoryTitle(title: String)
     func receiveWaterHistoryValues(values: [WaterCapacity]?)
+    func receiveWeeklySummaryTitle(title: String)
+    func receiveWeeklySummary(summary: [WaterCapacity])
+    func receiveGoalsDefault(title: String, imageName: String, type: ActivityType)
+    func receiveAverageDefault(title: String, imageName: String, type: ActivityType)
 }
