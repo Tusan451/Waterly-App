@@ -17,4 +17,8 @@ protocol MainViewInputProtocol: AnyObject {
     func setWaterProgress(progress: Double, goal: Double, percent: CGFloat)
     func setWaterHistoryTitle(title: String)
     func setWaterCapacity(capacity: [WaterCapacity])
+    func setWeeklySummaryTitle(title: String)
+    func setWeeklySummary(summary: [WeekWaterStatistic])
+    func setGoalsDefault(title: String, imageName: String, type: ActivityType)
+    func setAverageDefault(title: String, imageName: String, type: ActivityType)
 }
