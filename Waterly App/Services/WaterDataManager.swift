@@ -11,6 +11,7 @@ protocol WaterDataManagerProtocol {
     init(userDefaults: UserDefaults, encoder: JSONEncoder, decoder: JSONDecoder)
     func saveWaterCapacity(_ capacity: WaterCapacity, for key: String)
     func getWaterProgress(for key: String, completion: @escaping (Result<WaterProgress, Error>) -> Void)
+    func removeDayWaterProgress()
 }
 
 class WaterDataManager: WaterDataManagerProtocol {
@@ -40,8 +41,17 @@ class WaterDataManager: WaterDataManagerProtocol {
             }
         }
         
-        if waterProgress.progressArray.count == 6 {
-            waterProgress.progressArray.removeFirst()
+        switch key {
+        case Resources.Keys.dayProgressKey:
+            if waterProgress.progressArray.count == 6 {
+                waterProgress.progressArray.removeFirst()
+            }
+        case Resources.Keys.weekProgressKey:
+            if waterProgress.progressArray.count == 7 {
+                waterProgress.progressArray.removeFirst()
+            }
+        default:
+            break
         }
         
         waterProgress.progressArray.append(capacity)
@@ -60,6 +70,10 @@ class WaterDataManager: WaterDataManagerProtocol {
             completion(.failure(error))
             print(error)
         }
+    }
+    
+    func removeDayWaterProgress() {
+        userDefaults.removeObject(forKey: Resources.Keys.dayProgressKey)
     }
 }
 
