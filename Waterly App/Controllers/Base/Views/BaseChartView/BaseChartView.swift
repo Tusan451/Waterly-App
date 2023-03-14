@@ -63,11 +63,6 @@ extension BaseChartView {
 
 extension BaseChartView {
     
-//    struct Data {
-//        let value: Int
-//        let title: String
-//    }
-    
     enum ChartSize {
         case short
         case full
@@ -124,6 +119,8 @@ private extension BaseChartView {
     func addBarWith(value: Int, at xPosition: CGFloat) {
         
         var barColor = UIColor()
+        
+        let dayGoal = UserDataManager.shared.getWaterGoal(for: Resources.Keys.waterGoalKey) ?? 0
         
         if value == 0 {
             barColor = .clear
