@@ -11,7 +11,6 @@ final class CounterView: BaseView {
     
     private let progressView = ProgressView()
     
-//    private var counterProgress: CGFloat = 0
     private var counterGoal = 0.0
     
     private let percentProgressValueLabel: UILabel = {
@@ -50,29 +49,14 @@ final class CounterView: BaseView {
     
     // Конфигурация счетчика воды
     func configure(goal: Double, progress: Double, percent: CGFloat) {
-//        counterGoal = goal
         
         let tempCurrentValue = progress > goal ? goal : progress
         let goalValueDivider = goal == 0 ? 1 : goal
-        let percent = tempCurrentValue / goalValueDivider
-        
+        let percent = (ceil(tempCurrentValue / goalValueDivider * 100)) / 100
+                
         progressView.drawProgress(with: percent)
         valueLabelsAnimate(goal: goal, progress: progress)
     }
-    
-//    func configureDailyGoalValue(_ value: Int) {
-//        goalView.setValueLabel(with: value)
-//    }
-    
-    // Действие для кнопки изменения цели дня
-//    func editButtonAddAction(selector: Selector, target: Any?) {
-//        goalView.addEditButtonAction(selector, target: target)
-//    }
-    
-    // Действие для кнопки добавления воды
-//    func addWaterButtonAction(selector: Selector, target: Any?) {
-//        addWaterButton.addTarget(target, action: selector, for: .touchUpInside)
-//    }
 }
 
 extension CounterView {
@@ -114,28 +98,11 @@ extension CounterView {
     
     override func configureViews() {
         super.configureViews()
-                
-//        goalView.setValueLabel(with: dayGoal)
-//        goalView.addEditButtonAction(#selector(editButtonTapped), target: self)
         
         addWaterButton.setTitle(with: Resources.Strings.MainController.addWaterButton)
         addWaterButton.setColor(for: Resources.Colors.Accent.accentMain, title: .white)
-//        addWaterButton.addTarget(self, action: #selector(addWaterButtonTapped), for: .touchUpInside)
     }
 }
-
-//@objc extension CounterView {
-//
-//    // TODO: - Вызов поп-ап окна с изменением дневной нормы
-//    func editButtonTapped() {
-//        print("edit button tapped")
-//    }
-//
-//    // TODO: - Добавление выпитой воды
-//    func addWaterButtonTapped() {
-//        print("waterButton tapped")
-//    }
-//}
 
 private extension CounterView {
     
