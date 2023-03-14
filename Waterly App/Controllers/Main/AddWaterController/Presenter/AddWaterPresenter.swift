@@ -161,6 +161,8 @@ class AddWaterPresenter: AddWaterPresenterProtocol {
     
     func saveButtonPressed(_ value: String?) {
         
+        
+        
         guard let value = value else { return }
         guard let intValue = Int(value) else { return }
         
@@ -200,14 +202,6 @@ class AddWaterPresenter: AddWaterPresenterProtocol {
             let waterCapacity = WaterCapacity(capacity: intValue, date: nil)
             WaterDataManager.shared.saveWaterCapacity(waterCapacity, for: Resources.Keys.dayProgressKey)
             
-//            dayProgress += intValue
-//
-//            // TODO: - Контроль кол-ва элементов реализовать на уровне бека
-//            if recentlyAddedWater.count == 6 {
-//                recentlyAddedWater.removeFirst()
-//            }
-//
-//            recentlyAddedWater.append(RecentlyAddedWater.init(value: intValue))
             self.view?.dismiss()
         }
     }
@@ -248,7 +242,8 @@ class AddWaterPresenter: AddWaterPresenterProtocol {
         let dayGoal = UserDataManager.shared.getWaterGoal(for: Resources.Keys.waterGoalKey)
         let waterProgress = UserDataManager.shared.getWaterProgress(for: Resources.Keys.waterProgressKey)
         
-        let value = lround(Double(waterProgress ?? 0) / Double((dayGoal ?? 0) / 100))
+        let value = dayGoal == nil ? 0 : lround(Double(waterProgress ?? 0) / Double((dayGoal ?? 0) / 100))
+        print("Value: \(value)")
         self.view?.setCurrentProgressViewValue(value: "\(value)%")
     }
     
