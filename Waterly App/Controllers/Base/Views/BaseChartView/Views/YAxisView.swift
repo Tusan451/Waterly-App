@@ -17,7 +17,7 @@ final class YAxisView: BaseView {
         return view
     }()
     
-    func configure(data: [WaterData],
+    func configure(data: [WeekWaterStatistic],
                    size: BaseChartView.ChartSize,
                    type: BaseChartView.ChartType) {
         
@@ -53,58 +53,6 @@ final class YAxisView: BaseView {
                 stackView.addArrangedSubview(label)
             }
         }
-        
-//        if type == .year {
-//            (0...5).reversed().forEach {
-//                let label = UILabel()
-//                label.font = Resources.Fonts.sfProMedium(size: 10)
-//                label.textColor = Resources.Colors.Text.textTertiary
-//                label.text = "\($0 * 1000) мл"
-//
-//                stackView.addArrangedSubview(label)
-//            }
-//        }
-//
-//        else {
-//            switch type {
-//            case .day:
-//                (0...5).reversed().forEach {
-//                    let label = UILabel()
-//                    label.font = Resources.Fonts.sfProMedium(size: 10)
-//                    label.textColor = Resources.Colors.Text.textTertiary
-//                    label.text = "\($0 * 1000) мл"
-//
-//                    stackView.addArrangedSubview(label)
-//                }
-//            case .week:
-//                (0...5).reversed().forEach {
-//                    let label = UILabel()
-//                    label.font = Resources.Fonts.sfProMedium(size: 10)
-//                    label.textColor = Resources.Colors.Text.textTertiary
-//                    label.text = "\($0 * 1000) мл"
-//
-//                    stackView.addArrangedSubview(label)
-//                }
-//            case .month:
-//                (0...5).reversed().forEach {
-//                    let label = UILabel()
-//                    label.font = Resources.Fonts.sfProMedium(size: 10)
-//                    label.textColor = Resources.Colors.Text.textTertiary
-//                    label.text = "\($0 * 1000) мл"
-//
-//                    stackView.addArrangedSubview(label)
-//                }
-//            case .year:
-//                (0...5).reversed().forEach {
-//                    let label = UILabel()
-//                    label.font = Resources.Fonts.sfProMedium(size: 10)
-//                    label.textColor = Resources.Colors.Text.textTertiary
-//                    label.text = "\($0 * 1000) мл"
-//
-//                    stackView.addArrangedSubview(label)
-//                }
-//            }
-//        }
     }
 }
 
