@@ -16,7 +16,6 @@ final class HeaderView: BaseView {
         return label
     }()
     
-    // TODO: - Изменить лейбл мотивации в зависимости от кол-ва выпитой воды за день
     func configureMotivationLabel(with title: String) {
         motivationLabel.text = title
     }
