@@ -27,25 +27,9 @@ final class GoalView: BaseView {
     
     let editButton = CustomButton(with: .text)
     
-//    init(with title: String, iconImage: UIImage? = nil) {
-//        titleLabel.text = title
-//        iconView.image = iconImage?.withRenderingMode(.alwaysTemplate)
-//
-//        super.init(frame: .zero)
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
-    // TODO: - Изменить функцию установки значения в зависимости от данных из БД
     func setValueLabel(with value: String) {
         valueLabel.text = value
     }
-    
-//    func addEditButtonAction(_ action: Selector, target: Any?) {
-//        editButton.addTarget(target, action: action, for: .touchUpInside)
-//    }
 }
 
 extension GoalView {
