@@ -9,13 +9,7 @@ import UIKit
 
 final class DashboardInfoView: BaseView {
     
-//    let dailyWaterGoalView = BaseInfoView(with: Resources.Strings.MainController.dailyWaterGoal,
-//                                              iconImage: Resources.Images.MainController.water)
-    
     var dailyWaterGoalView = BaseInfoView()
-    
-//    let activityModeView = BaseInfoView(with: Resources.Strings.MainController.activityType,
-//                                            iconImage: Resources.Images.MainController.activity)
     
     var activityModeView = BaseInfoView()
     
@@ -26,7 +20,6 @@ final class DashboardInfoView: BaseView {
         return view
     }()
     
-    // TODO: - Конфигурация данных из БД
     func configureDailyValue(recommendDailyValue: String) {
         dailyWaterGoalView.setValueLabel(with: recommendDailyValue)
     }
