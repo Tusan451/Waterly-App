@@ -13,5 +13,5 @@ struct WaterProgress: Codable {
 
 struct WaterCapacity: Codable {
     let capacity: Int
-    let date: String?
+    let date: Date?
 }
