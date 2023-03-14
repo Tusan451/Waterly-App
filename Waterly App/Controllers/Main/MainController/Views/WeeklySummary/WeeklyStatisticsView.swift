@@ -9,20 +9,9 @@ import UIKit
 
 final class WeeklyStatisticsView: BaseView {
     
-//    private let hitGoalsView = BaseInfoView(with: Resources.Strings.MainController.hitGoals)
-//    private let averageDrinkedView = BaseInfoView(with: Resources.Strings.MainController.averageDrinked)
+    let hitGoalsView = BaseInfoView()
     
-    private let hitGoalsView: BaseInfoView = {
-        let view = BaseInfoView()
-        view.titleLabel.text = Resources.Strings.MainController.hitGoals
-        return view
-    }()
-
-    private let averageDrinkedView: BaseInfoView = {
-        let view = BaseInfoView()
-        view.titleLabel.text = Resources.Strings.MainController.averageDrinked
-        return view
-    }()
+    let averageDrinkedView = BaseInfoView()
     
     private let stackView: UIStackView = {
         let view = UIStackView()
@@ -32,20 +21,24 @@ final class WeeklyStatisticsView: BaseView {
     }()
     
     // TODO: - Конфигурация данных из БД
-    func configureWith(items: [WaterData]) {
+    func configureWith(items: [WeekWaterStatistic]) {
         
         var hitGoalsCount = 0
+        let count = items.isEmpty ? 1 : items.count
+        
+        
+        let dayWaterGoal = UserDataManager.shared.getWaterGoal(for: Resources.Keys.waterGoalKey) ?? 0
         
         items.forEach {
-            if $0.value >= dayGoal { hitGoalsCount += 1 }
+            if $0.capacity >= dayWaterGoal { hitGoalsCount += 1 }
         }
         
         hitGoalsView.setValueLabel(with: "\(hitGoalsCount)")
         
-        let sumOfWaterValues = items.map { $0.value }.reduce(0) { $0 + $1 }
-        let averageWaterValue = sumOfWaterValues / items.count
+        let sumOfWaterValues = items.map { $0.capacity }.reduce(0) { $0 + $1 }
+        let averageWaterValue = sumOfWaterValues / count
         
-        averageDrinkedView.setValueLabel(with: "\(averageWaterValue) мл / день")
+        averageDrinkedView.setValueLabel(with: "\(averageWaterValue) мл")
     }
 }
 
@@ -68,9 +61,5 @@ extension WeeklyStatisticsView {
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
-    }
-    
-    override func configureViews() {
-        super.configureViews()
     }
 }
