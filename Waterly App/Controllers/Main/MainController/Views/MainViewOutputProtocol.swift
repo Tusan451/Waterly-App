@@ -18,4 +18,7 @@ protocol MainViewOutputProtocol {
     func addWaterButtonDidPressed()
     func provideWaterHistoryTitle()
     func provideWaterHistoryValues()
+    func provideWeeklySummaryTitle()
+    func provideWeeklySummary()
+    func provideWeeklyStatisticDefault()
 }
