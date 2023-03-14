@@ -15,7 +15,7 @@ final class XAxisView: BaseView {
         return view
     }()
     
-    func configure(data: [WaterData],
+    func configure(data: [WeekWaterStatistic],
                    size: BaseChartView.ChartSize,
                    type: BaseChartView.ChartType) {
         
@@ -28,9 +28,21 @@ final class XAxisView: BaseView {
             label.font = Resources.Fonts.sfProMedium(size: 10)
             label.textColor = Resources.Colors.Text.textTertiary
             label.textAlignment = .center
-            label.text = $0.title
+            label.text = $0.date
             
             stackView.addArrangedSubview(label)
+        }
+        
+        if data.count < 7 {
+            for _ in 1...(7 - data.count) {
+                let label = UILabel()
+                label.font = Resources.Fonts.sfProMedium(size: 10)
+                label.textColor = Resources.Colors.Text.textTertiary
+                label.textAlignment = .center
+                label.text = ""
+                
+                stackView.addArrangedSubview(label)
+            }
         }
     }
 }
