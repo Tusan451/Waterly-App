@@ -27,15 +27,6 @@ final class RadioButton: UIButton {
         configure()
     }
     
-//    init(color: UIColor?) {
-//        super.init(frame: .zero)
-//        self.iconView.tintColor = color
-//
-//        addViews()
-//        layoutViews()
-////        configure()
-//    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -55,10 +46,6 @@ final class RadioButton: UIButton {
     func getState() -> RadioButtonState {
         return buttonState
     }
-    
-//    func setColor(color: UIColor) {
-//        iconView.tintColor = color
-//    }
 }
 
 private extension RadioButton {
