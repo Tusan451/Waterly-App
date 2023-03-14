@@ -20,6 +20,7 @@ protocol UserDataManagerProtocol {
     func getWaterGoal(for key: String?) -> Int?
     func saveWaterProgress(_ value: Int?, for key: String)
     func getWaterProgress(for key: String?) -> Int?
+    func removeWaterProgress(for key: String)
 }
 
 enum DataManagerError: Error {
@@ -32,11 +33,11 @@ class UserDataManager: UserDataManagerProtocol {
     private let userDefaults: UserDefaults
     private let encoder: JSONEncoder
     private let decoder: JSONDecoder
-//    private var user: UserDataModel? = nil
     
     required init(userDefaults: UserDefaults = .standard,
                   encoder: JSONEncoder = .init(),
                   decoder: JSONDecoder = .init()) {
+        
         self.userDefaults = userDefaults
         self.encoder = encoder
         self.decoder = decoder
@@ -108,5 +109,9 @@ class UserDataManager: UserDataManagerProtocol {
         guard let key = key else { return nil }
         return userDefaults.object(forKey: key) == nil ?
         nil : userDefaults.integer(forKey: key)
+    }
+    
+    func removeWaterProgress(for key: String) {
+        userDefaults.removeObject(forKey: key)
     }
 }
