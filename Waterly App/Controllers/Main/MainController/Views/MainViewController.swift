@@ -40,21 +40,22 @@ extension MainViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-//        startPresentation()
         presenter.provideDashboardInfoValues()
         presenter.provideNavigationBarLabels()
         presenter.provideWaterGoalValue()
         presenter.provideWaterProgress()
         presenter.provideWaterHistoryValues()
+        presenter.provideWeeklySummary()
     }
     
     override func configureViews() {
         super.configureViews()
         
-//        navigationBarConfigure()
         navigationController?.navigationBar.prefersLargeTitles = true
         presenter.provideGoalViewDefault()
         presenter.provideWaterHistoryTitle()
+        presenter.provideWeeklySummaryTitle()
+        presenter.provideWeeklyStatisticDefault()
     }
 }
 
@@ -64,21 +65,10 @@ extension MainViewController: ModalViewControllerDelegate {
         presenter.provideWaterGoalValue()
         presenter.provideWaterProgress()
         presenter.provideWaterHistoryValues()
-        
-//        counterView.configure(goal: Double(dayGoal), progress: Double(dayProgress))
-//        counterView.configureDailyGoalValue(dayGoal)
-        
-//        waterHistoryView.configure(items: recentlyAddedWater)
     }
 }
 
 private extension MainViewController {
-    
-//    func navigationBarConfigure() {
-//        title = "Привет, Олег!"
-//        navigationController?.tabBarItem.title = Resources.Strings.TabBar.main
-//        navigationController?.navigationBar.prefersLargeTitles = true
-//    }
     
     func startPresentation() {
         let pageViewController = ModuleBuilder.configureNewUserPageModule(0)
@@ -136,5 +126,28 @@ extension MainViewController: MainViewInputProtocol {
     
     func setWaterCapacity(capacity: [WaterCapacity]) {
         mainView.waterHistoryView.configure(items: capacity)
+    }
+    
+    func setWeeklySummaryTitle(title: String) {
+        mainView.weeklySummaryView.titleLabel.text = title
+    }
+    
+    func setWeeklySummary(summary: [WeekWaterStatistic]) {
+        print("Weekly Summary: \(summary)")
+        mainView.weeklySummaryView.configure(items: summary, size: .short, type: .week)
+    }
+    
+    func setAverageDefault(title: String, imageName: String, type: ActivityType) {
+        mainView.weeklySummaryView.statisticsView.averageDrinkedView.titleLabel.text = title
+        mainView.weeklySummaryView.statisticsView.averageDrinkedView.iconView.image =
+        UIImage(named: imageName)?.withRenderingMode(.alwaysTemplate)
+        mainView.weeklySummaryView.statisticsView.averageDrinkedView.setIconColor(for: type)
+    }
+    
+    func setGoalsDefault(title: String, imageName: String, type: ActivityType) {
+        mainView.weeklySummaryView.statisticsView.hitGoalsView.titleLabel.text = title
+        mainView.weeklySummaryView.statisticsView.hitGoalsView.iconView.image =
+        UIImage(named: imageName)?.withRenderingMode(.alwaysTemplate)
+        mainView.weeklySummaryView.statisticsView.hitGoalsView.setIconColor(for: type)
     }
 }
