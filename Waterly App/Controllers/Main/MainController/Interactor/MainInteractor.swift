@@ -25,11 +25,10 @@ class MainInteractor: MainInteractorInputProtocol {
                 userName = userData.name
             case .failure(let error):
                 print("ERROR: \(error)")
-                userName = Resources.Strings.MainController.defaultUserName
+                userName = ""
             }
         }
         presenter.receiveMainTitle(title: mainTitle)
-        print("MAINTITLE: \(mainTitle)")
         presenter.receiveUserName(name: userName)
     }
     
@@ -116,5 +115,42 @@ class MainInteractor: MainInteractorInputProtocol {
             }
         
         presenter.receiveWaterHistoryValues(values: waterCapacity)
+    }
+    
+    func provideWeeklySummaryTitle() {
+        let title = Resources.Strings.MainController.weeklySummary
+        presenter.receiveWeeklySummaryTitle(title: title)
+    }
+    
+    func provideWeeklySummary() {
+        var weeklySummary: [WaterCapacity] = []
+        
+        WaterDataManager.shared.getWaterProgress(for: Resources.Keys.weekProgressKey) { result in
+            switch result {
+            case .success(let waterProgress):
+                weeklySummary = waterProgress.progressArray
+            case .failure(let error):
+                print(error)
+            }
+        }
+        presenter.receiveWeeklySummary(summary: weeklySummary)
+    }
+    
+    func provideWeeklyStatisticDefault() {
+        let goalsTitle = Resources.Strings.MainController.hitGoals
+        let goalsImageName = Resources.Strings.MainController.hitGoalImageName
+        let goalsActivityType: ActivityType = .low
+        
+        let averageTitle = Resources.Strings.MainController.averageDrinked
+        let averageImageName = Resources.Strings.MainController.averageWaterImageName
+        let averageActivityType: ActivityType = .high
+        
+        presenter.receiveGoalsDefault(title: goalsTitle,
+                                      imageName: goalsImageName,
+                                      type: goalsActivityType)
+        
+        presenter.receiveAverageDefault(title: averageTitle,
+                                        imageName: averageImageName,
+                                        type: averageActivityType)
     }
 }
