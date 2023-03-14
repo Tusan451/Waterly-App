@@ -9,9 +9,8 @@ import UIKit
 
 final class WeeklySummaryView: BaseView {
     
-    private let titleLabel: UILabel = {
+    let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = Resources.Strings.MainController.weeklySummary
         label.font = Resources.Fonts.sfProMedium(size: 16)
         label.textColor = Resources.Colors.Text.textMain
         return label
@@ -19,9 +18,9 @@ final class WeeklySummaryView: BaseView {
     
     private let chartView = BaseChartView()
     
-    private let statisticsView = WeeklyStatisticsView()
+    let statisticsView = WeeklyStatisticsView()
     
-    func configure(items: [WaterData],
+    func configure(items: [WeekWaterStatistic],
                    size: BaseChartView.ChartSize,
                    type: BaseChartView.ChartType) {
         
