@@ -12,7 +12,7 @@ extension CounterView {
     final class ProgressView: UIView {
         
         func drawProgress(with percent: CGFloat) {
-            
+                        
             // Определение серой окружности/подложки и активной окружности
             let circleFrame = UIScreen.main.bounds.width / 2 - (40 + 8)
             let radius = circleFrame / 2
