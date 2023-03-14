@@ -38,26 +38,10 @@ class BaseInfoView: BaseView {
     
     let iconView = UIImageView()
     
-//    init(with title: String, iconImage: UIImage? = nil) {
-//        super.init(frame: .zero)
-//        titleLabel.text = title
-//        iconView.image = iconImage?.withRenderingMode(.alwaysTemplate)
-//    }
-//
-//    init() {
-//        super.init(frame: .zero)
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
-    // TODO: - Изменить функцию установки значения в зависимости от данных из БД
     func setValueLabel(with value: String) {
         valueLabel.text = value
     }
     
-    // TODO: - Режим физ активности берем из БД
     func setActivityColor(for type: ActivityType) {
         switch type {
         case .low:
@@ -72,6 +56,17 @@ class BaseInfoView: BaseView {
             iconView.tintColor = Resources.Colors.Other.red
             valueLabel.textColor = Resources.Colors.Other.red
             valueLabel.text = type.rawValue
+        }
+    }
+    
+    func setIconColor(for type: ActivityType) {
+        switch type {
+        case .low:
+            iconView.tintColor = Resources.Colors.Other.green
+        case .medium:
+            iconView.tintColor = Resources.Colors.Other.yellow
+        case .high:
+            iconView.tintColor = Resources.Colors.Other.red
         }
     }
 }
@@ -89,9 +84,6 @@ extension BaseInfoView {
     
     override func layoutViews() {
         super.layoutViews()
-        
-//        let contentLeadingAnchor: NSLayoutAnchor = iconView.image == nil ? leadingAnchor : iconView.trailingAnchor
-//        let contentLeadingOffset: CGFloat = iconView.image == nil ? 16 : 8
         
         NSLayoutConstraint.activate([
             iconView.centerYAnchor.constraint(equalTo: centerYAnchor),
