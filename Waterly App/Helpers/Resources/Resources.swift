@@ -117,13 +117,16 @@ enum Resources {
             
             static let weeklySummary = "Сводка за неделю"
             
-            static let hitGoals = "Выполнено целей"
-            static let averageDrinked = "В среднем выпили"
+            static let hitGoals = "Цели сделаны"
+            static let averageDrinked = "В среднем / день"
             
             static let defaultUserName = "Имя пользователя"
             
             static let waterImageName = "water"
             static let activityImageName = "activity"
+            
+            static let hitGoalImageName = "hitGoal"
+            static let averageWaterImageName = "averageWater"
             
             static let doneKeyboardButton = "Готово"
             
@@ -320,5 +323,7 @@ enum Resources {
         
         static let dayProgressKey = "dayProgressKey"
         static let weekProgressKey = "weekProgressKey"
+        
+        static let dateKey = "dateKey"
     }
 }
