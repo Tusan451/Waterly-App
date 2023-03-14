@@ -27,7 +27,6 @@ final class PhysicalActivityView: BaseView {
         let slider = UISlider()
         slider.minimumValue = Resources.Values.activitySliderMinimumValue
         slider.maximumValue = Resources.Values.activitySliderMaximumValue
-//        slider.value = Resources.Values.activitySliderDefaultValue
         slider.minimumTrackTintColor = Resources.Colors.Other.yellow
         slider.maximumTrackTintColor = Resources.Colors.Back.backSecondary
         return slider
